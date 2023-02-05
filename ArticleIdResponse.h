@@ -7,7 +7,7 @@ public:
 	ArticleIdResponse(const ArticleIdResponse& other) noexcept = default;
 	ArticleIdResponse(ArticleIdResponse&& other) noexcept = default;
 	virtual ~ArticleIdResponse() noexcept = default;
-	ArticleIdResponse(String const& id);
+	ArticleIdResponse(String const& _Id);
 
 private:
 	String _Id;

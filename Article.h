@@ -16,7 +16,7 @@ private:
 	String _Title;
 	String _Content;
 	AuthorPtr _Author;
-	Article(String const& id, String const& title, String const& _Content, AuthorPtr author);
+	Article(String const& _Id, String const& title, String const& _Content, AuthorPtr author);
 
 #pragma region ArticleBuilder
 
@@ -37,7 +37,7 @@ public:
 		ArticleBuilder(ArticleBuilder&& other) noexcept = default;
 
 	public:
-		ArticleBuilder withId(String const& id);
+		ArticleBuilder withId(String const& _Id);
 
 		ArticleBuilder withTitle(String const& title);
 

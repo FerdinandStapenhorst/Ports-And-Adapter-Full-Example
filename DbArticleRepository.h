@@ -13,5 +13,5 @@ private:
 public:
 	virtual ArticlePtr Save(AuthorPtr author, String const& title, String const& _Content) override;
 
-	ArticlePtr Get(String const& id) override;
+	ArticlePtr Get(String const& _Id) override;
 };

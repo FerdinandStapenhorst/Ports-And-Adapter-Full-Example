@@ -1,10 +1,19 @@
 #pragma once
 #include "pch.h"
 
-
 class ArticleModel {
 private:
 	friend class ArticleModelBuilder;
+	ArticleModel() noexcept = default;
+	ArticleModel(const ArticleModel& other) noexcept = default;
+
+	ArticleModel(ArticleModel&& other) noexcept = default;
+	ArticleModel(String const& _Id, String const& title,
+		String const& _Content, String const& authorId,
+		uint32_t const& version, String const& authorName);
+
+public:
+	virtual ~ArticleModel() noexcept = default;
 
 	String _Id;
 	String _Title;
@@ -13,13 +22,6 @@ private:
 	String _AuthorId;
 	String _AuthorName;
 
-	ArticleModel() noexcept = default;
-	ArticleModel(const ArticleModel& other) noexcept = default;
-	ArticleModel(ArticleModel&& other) noexcept = default;
-
-	ArticleModel(String const& id, String const& title,
-		String const& _Content, String const& authorId,
-		uint32_t const& version, String const& authorName);
 
 public:
 
@@ -48,7 +50,7 @@ public:
 
 	public:
 
-		ArticleModelBuilder withId(String const& id);
+		ArticleModelBuilder withId(String const& _Id);
 
 		ArticleModelBuilder withTitle(String const& title);
 

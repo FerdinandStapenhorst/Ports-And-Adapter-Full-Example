@@ -6,77 +6,50 @@ class AuthorExternalModel {
 private:
 	friend class AuthorExternalModelBuilder;
 
-	String id;
-	String firstName;
-	String lastName;
-
-	AuthorExternalModel(String const& id, String const& firstName, String const& lastName) :
-		id{ id },
-		firstName{ firstName },
-		lastName{ lastName }
-	{
-	}
-
-	AuthorPtr ToDomain() {
-
-		return Author::Create()
-			.withId(id)
-			.withName(FullName())
-			.build();
-	}
-
+	AuthorExternalModel() noexcept = default;
+	AuthorExternalModel(const AuthorExternalModel& other) noexcept = default;
+	AuthorExternalModel(AuthorExternalModel&& other) noexcept = default;
+	AuthorExternalModel(String const& _Id, String const& _FirstName, String const& _LastName);
 
 public:
-	String FullName() const {
-		return std::format("{} {}", firstName, lastName);
-	}
+	virtual ~AuthorExternalModel() noexcept = default;
 
-	
+private:
+	String _Id;
+	String _FirstName;
+	String _LastName;
 
-	String ToString() const {
-		return FullName();
-	}
+public:
+	AuthorPtr ToDomain();
 
+	String FullName() const;
+
+	String ToString() const;
+
+#pragma region AuthorExternalModelBuilder
 
 	class AuthorExternalModelBuilder {
 	private:
 		friend class AuthorExternalModel;
 
 		AuthorExternalModelBuilder() noexcept = default;
+		virtual ~AuthorExternalModelBuilder() noexcept = default;
 		AuthorExternalModelBuilder(const AuthorExternalModelBuilder& other) noexcept = default;
 		AuthorExternalModelBuilder(AuthorExternalModelBuilder&& other) noexcept = default;
 
+		String _Id;
+		String _FirstName;
+		String _LastName;
 
-		String id;
-		String firstName;
-		String lastName;
+		AuthorExternalModelBuilder withId(String const& id);
 
-		AuthorExternalModelBuilder() {}
+		AuthorExternalModelBuilder withFirstName(String const& firstName);
 
-		AuthorExternalModelBuilder withId(long id) {
-			id = id;
-			return *this;
-		}
+		AuthorExternalModelBuilder withLastName(String const& lastName);
 
-		AuthorExternalModelBuilder withFirstName(String firstName) {
-			firstName = firstName;
-			return *this;
-		}
-
-		AuthorExternalModelBuilder withLastName(String lastName) {
-			lastName = lastName;
-			return *this;
-		}
-
-		AuthorExternalModelPtr build() {
-			AuthorExternalModel* a = new AuthorExternalModel(id, firstName, lastName);
-			return std::shared_ptr<AuthorExternalModel>(a);
-		}
+		AuthorExternalModelPtr build();
 	};
 
-
-	static AuthorExternalModelBuilder Create() {
-		AuthorExternalModelBuilder a;
-		return a;
-	}
+#pragma endregion
+	static AuthorExternalModelBuilder Create();
 };

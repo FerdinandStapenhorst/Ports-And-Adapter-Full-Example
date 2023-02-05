@@ -3,8 +3,8 @@
 #include "Article.h"
 #include "Author.h"
 
-Article::Article(String const& id, String const& title, String const& _Content, AuthorPtr author) :
-	_Id{ id },
+Article::Article(String const& _Id, String const& title, String const& _Content, AuthorPtr author) :
+	_Id{ _Id },
 	_Title{ title },
 	_Content{ _Content },
 	_Author{ author }

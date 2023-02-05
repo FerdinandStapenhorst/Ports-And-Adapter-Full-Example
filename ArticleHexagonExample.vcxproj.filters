@@ -47,6 +47,9 @@
     <ClCompile Include="ArticleService.cpp">
       <Filter>domain</Filter>
     </ClCompile>
+    <ClCompile Include="AuthorExternalModel.cpp">
+      <Filter>Adapter\authorservice</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="domain">

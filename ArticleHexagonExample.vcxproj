@@ -143,6 +143,7 @@
     <ClCompile Include="ArticleService.cpp" />
     <ClCompile Include="ArticleSmsModel.cpp" />
     <ClCompile Include="Author.cpp" />
+    <ClCompile Include="AuthorExternalModel.cpp" />
     <ClCompile Include="AuthorMailNotifier.cpp" />
     <ClCompile Include="AuthorSmsNotifier.cpp" />
     <ClCompile Include="DbArticleRepository.cpp" />

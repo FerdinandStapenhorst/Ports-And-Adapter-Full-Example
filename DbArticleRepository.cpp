@@ -1,3 +1,4 @@
+#pragma once
 #include "pch.h"
 #include "DbArticleRepository.h"
 #include "Author.h"
@@ -12,7 +13,7 @@ ArticlePtr DbArticleRepository::Save(AuthorPtr author, String const& title, Stri
 	return entity->ToDomain();
 }
 
-ArticlePtr DbArticleRepository::Get(String const& id)
+ArticlePtr DbArticleRepository::Get(String const& _Id)
 {
 	/**
 	 * Database integration implementation comes here

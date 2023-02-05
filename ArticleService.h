@@ -16,5 +16,5 @@ private:
 
 public:
 	String Create(String const& authorId, String const& title, String const& _Content);
-	ArticlePtr Get(String const& id);
+	ArticlePtr Get(String const& _Id);
 };

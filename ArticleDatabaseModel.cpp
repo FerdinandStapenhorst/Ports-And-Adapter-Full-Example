@@ -1,11 +1,12 @@
+#pragma once
 #include "pch.h"
 #include "ArticleDatabaseModel.h"
 #include "Article.h"
 #include "Author.h"
 
-ArticleModel::ArticleModel(String const& id, String const& title, String const& _Content,
+ArticleModel::ArticleModel(String const& _Id, String const& title, String const& _Content,
 	String const& authorId, uint32_t const& version, String const& authorName) :
-	_Id{ id }, _Title{ title }, _Content{ _Content }, _AuthorId{ authorId },
+	_Id{ _Id }, _Title{ title }, _Content{ _Content }, _AuthorId{ authorId },
 	_Version{ version }, _AuthorName{ authorName }
 {
 }

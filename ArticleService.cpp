@@ -23,9 +23,9 @@ String ArticleService::Create(String const& authorId, String const& title, Strin
 	return article->Id();
 }
 
-ArticlePtr ArticleService::Get(String const& id)
+ArticlePtr ArticleService::Get(String const& _Id)
 {
-	auto article = _ArticleRepository->Get(id);
+	auto article = _ArticleRepository->Get(_Id);
 	//eventPublisher.publishRetrievalOf(article);
 	return article;
 }

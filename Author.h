@@ -11,7 +11,7 @@ public:
 	virtual ~Author() noexcept = default;
 
 private:
-	Author(String const& id, String const& name);
+	Author(String const& _Id, String const& name);
 	String _Id;
 	String _Name;
 
@@ -32,7 +32,7 @@ public:
 		String  _Name;
 
 	public:
-		AuthorBuilder withId(String const& id);
+		AuthorBuilder withId(String const& _Id);
 		AuthorBuilder withName(String const& name);
 		AuthorPtr build();
 	};

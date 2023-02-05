@@ -3,7 +3,7 @@
 #pragma once
 #include "pch.h"
 
-ArticleIdResponse::ArticleIdResponse(String const& id) : _Id{ id } {}
+ArticleIdResponse::ArticleIdResponse(String const& _Id) : _Id{ _Id } {}
 
 ArticleIdResponse ArticleIdResponse::Of(String const& articleId)
 {
