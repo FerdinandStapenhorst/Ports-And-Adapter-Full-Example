@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="ArticleHexagonExample.cpp" />
+    <ClCompile Include="pch.cpp">
+      <Filter>pch</Filter>
+    </ClCompile>
+    <ClCompile Include="Article.cpp">
+      <Filter>domain\model</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticlePublisher.cpp">
+      <Filter>domain</Filter>
+    </ClCompile>
+    <ClCompile Include="Author.cpp">
+      <Filter>domain\model</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticleIdResponse.cpp">
+      <Filter>Adapter\messagebroker</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticleRetrievedMessage.cpp">
+      <Filter>Adapter\messagebroker</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageBrokerArticleMessageSender.cpp">
+      <Filter>Adapter\messagebroker</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticleCreatedMessage.cpp">
+      <Filter>Adapter\messagebroker</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticleMailModel.cpp">
+      <Filter>Adapter\notifications</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticleSmsModel.cpp">
+      <Filter>Adapter\notifications</Filter>
+    </ClCompile>
+    <ClCompile Include="AuthorMailNotifier.cpp">
+      <Filter>Adapter\notifications</Filter>
+    </ClCompile>
+    <ClCompile Include="AuthorSmsNotifier.cpp">
+      <Filter>Adapter\notifications</Filter>
+    </ClCompile>
+    <ClCompile Include="DbArticleRepository.cpp">
+      <Filter>Adapter\articledb</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticleDatabaseModel.cpp">
+      <Filter>Adapter\articledb</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticleService.cpp">
+      <Filter>domain</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="domain">
+      <UniqueIdentifier>{9342a162-1c71-463f-b75f-16dcdc592013}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="domain\ports">
+      <UniqueIdentifier>{4a5c281e-bbb3-447b-a412-34bc23f3abc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="domain\model">
+      <UniqueIdentifier>{ec55c9b4-bac0-4a9d-bced-45d7279f61a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pch">
+      <UniqueIdentifier>{c02c334e-2fa3-4fa8-ad22-49ad77be10c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Adapter">
+      <UniqueIdentifier>{6c43a551-fc8f-4b90-81f8-37742c8f24d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{7562d3bf-192e-4dd7-9436-6263300a9154}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Adapter\api">
+      <UniqueIdentifier>{0cca90c2-98ec-4e01-9f2f-17615f6f36d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Adapter\articledb">
+      <UniqueIdentifier>{ec61f699-a9d6-46dd-b3dc-c085c4849df4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Adapter\messagebroker">
+      <UniqueIdentifier>{19674f34-b563-479f-8c04-e56c985f476f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Adapter\notifications">
+      <UniqueIdentifier>{f1cc5046-dbe1-40e2-aef9-bec7002ad79f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Adapter\authorservice">
+      <UniqueIdentifier>{22724706-3c9b-4907-8dc4-9227a5eb06d5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="Article.h">
+      <Filter>domain\model</Filter>
+    </ClInclude>
+    <ClInclude Include="Author.h">
+      <Filter>domain\model</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticlePublisher.h">
+      <Filter>domain</Filter>
+    </ClInclude>
+    <ClInclude Include="IArticleRepository.h">
+      <Filter>domain\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="IAuthorRepository.h">
+      <Filter>domain\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticleConfig.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticleDatabaseModel.h">
+      <Filter>Adapter\articledb</Filter>
+    </ClInclude>
+    <ClInclude Include="DbArticleRepository.h">
+      <Filter>Adapter\articledb</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticleIdResponse.h">
+      <Filter>Adapter\messagebroker</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticleRetrievedMessage.h">
+      <Filter>Adapter\messagebroker</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageBrokerArticleMessageSender.h">
+      <Filter>Adapter\messagebroker</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticleCreatedMessage.h">
+      <Filter>Adapter\messagebroker</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticleMailModel.h">
+      <Filter>Adapter\notifications</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticleSmsModel.h">
+      <Filter>Adapter\notifications</Filter>
+    </ClInclude>
+    <ClInclude Include="AuthorMailNotifier.h">
+      <Filter>Adapter\notifications</Filter>
+    </ClInclude>
+    <ClInclude Include="AuthorSmsNotifier.h">
+      <Filter>Adapter\notifications</Filter>
+    </ClInclude>
+    <ClInclude Include="IAuthorNotifier.h">
+      <Filter>domain\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="IArticleMessageSender.h">
+      <Filter>domain\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="ISocialMediaPublisher.h">
+      <Filter>domain\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticleService.h">
+      <Filter>domain</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternalServiceClientAuthorRepository.h">
+      <Filter>Adapter\authorservice</Filter>
+    </ClInclude>
+    <ClInclude Include="AuthorExternalModel.h">
+      <Filter>Adapter\authorservice</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
