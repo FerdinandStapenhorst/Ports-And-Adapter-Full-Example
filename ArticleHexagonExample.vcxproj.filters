@@ -1,205 +1,205 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="ArticleHexagonExample.cpp" />
-    <ClCompile Include="pch.cpp">
-      <Filter>pch</Filter>
-    </ClCompile>
-    <ClCompile Include="Article.cpp">
-      <Filter>domain\model</Filter>
-    </ClCompile>
-    <ClCompile Include="Author.cpp">
-      <Filter>domain\model</Filter>
-    </ClCompile>
-    <ClCompile Include="ArticleRetrievedMessage.cpp">
-      <Filter>Adapter\messagebroker</Filter>
-    </ClCompile>
-    <ClCompile Include="ArticleMessageBroker.cpp">
-      <Filter>Adapter\messagebroker</Filter>
-    </ClCompile>
-    <ClCompile Include="ArticleCreatedMessage.cpp">
-      <Filter>Adapter\messagebroker</Filter>
-    </ClCompile>
-    <ClCompile Include="ArticleMailModel.cpp">
-      <Filter>Adapter\notifications</Filter>
-    </ClCompile>
-    <ClCompile Include="ArticleSmsModel.cpp">
-      <Filter>Adapter\notifications</Filter>
-    </ClCompile>
-    <ClCompile Include="AuthorMailNotifier.cpp">
-      <Filter>Adapter\notifications</Filter>
-    </ClCompile>
-    <ClCompile Include="AuthorSmsNotifier.cpp">
-      <Filter>Adapter\notifications</Filter>
-    </ClCompile>
-    <ClCompile Include="DbArticleRepository.cpp">
-      <Filter>Adapter\articledb</Filter>
-    </ClCompile>
-    <ClCompile Include="ArticleDatabaseModel.cpp">
-      <Filter>Adapter\articledb</Filter>
-    </ClCompile>
-    <ClCompile Include="AuthorExternalModel.cpp">
-      <Filter>Adapter\authorservice</Filter>
-    </ClCompile>
-    <ClCompile Include="AuthorRepository.cpp">
-      <Filter>Adapter\authorservice</Filter>
-    </ClCompile>
-    <ClCompile Include="ArticleTwitterModel.cpp">
-      <Filter>Adapter\socialmedia</Filter>
-    </ClCompile>
-    <ClCompile Include="TwitterArticlePublisher.cpp">
-      <Filter>Adapter\socialmedia</Filter>
-    </ClCompile>
-    <ClCompile Include="TwitterClient.cpp">
-      <Filter>Adapter\socialmedia</Filter>
-    </ClCompile>
-    <ClCompile Include="ArticleResponse.cpp">
-      <Filter>Adapter\api</Filter>
-    </ClCompile>
-    <ClCompile Include="ArticleFacade.cpp">
-      <Filter>Adapter\api</Filter>
-    </ClCompile>
-    <ClCompile Include="ArticleIdResponse.cpp">
-      <Filter>Adapter\api</Filter>
-    </ClCompile>
-    <ClCompile Include="ArticleRequest.cpp">
-      <Filter>Adapter\api</Filter>
-    </ClCompile>
-    <ClCompile Include="ArticleEndpoint.cpp">
-      <Filter>Adapter\api</Filter>
-    </ClCompile>
-    <ClCompile Include="ArticleService.cpp">
-      <Filter>domain\services</Filter>
-    </ClCompile>
-    <ClCompile Include="ArticlePublisher.cpp">
-      <Filter>domain\services</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="domain">
-      <UniqueIdentifier>{9342a162-1c71-463f-b75f-16dcdc592013}</UniqueIdentifier>
+      <UniqueIdentifier>{741f8d0c-7162-4615-b65c-6af12a3790dc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="domain\ports">
-      <UniqueIdentifier>{4a5c281e-bbb3-447b-a412-34bc23f3abc4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="domain\model">
-      <UniqueIdentifier>{ec55c9b4-bac0-4a9d-bced-45d7279f61a5}</UniqueIdentifier>
+    <Filter Include="adapter">
+      <UniqueIdentifier>{c0ec4ffb-c42f-46f5-b223-0ade8dfb04d0}</UniqueIdentifier>
     </Filter>
     <Filter Include="pch">
-      <UniqueIdentifier>{c02c334e-2fa3-4fa8-ad22-49ad77be10c4}</UniqueIdentifier>
+      <UniqueIdentifier>{c019faf0-9bba-441d-ac9d-b709dba99cab}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Adapter">
-      <UniqueIdentifier>{6c43a551-fc8f-4b90-81f8-37742c8f24d8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Adapter\api">
-      <UniqueIdentifier>{0cca90c2-98ec-4e01-9f2f-17615f6f36d5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Adapter\articledb">
-      <UniqueIdentifier>{ec61f699-a9d6-46dd-b3dc-c085c4849df4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Adapter\messagebroker">
-      <UniqueIdentifier>{19674f34-b563-479f-8c04-e56c985f476f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Adapter\notifications">
-      <UniqueIdentifier>{f1cc5046-dbe1-40e2-aef9-bec7002ad79f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Adapter\authorservice">
-      <UniqueIdentifier>{22724706-3c9b-4907-8dc4-9227a5eb06d5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Adapter\socialmedia">
-      <UniqueIdentifier>{ba071e7d-8c71-4df8-a519-e0242539b213}</UniqueIdentifier>
+    <Filter Include="domain\model">
+      <UniqueIdentifier>{2357ba9c-fa25-48de-9886-6694fab17b8a}</UniqueIdentifier>
     </Filter>
     <Filter Include="domain\services">
-      <UniqueIdentifier>{0effb350-ac7e-4ce9-ac3c-d307bfc1a80b}</UniqueIdentifier>
+      <UniqueIdentifier>{b55accda-62dd-4756-af5a-1517b9f944b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="domain\ports">
+      <UniqueIdentifier>{eb4489b4-9b68-42d4-b78d-47d5584c509d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="adapter\api">
+      <UniqueIdentifier>{38eebb81-a258-4a40-b63d-a3e0ed263c7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="adapter\articledb">
+      <UniqueIdentifier>{f56f49ac-7216-404e-a788-d74ba57dbcfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="adapter\authorservice">
+      <UniqueIdentifier>{88ee120e-e5d2-4927-a404-dbd97c0d67d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="adapter\messagebroker">
+      <UniqueIdentifier>{998afca3-09b1-429e-958c-d1544a6f01a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="adapter\notifications">
+      <UniqueIdentifier>{668daaaa-52f8-43b1-a236-c822e99af23b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="adapter\socialmedia">
+      <UniqueIdentifier>{d2e885de-8b7e-4947-85df-44b0a388b35c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
+    <ClCompile Include="src\adapter\api\ArticleEndpoint.cpp">
+      <Filter>adapter\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\api\ArticleFacade.cpp">
+      <Filter>adapter\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\api\ArticleIdResponse.cpp">
+      <Filter>adapter\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\api\ArticleRequest.cpp">
+      <Filter>adapter\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\api\ArticleResponse.cpp">
+      <Filter>adapter\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\articledb\ArticleDatabaseModel.cpp">
+      <Filter>adapter\articledb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\articledb\DbArticleRepository.cpp">
+      <Filter>adapter\articledb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\authorservice\AuthorExternalModel.cpp">
+      <Filter>adapter\authorservice</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\authorservice\AuthorRepository.cpp">
+      <Filter>adapter\authorservice</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\messagebroker\ArticleCreatedMessage.cpp">
+      <Filter>adapter\messagebroker</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\messagebroker\ArticleMessageBroker.cpp">
+      <Filter>adapter\messagebroker</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\messagebroker\ArticleRetrievedMessage.cpp">
+      <Filter>adapter\messagebroker</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\notifications\ArticleMailModel.cpp">
+      <Filter>adapter\notifications</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\notifications\ArticleSmsModel.cpp">
+      <Filter>adapter\notifications</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\notifications\AuthorMailNotifier.cpp">
+      <Filter>adapter\notifications</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\notifications\AuthorSmsNotifier.cpp">
+      <Filter>adapter\notifications</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\socialmedia\ArticleTwitterModel.cpp">
+      <Filter>adapter\socialmedia</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\socialmedia\TwitterArticlePublisher.cpp">
+      <Filter>adapter\socialmedia</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\socialmedia\TwitterClient.cpp">
+      <Filter>adapter\socialmedia</Filter>
+    </ClCompile>
+    <ClCompile Include="src\domain\model\Article.cpp">
+      <Filter>domain\model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\domain\model\Author.cpp">
+      <Filter>domain\model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\domain\services\ArticlePublisher.cpp">
+      <Filter>domain\services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\domain\services\ArticleService.cpp">
+      <Filter>domain\services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pch\pch.cpp">
       <Filter>pch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ArticleHexagonExample.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\adapter\api\ArticleEndpoint.h">
+      <Filter>adapter\api</Filter>
     </ClInclude>
-    <ClInclude Include="Article.h">
+    <ClInclude Include="src\adapter\api\ArticleFacade.h">
+      <Filter>adapter\api</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\api\ArticleIdResponse.h">
+      <Filter>adapter\api</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\api\ArticleRequest.h">
+      <Filter>adapter\api</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\api\ArticleResponse.h">
+      <Filter>adapter\api</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\articledb\ArticleDatabaseModel.h">
+      <Filter>adapter\articledb</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\articledb\DbArticleRepository.h">
+      <Filter>adapter\articledb</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\authorservice\AuthorExternalModel.h">
+      <Filter>adapter\authorservice</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\authorservice\AuthorRepository.h">
+      <Filter>adapter\authorservice</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\messagebroker\ArticleCreatedMessage.h">
+      <Filter>adapter\messagebroker</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\messagebroker\ArticleMessageBroker.h">
+      <Filter>adapter\messagebroker</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\messagebroker\ArticleRetrievedMessage.h">
+      <Filter>adapter\messagebroker</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\notifications\ArticleMailModel.h">
+      <Filter>adapter\notifications</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\notifications\ArticleSmsModel.h">
+      <Filter>adapter\notifications</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\notifications\AuthorMailNotifier.h">
+      <Filter>adapter\notifications</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\notifications\AuthorSmsNotifier.h">
+      <Filter>adapter\notifications</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\socialmedia\ArticleTwitterModel.h">
+      <Filter>adapter\socialmedia</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\socialmedia\TwitterArticlePublisher.h">
+      <Filter>adapter\socialmedia</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\socialmedia\TwitterClient.h">
+      <Filter>adapter\socialmedia</Filter>
+    </ClInclude>
+    <ClInclude Include="src\domain\model\Article.h">
       <Filter>domain\model</Filter>
     </ClInclude>
-    <ClInclude Include="Author.h">
+    <ClInclude Include="src\domain\model\Author.h">
       <Filter>domain\model</Filter>
     </ClInclude>
-    <ClInclude Include="IArticleRepository.h">
+    <ClInclude Include="src\domain\ports\IArticleMessageSender.h">
       <Filter>domain\ports</Filter>
     </ClInclude>
-    <ClInclude Include="IAuthorRepository.h">
+    <ClInclude Include="src\domain\ports\IArticleRepository.h">
       <Filter>domain\ports</Filter>
     </ClInclude>
-    <ClInclude Include="ArticleDatabaseModel.h">
-      <Filter>Adapter\articledb</Filter>
-    </ClInclude>
-    <ClInclude Include="DbArticleRepository.h">
-      <Filter>Adapter\articledb</Filter>
-    </ClInclude>
-    <ClInclude Include="ArticleRetrievedMessage.h">
-      <Filter>Adapter\messagebroker</Filter>
-    </ClInclude>
-    <ClInclude Include="ArticleMessageBroker.h">
-      <Filter>Adapter\messagebroker</Filter>
-    </ClInclude>
-    <ClInclude Include="ArticleCreatedMessage.h">
-      <Filter>Adapter\messagebroker</Filter>
-    </ClInclude>
-    <ClInclude Include="ArticleMailModel.h">
-      <Filter>Adapter\notifications</Filter>
-    </ClInclude>
-    <ClInclude Include="ArticleSmsModel.h">
-      <Filter>Adapter\notifications</Filter>
-    </ClInclude>
-    <ClInclude Include="AuthorMailNotifier.h">
-      <Filter>Adapter\notifications</Filter>
-    </ClInclude>
-    <ClInclude Include="AuthorSmsNotifier.h">
-      <Filter>Adapter\notifications</Filter>
-    </ClInclude>
-    <ClInclude Include="IAuthorNotifier.h">
+    <ClInclude Include="src\domain\ports\IAuthorNotifier.h">
       <Filter>domain\ports</Filter>
     </ClInclude>
-    <ClInclude Include="IArticleMessageSender.h">
+    <ClInclude Include="src\domain\ports\IAuthorRepository.h">
       <Filter>domain\ports</Filter>
     </ClInclude>
-    <ClInclude Include="ISocialMediaPublisher.h">
+    <ClInclude Include="src\domain\ports\ISocialMediaPublisher.h">
       <Filter>domain\ports</Filter>
     </ClInclude>
-    <ClInclude Include="AuthorRepository.h">
-      <Filter>Adapter\authorservice</Filter>
-    </ClInclude>
-    <ClInclude Include="AuthorExternalModel.h">
-      <Filter>Adapter\authorservice</Filter>
-    </ClInclude>
-    <ClInclude Include="ArticleTwitterModel.h">
-      <Filter>Adapter\socialmedia</Filter>
-    </ClInclude>
-    <ClInclude Include="TwitterArticlePublisher.h">
-      <Filter>Adapter\socialmedia</Filter>
-    </ClInclude>
-    <ClInclude Include="TwitterClient.h">
-      <Filter>Adapter\socialmedia</Filter>
-    </ClInclude>
-    <ClInclude Include="ArticleEndpoint.h">
-      <Filter>Adapter\api</Filter>
-    </ClInclude>
-    <ClInclude Include="ArticleFacade.h">
-      <Filter>Adapter\api</Filter>
-    </ClInclude>
-    <ClInclude Include="ArticleResponse.h">
-      <Filter>Adapter\api</Filter>
-    </ClInclude>
-    <ClInclude Include="ArticleIdResponse.h">
-      <Filter>Adapter\api</Filter>
-    </ClInclude>
-    <ClInclude Include="ArticleRequest.h">
-      <Filter>Adapter\api</Filter>
-    </ClInclude>
-    <ClInclude Include="ArticleService.h">
+    <ClInclude Include="src\domain\services\ArticlePublisher.h">
       <Filter>domain\services</Filter>
     </ClInclude>
-    <ClInclude Include="ArticlePublisher.h">
+    <ClInclude Include="src\domain\services\ArticleService.h">
       <Filter>domain\services</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pch\pch.h">
+      <Filter>pch</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

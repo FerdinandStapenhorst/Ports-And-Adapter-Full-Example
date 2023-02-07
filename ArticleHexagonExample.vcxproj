@@ -18,6 +18,67 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\adapter\api\ArticleEndpoint.cpp" />
+    <ClCompile Include="src\adapter\api\ArticleFacade.cpp" />
+    <ClCompile Include="src\adapter\api\ArticleIdResponse.cpp" />
+    <ClCompile Include="src\adapter\api\ArticleRequest.cpp" />
+    <ClCompile Include="src\adapter\api\ArticleResponse.cpp" />
+    <ClCompile Include="src\adapter\articledb\ArticleDatabaseModel.cpp" />
+    <ClCompile Include="src\adapter\articledb\DbArticleRepository.cpp" />
+    <ClCompile Include="src\adapter\authorservice\AuthorExternalModel.cpp" />
+    <ClCompile Include="src\adapter\authorservice\AuthorRepository.cpp" />
+    <ClCompile Include="src\adapter\messagebroker\ArticleCreatedMessage.cpp" />
+    <ClCompile Include="src\adapter\messagebroker\ArticleMessageBroker.cpp" />
+    <ClCompile Include="src\adapter\messagebroker\ArticleRetrievedMessage.cpp" />
+    <ClCompile Include="src\adapter\notifications\ArticleMailModel.cpp" />
+    <ClCompile Include="src\adapter\notifications\ArticleSmsModel.cpp" />
+    <ClCompile Include="src\adapter\notifications\AuthorMailNotifier.cpp" />
+    <ClCompile Include="src\adapter\notifications\AuthorSmsNotifier.cpp" />
+    <ClCompile Include="src\adapter\socialmedia\ArticleTwitterModel.cpp" />
+    <ClCompile Include="src\adapter\socialmedia\TwitterArticlePublisher.cpp" />
+    <ClCompile Include="src\adapter\socialmedia\TwitterClient.cpp" />
+    <ClCompile Include="src\ArticleHexagonExample.cpp" />
+    <ClCompile Include="src\domain\model\Article.cpp" />
+    <ClCompile Include="src\domain\model\Author.cpp" />
+    <ClCompile Include="src\domain\services\ArticlePublisher.cpp" />
+    <ClCompile Include="src\domain\services\ArticleService.cpp" />
+    <ClCompile Include="src\pch\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\adapter\api\ArticleEndpoint.h" />
+    <ClInclude Include="src\adapter\api\ArticleFacade.h" />
+    <ClInclude Include="src\adapter\api\ArticleIdResponse.h" />
+    <ClInclude Include="src\adapter\api\ArticleRequest.h" />
+    <ClInclude Include="src\adapter\api\ArticleResponse.h" />
+    <ClInclude Include="src\adapter\articledb\ArticleDatabaseModel.h" />
+    <ClInclude Include="src\adapter\articledb\DbArticleRepository.h" />
+    <ClInclude Include="src\adapter\authorservice\AuthorExternalModel.h" />
+    <ClInclude Include="src\adapter\authorservice\AuthorRepository.h" />
+    <ClInclude Include="src\adapter\messagebroker\ArticleCreatedMessage.h" />
+    <ClInclude Include="src\adapter\messagebroker\ArticleMessageBroker.h" />
+    <ClInclude Include="src\adapter\messagebroker\ArticleRetrievedMessage.h" />
+    <ClInclude Include="src\adapter\notifications\ArticleMailModel.h" />
+    <ClInclude Include="src\adapter\notifications\ArticleSmsModel.h" />
+    <ClInclude Include="src\adapter\notifications\AuthorMailNotifier.h" />
+    <ClInclude Include="src\adapter\notifications\AuthorSmsNotifier.h" />
+    <ClInclude Include="src\adapter\socialmedia\ArticleTwitterModel.h" />
+    <ClInclude Include="src\adapter\socialmedia\TwitterArticlePublisher.h" />
+    <ClInclude Include="src\adapter\socialmedia\TwitterClient.h" />
+    <ClInclude Include="src\domain\model\Article.h" />
+    <ClInclude Include="src\domain\model\Author.h" />
+    <ClInclude Include="src\domain\ports\IArticleMessageSender.h" />
+    <ClInclude Include="src\domain\ports\IArticleRepository.h" />
+    <ClInclude Include="src\domain\ports\IAuthorNotifier.h" />
+    <ClInclude Include="src\domain\ports\IAuthorRepository.h" />
+    <ClInclude Include="src\domain\ports\ISocialMediaPublisher.h" />
+    <ClInclude Include="src\domain\services\ArticlePublisher.h" />
+    <ClInclude Include="src\domain\services\ArticleService.h" />
+    <ClInclude Include="src\pch\pch.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -70,6 +131,12 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)src\adapter\api;$(ProjectDir)src\adapter\articledb;$(ProjectDir)src\adapter\authorservice;$(ProjectDir)src\adapter\messagebroker;$(ProjectDir)src\adapter\notifications;$(ProjectDir)src\adapter\socialmedia;$(ProjectDir)src\domain\model;$(ProjectDir)src\domain\ports;$(ProjectDir)src\domain\services;$(ProjectDir)src\pch;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(ProjectDir)src\adapter\api;$(ProjectDir)src\adapter\articledb;$(ProjectDir)src\adapter\authorservice;$(ProjectDir)src\adapter\messagebroker;$(ProjectDir)src\adapter\notifications;$(ProjectDir)src\adapter\socialmedia;$(ProjectDir)src\domain\model;$(ProjectDir)src\domain\ports;$(ProjectDir)src\domain\services;$(ProjectDir)src\pch;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -131,67 +198,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Article.cpp" />
-    <ClCompile Include="ArticleCreatedMessage.cpp" />
-    <ClCompile Include="ArticleDatabaseModel.cpp" />
-    <ClCompile Include="ArticleEndpoint.cpp" />
-    <ClCompile Include="ArticleFacade.cpp" />
-    <ClCompile Include="ArticleHexagonExample.cpp" />
-    <ClCompile Include="ArticleIdResponse.cpp" />
-    <ClCompile Include="ArticleMailModel.cpp" />
-    <ClCompile Include="ArticlePublisher.cpp" />
-    <ClCompile Include="ArticleRequest.cpp" />
-    <ClCompile Include="ArticleResponse.cpp" />
-    <ClCompile Include="ArticleRetrievedMessage.cpp" />
-    <ClCompile Include="ArticleService.cpp" />
-    <ClCompile Include="ArticleSmsModel.cpp" />
-    <ClCompile Include="ArticleTwitterModel.cpp" />
-    <ClCompile Include="Author.cpp" />
-    <ClCompile Include="AuthorExternalModel.cpp" />
-    <ClCompile Include="AuthorMailNotifier.cpp" />
-    <ClCompile Include="AuthorSmsNotifier.cpp" />
-    <ClCompile Include="DbArticleRepository.cpp" />
-    <ClCompile Include="AuthorRepository.cpp" />
-    <ClCompile Include="ArticleMessageBroker.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="TwitterArticlePublisher.cpp" />
-    <ClCompile Include="TwitterClient.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Article.h" />
-    <ClInclude Include="ArticleCreatedMessage.h" />
-    <ClInclude Include="ArticleDatabaseModel.h" />
-    <ClInclude Include="ArticleEndpoint.h" />
-    <ClInclude Include="ArticleFacade.h" />
-    <ClInclude Include="ArticleIdResponse.h" />
-    <ClInclude Include="ArticleMailModel.h" />
-    <ClInclude Include="ArticlePublisher.h" />
-    <ClInclude Include="ArticleRequest.h" />
-    <ClInclude Include="ArticleResponse.h" />
-    <ClInclude Include="ArticleRetrievedMessage.h" />
-    <ClInclude Include="ArticleSmsModel.h" />
-    <ClInclude Include="ArticleTwitterModel.h" />
-    <ClInclude Include="AuthorExternalModel.h" />
-    <ClInclude Include="AuthorMailNotifier.h" />
-    <ClInclude Include="AuthorSmsNotifier.h" />
-    <ClInclude Include="DbArticleRepository.h" />
-    <ClInclude Include="AuthorRepository.h" />
-    <ClInclude Include="IArticleMessageSender.h" />
-    <ClInclude Include="IArticleRepository.h" />
-    <ClInclude Include="ArticleService.h" />
-    <ClInclude Include="Author.h" />
-    <ClInclude Include="IAuthorNotifier.h" />
-    <ClInclude Include="IAuthorRepository.h" />
-    <ClInclude Include="ArticleMessageBroker.h" />
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="ISocialMediaPublisher.h" />
-    <ClInclude Include="TwitterArticlePublisher.h" />
-    <ClInclude Include="TwitterClient.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
