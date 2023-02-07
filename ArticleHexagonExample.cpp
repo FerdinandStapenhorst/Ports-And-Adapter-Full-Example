@@ -5,7 +5,7 @@
 #include "Article.h"
 #include "DbArticleRepository.h"
 #include "AuthorRepository.h"
-#include "MessageBrokerArticleMessageSender.h"
+#include "ArticleMessageBroker.h"
 #include "TwitterArticlePublisher.h"
 #include "AuthorSmsNotifier.h"
 #include "AuthorMailNotifier.h"
@@ -31,14 +31,14 @@ ArticlePublisherPtr CreateArticlePublisher()
 	//Author SMS notifier
 	IAuthorNotifierPtr authorSmSNotifier = CreateInstance(new AuthorSmsNotifier);
 
-	//Author E-Mail notifier
+	//Author E-Mail notifier list
 	IAuthorNotifierPtr authorMailNotifier = CreateInstance(new AuthorMailNotifier);
 	std::vector<IAuthorNotifierPtr> authorMailNotifierList;
 	authorMailNotifierList.push_back(authorSmSNotifier);
 	authorMailNotifierList.push_back(authorMailNotifier);
 
 	//MessageSender
-	IArticleMessageSenderPtr articleMessageSender = CreateInstance(new MessageBrokerArticleMessageSender);
+	IArticleMessageSenderPtr articleMessageSender = CreateInstance(new ArticleMessageBroker);
 
 	//Article Publisher
 	return CreateInstance(new ArticlePublisher(articleMessageSender, socialMediaPublisherList, authorMailNotifierList));
@@ -62,11 +62,11 @@ ArticleEndpointPtr CreateArticleEndpoint()
 int main()
 {
 	ArticleEndpointPtr articleEndpoint = CreateArticleEndpoint();
-
 	ArticleResponse article = articleEndpoint->Get("*");
 
+
 	auto author = Author::Create()
-		.withId("´2")
+		.withId("2")
 		.withName(article.AuthorName())
 		.build();
 

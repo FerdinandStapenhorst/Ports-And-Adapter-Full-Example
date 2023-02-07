@@ -1,10 +1,10 @@
 #pragma once
 #include "pch.h"
-#include "MessageBrokerArticleMessageSender.h"
+#include "ArticleMessageBroker.h"
 #include "ArticleRetrievedMessage.h"
 #include "ArticleCreatedMessage.h"
 
-void MessageBrokerArticleMessageSender::SendMessageForCreated(ArticlePtr const article)
+void ArticleMessageBroker::SendMessageForCreated(ArticlePtr const article)
 {
 	/**
 	 * message broker integration implementation comes here
@@ -13,7 +13,7 @@ void MessageBrokerArticleMessageSender::SendMessageForCreated(ArticlePtr const a
 	std::cout << "Article Message Broker: Send created event " << m.ToString() << std::endl;
 }
 
-void MessageBrokerArticleMessageSender::SendMessageForRetrieved(ArticlePtr const article)
+void ArticleMessageBroker::SendMessageForRetrieved(ArticlePtr const article)
 {
 	/**
 	 * message broker integration implementation comes here

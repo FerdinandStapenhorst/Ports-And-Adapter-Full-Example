@@ -3,7 +3,7 @@
 #include "Article.h"
 
 class ArticleCreatedMessage {
-	friend class MessageBrokerArticleMessageSender;
+	friend class ArticleMessageBroker;
 
 public:
 	ArticleCreatedMessage() noexcept = delete;

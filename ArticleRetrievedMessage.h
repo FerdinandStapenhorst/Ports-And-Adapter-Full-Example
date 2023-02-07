@@ -3,7 +3,7 @@
 #include "Article.h"
 
 class ArticleRetrievedMessage {
-	friend class MessageBrokerArticleMessageSender;
+	friend class ArticleMessageBroker;
 public:
 	ArticleRetrievedMessage() noexcept = delete;
 	ArticleRetrievedMessage(const ArticleRetrievedMessage& other) noexcept = delete;
