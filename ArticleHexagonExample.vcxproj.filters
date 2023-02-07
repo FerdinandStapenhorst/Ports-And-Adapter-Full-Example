@@ -14,9 +14,6 @@
     <ClCompile Include="Author.cpp">
       <Filter>domain\model</Filter>
     </ClCompile>
-    <ClCompile Include="ArticleIdResponse.cpp">
-      <Filter>Adapter\messagebroker</Filter>
-    </ClCompile>
     <ClCompile Include="ArticleRetrievedMessage.cpp">
       <Filter>Adapter\messagebroker</Filter>
     </ClCompile>
@@ -44,11 +41,38 @@
     <ClCompile Include="ArticleDatabaseModel.cpp">
       <Filter>Adapter\articledb</Filter>
     </ClCompile>
-    <ClCompile Include="ArticleService.cpp">
-      <Filter>domain</Filter>
-    </ClCompile>
     <ClCompile Include="AuthorExternalModel.cpp">
       <Filter>Adapter\authorservice</Filter>
+    </ClCompile>
+    <ClCompile Include="AuthorRepository.cpp">
+      <Filter>Adapter\authorservice</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticleTwitterModel.cpp">
+      <Filter>Adapter\socialmedia</Filter>
+    </ClCompile>
+    <ClCompile Include="TwitterArticlePublisher.cpp">
+      <Filter>Adapter\socialmedia</Filter>
+    </ClCompile>
+    <ClCompile Include="TwitterClient.cpp">
+      <Filter>Adapter\socialmedia</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticleResponse.cpp">
+      <Filter>Adapter\api</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticleFacade.cpp">
+      <Filter>Adapter\api</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticleIdResponse.cpp">
+      <Filter>Adapter\api</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticleRequest.cpp">
+      <Filter>Adapter\api</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticleEndpoint.cpp">
+      <Filter>Adapter\api</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticleService.cpp">
+      <Filter>domain\ports</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -67,9 +91,6 @@
     <Filter Include="Adapter">
       <UniqueIdentifier>{6c43a551-fc8f-4b90-81f8-37742c8f24d8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Config">
-      <UniqueIdentifier>{7562d3bf-192e-4dd7-9436-6263300a9154}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Adapter\api">
       <UniqueIdentifier>{0cca90c2-98ec-4e01-9f2f-17615f6f36d5}</UniqueIdentifier>
     </Filter>
@@ -84,6 +105,9 @@
     </Filter>
     <Filter Include="Adapter\authorservice">
       <UniqueIdentifier>{22724706-3c9b-4907-8dc4-9227a5eb06d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Adapter\socialmedia">
+      <UniqueIdentifier>{ba071e7d-8c71-4df8-a519-e0242539b213}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -105,17 +129,11 @@
     <ClInclude Include="IAuthorRepository.h">
       <Filter>domain\ports</Filter>
     </ClInclude>
-    <ClInclude Include="ArticleConfig.h">
-      <Filter>Config</Filter>
-    </ClInclude>
     <ClInclude Include="ArticleDatabaseModel.h">
       <Filter>Adapter\articledb</Filter>
     </ClInclude>
     <ClInclude Include="DbArticleRepository.h">
       <Filter>Adapter\articledb</Filter>
-    </ClInclude>
-    <ClInclude Include="ArticleIdResponse.h">
-      <Filter>Adapter\messagebroker</Filter>
     </ClInclude>
     <ClInclude Include="ArticleRetrievedMessage.h">
       <Filter>Adapter\messagebroker</Filter>
@@ -147,14 +165,38 @@
     <ClInclude Include="ISocialMediaPublisher.h">
       <Filter>domain\ports</Filter>
     </ClInclude>
-    <ClInclude Include="ArticleService.h">
-      <Filter>domain</Filter>
-    </ClInclude>
-    <ClInclude Include="ExternalServiceClientAuthorRepository.h">
+    <ClInclude Include="AuthorRepository.h">
       <Filter>Adapter\authorservice</Filter>
     </ClInclude>
     <ClInclude Include="AuthorExternalModel.h">
       <Filter>Adapter\authorservice</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticleTwitterModel.h">
+      <Filter>Adapter\socialmedia</Filter>
+    </ClInclude>
+    <ClInclude Include="TwitterArticlePublisher.h">
+      <Filter>Adapter\socialmedia</Filter>
+    </ClInclude>
+    <ClInclude Include="TwitterClient.h">
+      <Filter>Adapter\socialmedia</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticleEndpoint.h">
+      <Filter>Adapter\api</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticleFacade.h">
+      <Filter>Adapter\api</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticleResponse.h">
+      <Filter>Adapter\api</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticleIdResponse.h">
+      <Filter>Adapter\api</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticleRequest.h">
+      <Filter>Adapter\api</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticleService.h">
+      <Filter>domain\ports</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

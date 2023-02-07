@@ -20,10 +20,12 @@ ArticlePtr DbArticleRepository::Get(String const& _Id)
 	 */
 	ArticleModelPtr entity = ArticleModel::Create()
 		.withId(Tools::CreateGuid())
-		.withAuthorName("William Shakespeare")
-		.withAuthorId("928467")
-		.withTitle("Hexagonal Architecture")
-		.withContent("Lorem ipsum")
+		.withAuthorName("Albert Einstein")
+		.withAuthorId("1")
+		.withTitle("Theory of relativity")
+		.withContent("E = MC2")
 		.build();
+
+	std::cout << "Retrieved article from Article Repository: " << entity->ToString() << std::endl;
 	return entity->ToDomain();
 }

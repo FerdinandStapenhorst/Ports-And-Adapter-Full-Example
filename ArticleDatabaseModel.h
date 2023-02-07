@@ -2,18 +2,19 @@
 #include "pch.h"
 
 class ArticleModel {
+public:
+	ArticleModel() noexcept = delete;
+	ArticleModel(const ArticleModel& other) noexcept = delete;
+	ArticleModel(ArticleModel&& other) noexcept = delete;
+
 private:
 	friend class ArticleModelBuilder;
-	ArticleModel() noexcept = default;
-	ArticleModel(const ArticleModel& other) noexcept = default;
 
-	ArticleModel(ArticleModel&& other) noexcept = default;
 	ArticleModel(String const& _Id, String const& title,
 		String const& _Content, String const& authorId,
 		uint32_t const& version, String const& authorName);
 
 public:
-	virtual ~ArticleModel() noexcept = default;
 
 	String _Id;
 	String _Title;
@@ -21,7 +22,6 @@ public:
 	uint32_t _Version;
 	String _AuthorId;
 	String _AuthorName;
-
 
 public:
 
@@ -34,6 +34,8 @@ public:
 #pragma region ArticleModelBuilder
 
 	class ArticleModelBuilder {
+	public:
+
 	private:
 		friend class ArticleModel;
 
@@ -45,8 +47,8 @@ public:
 		String _AuthorName;
 
 		ArticleModelBuilder() noexcept = default;
-		ArticleModelBuilder(const ArticleModelBuilder& other) noexcept = default;
-		ArticleModelBuilder(ArticleModelBuilder&& other) noexcept = default;
+		ArticleModelBuilder(const ArticleModelBuilder& other) noexcept = default; //required
+		ArticleModelBuilder(ArticleModelBuilder&& other) noexcept = default; //required
 
 	public:
 
@@ -62,7 +64,7 @@ public:
 
 		ArticleModelBuilder withAuthorName(String const& authorName);
 
-		std::shared_ptr<ArticleModel> build();
+		ArticleModelPtr build();
 	};
 
 #pragma endregion

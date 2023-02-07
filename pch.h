@@ -1,3 +1,4 @@
+//The precompiled header. The respective cpp file is pch.cpp
 #pragma once
 #include <string>
 #include <iostream>
@@ -6,37 +7,59 @@
 #include <random>
 #include <sstream>
 #include <format>
+#include <optional>
+
+#pragma region Concepts
+
+template<typename T>
+concept IsRegularType = std::regular<T>;
+
+#pragma endregion
 
 //Forward declarations
 class Author;
 class Article;
 class ArticleService;
-class IArticleFacade;
+class ArticleFacade;
 class IArticleRepository;
+class ArticleRequest;
+class ArticleResponse;
 class IAuthorRepository;
 class ArticleModel;
-class IArticlePublisher;
+class ArticlePublisher;
 class IArticleMessageSender;
 class ISocialMediaPublisher;
 class IAuthorNotifier;
 class AuthorExternalModel;
-
+class TwitterClient;
+class ArticleTwitterModel;
+class ArticleIdResponse;
+class AuthorRepository;
+class ArticleEndpoint;
 
 //Usings
 using String = std::string;
 using AuthorPtr = std::shared_ptr <Author>;
 using ArticlePtr = std::shared_ptr <Article>;
-
-using IArticleFacadePtr = std::shared_ptr<IArticleFacade>;
+using ArticleFacadePtr = std::shared_ptr<ArticleFacade>;
 using ArticleServicePtr = std::shared_ptr<ArticleService>;
 using IArticleRepositoryPtr = std::shared_ptr<IArticleRepository>;
 using IAuthorRepositoryPtr = std::shared_ptr<IAuthorRepository>;
-using IArticlePublisherPtr = std::shared_ptr<IArticlePublisher>;
+using ArticlePublisherPtr = std::shared_ptr<ArticlePublisher>;
 using ArticleModelPtr = std::shared_ptr<ArticleModel>;
 using IArticleMessageSenderPtr = std::shared_ptr<IArticleMessageSender>;
 using ISocialMediaPublisherPtr = std::shared_ptr<ISocialMediaPublisher>;
 using IAuthorNotifierPtr = std::shared_ptr <IAuthorNotifier>;
 using AuthorExternalModelPtr = std::shared_ptr <AuthorExternalModel>;
+using TwitterClientPtr = std::shared_ptr <TwitterClient>;
+using ArticleRequestPtr = std::shared_ptr <ArticleRequest>;
+using ArticleResponsePtr = std::shared_ptr <ArticleResponse>;
+using ArticleEndpointPtr = std::shared_ptr <ArticleEndpoint>;
+
+template <typename T>
+std::shared_ptr<T> CreateInstance(T* p) {
+	return std::shared_ptr<T>(p);
+}
 
 //Tools
 class Tools

@@ -2,13 +2,14 @@
 #include "pch.h"
 
 class ArticleMailModel {
+public:
+	ArticleMailModel() noexcept = delete;
+	ArticleMailModel(const ArticleMailModel& other) noexcept = delete;
+	ArticleMailModel(ArticleMailModel&& other) noexcept = default; //required
+
 private:
 	friend class AuthorMailNotifier;
 
-	ArticleMailModel() noexcept = delete;
-	ArticleMailModel(const ArticleMailModel& other) noexcept = default;
-	ArticleMailModel(ArticleMailModel&& other) noexcept = default;
-	virtual ~ArticleMailModel() noexcept = default;
 	ArticleMailModel(String const& _RecipientId, String const& _Subject, String const& _Content);
 
 	static constexpr const char* SUBJECT = "You have successfully published: >>{}<<";

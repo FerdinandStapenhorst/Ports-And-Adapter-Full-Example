@@ -1,34 +1,31 @@
 #pragma once
 #include "pch.h"
+#include "ArticleMessageSender.h"
+#include "ArticlePublisher.h"
+#include "AuthorRepository.h"
 
 class ArticleConfig {
-
 public:
-    ArticleConfig() noexcept = default;
-    ArticleConfig(const ArticleConfig& other) noexcept = default;
-    ArticleConfig(ArticleConfig&& other) noexcept = default;
-    virtual ~ArticleConfig() noexcept = default;
+	ArticleConfig() noexcept = default;
+	ArticleConfig(const ArticleConfig& other) noexcept = delete;
+	ArticleConfig(ArticleConfig&& other) noexcept = delete;
 
+	ArticlePublisher ArticleEventPublisher(IArticleMessageSenderPtr const eventPublisher,
+		std::vector<ISocialMediaPublisher> const socialMediaPublishers,
+		std::vector<IAuthorNotifier> const articleAuthorNotifiers) {
 
+		ArticlePublisher a(eventPublisher, socialMediaPublishers, articleAuthorNotifiers);
+		return a;
+	}
 
-    /*@Bean
-        ArticlePublisher articleEventPublisher(final ArticleMessageSender eventPublisher,
-            final List<SocialMediaPublisher> _SocialMediaPublishers,
-            final List<AuthorNotifier> _ArticleAuthorNotifiers) {
-        return new ArticlePublisher(eventPublisher,
-            _SocialMediaPublishers,
-            _ArticleAuthorNotifiers);
-    }
+	ArticleService ArticleService(IArticleRepositoryPtr const articleRepository,
+		IAuthorRepository const authorRepository,
+		ArticlePublisher const articleEventPublisher) {
 
-    @Bean
-        ArticleService articleService(final ArticleRepository articleRepository,
-            final AuthorRepository authorRepository,
-            final ArticlePublisher articleEventPublisher
-        ) {
-        return new ArticleService(
-            articleRepository,
-            authorRepository,
-            articleEventPublisher);
-    }*/
-
+		ArticleService a(
+			articleRepository,
+			authorRepository,
+			articleEventPublisher);
+		return a;
+	}
 };

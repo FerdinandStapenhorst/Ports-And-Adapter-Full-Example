@@ -12,6 +12,8 @@ Article::Article(String const& _Id, String const& title, String const& _Content,
 }
 
 void Article::ValidateEligibilityForPublication() {
+	std::cout << "Checking ValidateEligibilityForPublication: " << std::endl;
+
 	verifyForPlagiarism();
 	validateTitleLength();
 	validateContentLength();
@@ -64,6 +66,7 @@ Article::ArticleBuilder Article::Create() {
 
 std::shared_ptr<Article> Article::ArticleBuilder::build() {
 	Article* a = new Article(_Id, _Title, _Content, _Author);
+	std::cout << "ArticleBuilder.build called" << std::endl;
 	return std::shared_ptr<Article>(a);
 }
 

@@ -4,11 +4,10 @@
 #include "Article.h"
 
 class MessageBrokerArticleMessageSender : public IArticleMessageSender {
-private:
-	MessageBrokerArticleMessageSender() noexcept = delete;
-	MessageBrokerArticleMessageSender(const MessageBrokerArticleMessageSender& other) noexcept = default;
-	MessageBrokerArticleMessageSender(MessageBrokerArticleMessageSender&& other) noexcept = default;
-	virtual ~MessageBrokerArticleMessageSender() noexcept = default;
+public:
+	MessageBrokerArticleMessageSender() noexcept = default; //required
+	MessageBrokerArticleMessageSender(const MessageBrokerArticleMessageSender& other) noexcept = delete;
+	MessageBrokerArticleMessageSender(MessageBrokerArticleMessageSender&& other) noexcept = delete;
 
 public:
 	virtual void SendMessageForCreated(ArticlePtr const article) override;

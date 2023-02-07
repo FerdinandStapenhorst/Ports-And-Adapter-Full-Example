@@ -6,9 +6,8 @@ public:
 	friend class AuthorBuilder;
 
 	Author() noexcept = delete;
-	Author(const Author& other) noexcept = default;
-	Author(Author&& other) noexcept = default;
-	virtual ~Author() noexcept = default;
+	Author(const Author& other) noexcept = delete;
+	Author(Author&& other) noexcept = delete;
 
 private:
 	Author(String const& _Id, String const& name);
@@ -21,8 +20,7 @@ public:
 	public:
 		friend class Author;
 
-		AuthorBuilder(AuthorBuilder&& other) noexcept = default;
-		virtual ~AuthorBuilder() noexcept = default;
+		AuthorBuilder(AuthorBuilder&& other) noexcept = default; //required
 
 	private:
 		AuthorBuilder() noexcept = default;

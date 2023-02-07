@@ -1,30 +1,21 @@
 #pragma once
 #include "pch.h"
-#include "IAr"
 
 class ArticleEndpoint {
-
 public:
-    ArticleEndpoint() noexcept = default;
-    ArticleEndpoint(const ArticleEndpoint& other) noexcept = delete;
-    ArticleEndpoint(ArticleEndpoint&& other) noexcept = delete;
-    virtual ~ArticleEndpoint() noexcept = default;
+	ArticleEndpoint() noexcept = delete;
+	ArticleEndpoint(const ArticleEndpoint& other) noexcept = delete;
+	ArticleEndpoint(ArticleEndpoint&& other) noexcept = delete;
+
+	ArticleEndpoint(ArticleFacadePtr const articles);
 
 private:
-    IArticleFacadePtr articles;
+	ArticleFacadePtr _Articles;
 
-    ArticleEndpoint(ArticleFacade articles) {
-        this.articles = articles;
-    }
+public:
+	//@GetMapping("{articleId}")  @PathVariable("articleId")
+	ArticleResponse Get(String const& articleId);
 
-    @GetMapping("{articleId}")
-        ArticleResponse get(@PathVariable("articleId") final String articleId) {
-        return articles.get(articleId);
-    }
-
-    @PostMapping
-        ArticleIdResponse create(@RequestBody final ArticleRequest articleRequest) {
-        return articles.create(articleRequest);
-    }
-
+	//@PostMapping  @RequestBody
+	ArticleIdResponse Create(ArticleRequestPtr const articleRequest);
 };

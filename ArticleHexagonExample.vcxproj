@@ -135,39 +135,51 @@
     <ClCompile Include="Article.cpp" />
     <ClCompile Include="ArticleCreatedMessage.cpp" />
     <ClCompile Include="ArticleDatabaseModel.cpp" />
+    <ClCompile Include="ArticleEndpoint.cpp" />
+    <ClCompile Include="ArticleFacade.cpp" />
     <ClCompile Include="ArticleHexagonExample.cpp" />
     <ClCompile Include="ArticleIdResponse.cpp" />
     <ClCompile Include="ArticleMailModel.cpp" />
     <ClCompile Include="ArticlePublisher.cpp" />
+    <ClCompile Include="ArticleRequest.cpp" />
+    <ClCompile Include="ArticleResponse.cpp" />
     <ClCompile Include="ArticleRetrievedMessage.cpp" />
     <ClCompile Include="ArticleService.cpp" />
     <ClCompile Include="ArticleSmsModel.cpp" />
+    <ClCompile Include="ArticleTwitterModel.cpp" />
     <ClCompile Include="Author.cpp" />
     <ClCompile Include="AuthorExternalModel.cpp" />
     <ClCompile Include="AuthorMailNotifier.cpp" />
     <ClCompile Include="AuthorSmsNotifier.cpp" />
     <ClCompile Include="DbArticleRepository.cpp" />
+    <ClCompile Include="AuthorRepository.cpp" />
     <ClCompile Include="MessageBrokerArticleMessageSender.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TwitterArticlePublisher.cpp" />
+    <ClCompile Include="TwitterClient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Article.h" />
-    <ClInclude Include="ArticleConfig.h" />
     <ClInclude Include="ArticleCreatedMessage.h" />
     <ClInclude Include="ArticleDatabaseModel.h" />
+    <ClInclude Include="ArticleEndpoint.h" />
+    <ClInclude Include="ArticleFacade.h" />
     <ClInclude Include="ArticleIdResponse.h" />
     <ClInclude Include="ArticleMailModel.h" />
     <ClInclude Include="ArticlePublisher.h" />
+    <ClInclude Include="ArticleRequest.h" />
+    <ClInclude Include="ArticleResponse.h" />
     <ClInclude Include="ArticleRetrievedMessage.h" />
     <ClInclude Include="ArticleSmsModel.h" />
+    <ClInclude Include="ArticleTwitterModel.h" />
     <ClInclude Include="AuthorExternalModel.h" />
     <ClInclude Include="AuthorMailNotifier.h" />
     <ClInclude Include="AuthorSmsNotifier.h" />
     <ClInclude Include="DbArticleRepository.h" />
-    <ClInclude Include="ExternalServiceClientAuthorRepository.h" />
+    <ClInclude Include="AuthorRepository.h" />
     <ClInclude Include="IArticleMessageSender.h" />
     <ClInclude Include="IArticleRepository.h" />
     <ClInclude Include="ArticleService.h" />
@@ -177,6 +189,8 @@
     <ClInclude Include="MessageBrokerArticleMessageSender.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="ISocialMediaPublisher.h" />
+    <ClInclude Include="TwitterArticlePublisher.h" />
+    <ClInclude Include="TwitterClient.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

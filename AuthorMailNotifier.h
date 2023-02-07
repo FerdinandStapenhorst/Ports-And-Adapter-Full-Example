@@ -2,15 +2,12 @@
 #include "pch.h"
 #include "IAuthorNotifier.h"
 
-
 class AuthorMailNotifier : public IAuthorNotifier {
-
-private:
-    AuthorMailNotifier() noexcept = delete;
-    AuthorMailNotifier(const AuthorMailNotifier& other) noexcept = default;
-    AuthorMailNotifier(AuthorMailNotifier&& other) noexcept = default;
-    virtual ~AuthorMailNotifier() noexcept = default;
+public:
+	AuthorMailNotifier() noexcept = default; //required
+	AuthorMailNotifier(const AuthorMailNotifier& other) noexcept = delete;
+	AuthorMailNotifier(AuthorMailNotifier&& other) noexcept = delete;
 
 public:
-    virtual void NotifyAboutCreationOf(ArticlePtr const article) override;
+	virtual void NotifyAboutCreationOf(ArticlePtr const article) override;
 };

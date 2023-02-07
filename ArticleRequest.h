@@ -1,32 +1,25 @@
-package tech.allegro.hexagon.articles.adapters.api;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-import tech.allegro.hexagon.articles.domain.model.AuthorId;
-import tech.allegro.hexagon.articles.domain.model.Content;
-import tech.allegro.hexagon.articles.domain.model.Title;
+#pragma once
+#include "pch.h"
 
 class ArticleRequest {
-    private final String title;
-    private final String content;
-    private final String authorId;
+public:
+	ArticleRequest() noexcept = delete;
+	ArticleRequest(const ArticleRequest& other) noexcept = delete;
+	ArticleRequest(ArticleRequest&& other) noexcept = delete;
 
-    ArticleRequest(@JsonProperty("title") final String title, @JsonProperty("content") final String content, @JsonProperty("authorId") final String authorId) {
-        this.title = title;
-        this.content = content;
-        this.authorId = authorId;
-    }
+private:
+	String _Title;
+	String _Content;
+	String _AuthorId;
 
+public:
+	//JsonProperty("title")   @JsonProperty("content")   @JsonProperty("authorId")
+	ArticleRequest(String const& title, String const& content, String const& authorId);
+	ArticleRequest(ArticlePtr const article);
 
-    Title title() {
-        return Title.of(title);
-    }
+	String Title() const;
 
-    Content content() {
-        return Content.of(content);
-    }
+	String Content() const;
 
-    AuthorId authorId() {
-        return AuthorId.of(authorId);
-    }
-
-}
+	String AuthorId() const;
+};

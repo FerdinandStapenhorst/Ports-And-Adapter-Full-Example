@@ -1,9 +1,10 @@
+#pragma once
 #include "pch.h"
 #include "ArticleMailModel.h"
 #include "Article.h"
 #include "Author.h"
 
-ArticleMailModel::ArticleMailModel(String const& _RecipientId,	String const& _Subject,	String const& _Content) :
+ArticleMailModel::ArticleMailModel(String const& _RecipientId, String const& _Subject, String const& _Content) :
 	_RecipientId{ _RecipientId },
 	_Subject{ _Subject },
 	_Content{ _Content }

@@ -1,15 +1,13 @@
 #pragma once
 #include "pch.h"
 
-
 class Article {
 public:
 	friend class ArticleBuilder;
 
 	Article() noexcept = delete;
-	Article(const Article& other) noexcept = default;
-	Article(Article&& other) noexcept = default;
-	virtual ~Article() noexcept = default;
+	Article(const Article& other) noexcept = delete;
+	Article(Article&& other) noexcept = delete;
 
 private:
 	String _Id;
@@ -25,16 +23,14 @@ public:
 	public:
 		friend class Article;
 
-		virtual ~ArticleBuilder() noexcept = default;
-
 	private:
 		String _Id;
 		String _Title;
 		String _Content;
 		AuthorPtr _Author;
 		ArticleBuilder() noexcept = default;
-		ArticleBuilder(const ArticleBuilder& other) noexcept = default;
-		ArticleBuilder(ArticleBuilder&& other) noexcept = default;
+		ArticleBuilder(const ArticleBuilder& other) noexcept = default; //required
+		ArticleBuilder(ArticleBuilder&& other) noexcept = default; //required
 
 	public:
 		ArticleBuilder withId(String const& _Id);

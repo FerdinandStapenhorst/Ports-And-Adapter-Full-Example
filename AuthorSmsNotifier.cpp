@@ -4,8 +4,9 @@
 
 void AuthorSmsNotifier::NotifyAboutCreationOf(ArticlePtr const article)
 {
-    /**
-     * SMS system integration implementation comes here
-     */
-     auto articleSmsModel = ArticleSmsModel::Of(article);
+	/**
+	 * SMS system integration implementation comes here
+	 */
+	auto articleSmsModel = ArticleSmsModel::Of(article);
+	std::cout << "Notifying author via SMS: " << articleSmsModel.ToString() << std::endl;
 }

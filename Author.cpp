@@ -4,6 +4,7 @@
 
 AuthorPtr Author::AuthorBuilder::build() {
 	Author* a = new Author(_Id, _Name);
+	std::cout << "AuthorBuilder.build called" << std::endl;
 	return std::shared_ptr<Author>(a);
 }
 
@@ -31,7 +32,6 @@ Author::AuthorBuilder Author::AuthorBuilder::withId(String const& id) {
 }
 
 Author::AuthorBuilder Author::AuthorBuilder::withName(String const& name) {
-	_Name = name;	
+	_Name = name;
 	return *this;
 }
-

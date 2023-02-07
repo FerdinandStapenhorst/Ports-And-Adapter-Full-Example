@@ -1,45 +1,35 @@
-package tech.allegro.hexagon.articles.adapters.api;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-import tech.allegro.hexagon.articles.domain.model.Article;
+#pragma once
+#include "pch.h"
 
 class ArticleResponse {
-    private final String id;
-    private final String title;
-    private final String content;
-    private final String authorName;
+public:
+	ArticleResponse() noexcept = delete;
+	//ArticleResponse(const ArticleResponse& other) noexcept = delete;
+	//ArticleResponse(ArticleResponse&& other) noexcept = delete;
+	//virtual ~ArticleResponse() noexcept = default;
 
-    private ArticleResponse(final String id, final String title, final String content, final String authorName) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.authorName = authorName;
-    }
+private:
+	friend class ArticleFacade;
 
-    static ArticleResponse of(final Article article) {
-        return new ArticleResponse(article.id().value(),
-                article.title().value(),
-                article.content().value(),
-                article.author().name().value());
-    }
+	String _Id;
+	String _Title;
+	String _Content;
+	String _AuthorName;
 
-    @JsonProperty("id")
-    String id() {
-        return id;
-    }
+	ArticleResponse(String const& id, String const& title, String const& content, String const& authorName);
 
-    @JsonProperty("title")
-    String title() {
-        return title;
-    }
+public:
+	static ArticleResponse Of(ArticlePtr const article);
 
-    @JsonProperty("content")
-    String content() {
-        return content;
-    }
+	//@JsonProperty("id")
+	String Id() const;
 
-    @JsonProperty("authorName")
-    String authorName() {
-        return authorName;
-    }
-}
+	//@JsonProperty("title")
+	String Title() const;
+
+	//@JsonProperty("content")
+	String Content() const;
+
+	//@JsonProperty("authorName")
+	String AuthorName()const;
+};

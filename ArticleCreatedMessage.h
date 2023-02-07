@@ -5,11 +5,12 @@
 class ArticleCreatedMessage {
 	friend class MessageBrokerArticleMessageSender;
 
+public:
+	ArticleCreatedMessage() noexcept = delete;
+	ArticleCreatedMessage(const ArticleCreatedMessage& other) noexcept = delete;
+
 private:
-	ArticleCreatedMessage() noexcept = default;
-	ArticleCreatedMessage(const ArticleCreatedMessage& other) noexcept = default;
-	ArticleCreatedMessage(ArticleCreatedMessage&& other) noexcept = default;
-	virtual ~ArticleCreatedMessage() noexcept = default;
+	ArticleCreatedMessage(ArticleCreatedMessage&& other) noexcept = default;//required
 	ArticleCreatedMessage(ArticlePtr const article, String sentAt) : _Article{ article }, _SentAt{ sentAt } {}
 
 	ArticlePtr _Article;

@@ -3,5 +3,5 @@
 
 class IAuthorRepository {
 public:
-	virtual AuthorPtr get(String const& authorId) = 0;
+	virtual AuthorPtr Get(String const& authorId) = 0;
 };

@@ -3,12 +3,11 @@
 #include "IAuthorNotifier.h"
 
 class AuthorSmsNotifier : public IAuthorNotifier {
-private:
-    AuthorSmsNotifier() noexcept = delete;
-    AuthorSmsNotifier(const AuthorSmsNotifier& other) noexcept = default;
-    AuthorSmsNotifier(AuthorSmsNotifier&& other) noexcept = default;
-    virtual ~AuthorSmsNotifier() noexcept = default;
+public:
+	AuthorSmsNotifier() noexcept = default; //required
+	AuthorSmsNotifier(const AuthorSmsNotifier& other) noexcept = delete;
+	AuthorSmsNotifier(AuthorSmsNotifier&& other) noexcept = delete;
 
 public:
-    virtual void NotifyAboutCreationOf(ArticlePtr const article) override;
+	virtual void NotifyAboutCreationOf(ArticlePtr const article) override;
 };

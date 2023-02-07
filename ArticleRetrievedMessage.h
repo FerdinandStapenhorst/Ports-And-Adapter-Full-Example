@@ -4,12 +4,13 @@
 
 class ArticleRetrievedMessage {
 	friend class MessageBrokerArticleMessageSender;
+public:
+	ArticleRetrievedMessage() noexcept = delete;
+	ArticleRetrievedMessage(const ArticleRetrievedMessage& other) noexcept = delete;
 
 private:
-	ArticleRetrievedMessage() noexcept = default;
-	ArticleRetrievedMessage(const ArticleRetrievedMessage& other) noexcept = default;
-	ArticleRetrievedMessage(ArticleRetrievedMessage&& other) noexcept = default;
-	virtual ~ArticleRetrievedMessage() noexcept = default;
+	ArticleRetrievedMessage(ArticleRetrievedMessage&& other) noexcept = default; //required
+
 	ArticleRetrievedMessage(ArticlePtr const article, String const& sentAt);
 
 	ArticlePtr _Article;

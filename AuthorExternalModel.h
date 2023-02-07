@@ -1,18 +1,18 @@
 #pragma once
 #include "pch.h"
-#include "Author.h"
 
 class AuthorExternalModel {
+public:
+	AuthorExternalModel() noexcept = delete;
+	AuthorExternalModel(const AuthorExternalModel& other) noexcept = delete;
+	AuthorExternalModel(AuthorExternalModel&& other) noexcept = delete;
+
 private:
 	friend class AuthorExternalModelBuilder;
 
-	AuthorExternalModel() noexcept = default;
-	AuthorExternalModel(const AuthorExternalModel& other) noexcept = default;
-	AuthorExternalModel(AuthorExternalModel&& other) noexcept = default;
 	AuthorExternalModel(String const& _Id, String const& _FirstName, String const& _LastName);
 
 public:
-	virtual ~AuthorExternalModel() noexcept = default;
 
 private:
 	String _Id;
@@ -29,18 +29,19 @@ public:
 #pragma region AuthorExternalModelBuilder
 
 	class AuthorExternalModelBuilder {
+	public:
+
 	private:
 		friend class AuthorExternalModel;
-
-		AuthorExternalModelBuilder() noexcept = default;
-		virtual ~AuthorExternalModelBuilder() noexcept = default;
-		AuthorExternalModelBuilder(const AuthorExternalModelBuilder& other) noexcept = default;
-		AuthorExternalModelBuilder(AuthorExternalModelBuilder&& other) noexcept = default;
+		//AuthorExternalModelBuilder() noexcept = default;
+		//AuthorExternalModelBuilder(const AuthorExternalModelBuilder& other) noexcept = delete;
+		//AuthorExternalModelBuilder(AuthorExternalModelBuilder&& other) noexcept = delete;
 
 		String _Id;
 		String _FirstName;
 		String _LastName;
 
+	public:
 		AuthorExternalModelBuilder withId(String const& id);
 
 		AuthorExternalModelBuilder withFirstName(String const& firstName);
@@ -51,5 +52,6 @@ public:
 	};
 
 #pragma endregion
+public:
 	static AuthorExternalModelBuilder Create();
 };

@@ -6,8 +6,9 @@
 
 void AuthorMailNotifier::NotifyAboutCreationOf(ArticlePtr const article)
 {
-    /**
-     * Mail system integration implementation comes here
-     */
-    auto mailModel = ArticleMailModel::Of(article);
+	/**
+	 * Mail system integration implementation comes here
+	 */
+	auto mailModel = ArticleMailModel::Of(article);
+	std::cout << "Notifying author via E-Mail: " << mailModel.ToString() << std::endl;
 }
