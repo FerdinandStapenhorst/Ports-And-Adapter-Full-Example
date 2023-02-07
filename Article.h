@@ -14,10 +14,12 @@ private:
 	String _Title;
 	String _Content;
 	AuthorPtr _Author;
+
+	//Private constructor only used by friend class ArticleBuilder
 	Article(String const& _Id, String const& title, String const& _Content, AuthorPtr author);
 
 #pragma region ArticleBuilder
-
+	//Builder pattern https://refactoring.guru/design-patterns/builder
 public:
 	class ArticleBuilder {
 	public:

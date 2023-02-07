@@ -1,5 +1,7 @@
 #pragma once
-
+// ************************************************
+// *********   Ports & Andapter example ***********
+// ************************************************
 #include "pch.h"
 #include "Author.h"
 #include "Article.h"
@@ -61,6 +63,7 @@ ArticleEndpointPtr CreateArticleEndpoint()
 
 int main()
 {
+	//Simulate incoming request from endpoint to get an article
 	ArticleEndpointPtr articleEndpoint = CreateArticleEndpoint();
 	ArticleResponse article = articleEndpoint->Get("*");
 
@@ -70,16 +73,17 @@ int main()
 		.withName(article.AuthorName())
 		.build();
 
+	//Create a new article
 	auto articleNew = Article::Create()
 		.withAuthor(author)
 		.withTitle(article.Title())
 		.withId(article.Id())
 		.withContent(article.Content())
 		.build();
-
+	//Create request
 	ArticleRequestPtr articleRequest = CreateInstance(new ArticleRequest(articleNew));
 
-	//Create a new article
+	//simulate sending requerst to endpoint to create a new article 
 	auto articleIdResponse = articleEndpoint->Create(articleRequest);
 
 	return 0;

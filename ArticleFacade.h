@@ -1,6 +1,6 @@
 #pragma once
 #include "pch.h"
-
+//Facade design pattern: https://refactoring.guru/design-patterns/facade
 class ArticleFacade {
 public:
 	ArticleFacade() noexcept = delete;

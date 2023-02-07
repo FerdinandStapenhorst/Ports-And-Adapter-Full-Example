@@ -10,12 +10,16 @@ public:
 	Author(Author&& other) noexcept = delete;
 
 private:
-	Author(String const& _Id, String const& name);
 	String _Id;
 	String _Name;
 
+	//Private constructor only used by friend class AuthorBuilder
+	Author(String const& _Id, String const& name);
+
+#pragma region AuthorBuilder
 public:
 
+	//Builder pattern https://refactoring.guru/design-patterns/builder
 	class AuthorBuilder {
 	public:
 		friend class Author;
@@ -24,7 +28,7 @@ public:
 
 	private:
 		AuthorBuilder() noexcept = default;
-		AuthorBuilder(const AuthorBuilder& other) noexcept = default;
+		AuthorBuilder(const AuthorBuilder& other) noexcept = default;//required
 
 		String _Id;
 		String  _Name;
@@ -34,6 +38,8 @@ public:
 		AuthorBuilder withName(String const& name);
 		AuthorPtr build();
 	};
+
+#pragma endregion
 
 public:
 	static AuthorBuilder Create();
