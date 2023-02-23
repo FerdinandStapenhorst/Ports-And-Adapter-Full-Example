@@ -19,25 +19,25 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\adapter\api\ArticleEndpoint.cpp" />
-    <ClCompile Include="src\adapter\api\ArticleFacade.cpp" />
-    <ClCompile Include="src\adapter\api\ArticleIdResponse.cpp" />
-    <ClCompile Include="src\adapter\api\ArticleRequest.cpp" />
-    <ClCompile Include="src\adapter\api\ArticleResponse.cpp" />
-    <ClCompile Include="src\adapter\articledb\ArticleDatabaseModel.cpp" />
-    <ClCompile Include="src\adapter\articledb\DbArticleRepository.cpp" />
-    <ClCompile Include="src\adapter\authorservice\AuthorExternalModel.cpp" />
-    <ClCompile Include="src\adapter\authorservice\AuthorRepository.cpp" />
-    <ClCompile Include="src\adapter\messagebroker\ArticleCreatedMessage.cpp" />
-    <ClCompile Include="src\adapter\messagebroker\ArticleMessageBroker.cpp" />
-    <ClCompile Include="src\adapter\messagebroker\ArticleRetrievedMessage.cpp" />
-    <ClCompile Include="src\adapter\notifications\ArticleMailModel.cpp" />
-    <ClCompile Include="src\adapter\notifications\ArticleSmsModel.cpp" />
-    <ClCompile Include="src\adapter\notifications\AuthorMailNotifier.cpp" />
-    <ClCompile Include="src\adapter\notifications\AuthorSmsNotifier.cpp" />
-    <ClCompile Include="src\adapter\socialmedia\ArticleTwitterModel.cpp" />
-    <ClCompile Include="src\adapter\socialmedia\TwitterArticlePublisher.cpp" />
-    <ClCompile Include="src\adapter\socialmedia\TwitterClient.cpp" />
+    <ClCompile Include="src\adapter\primary actors\api\ArticleEndpoint.cpp" />
+    <ClCompile Include="src\adapter\primary actors\api\ArticleFacade.cpp" />
+    <ClCompile Include="src\adapter\primary actors\api\model\ArticleIdResponse.cpp" />
+    <ClCompile Include="src\adapter\primary actors\api\model\ArticleRequest.cpp" />
+    <ClCompile Include="src\adapter\primary actors\api\model\ArticleResponse.cpp" />
+    <ClCompile Include="src\adapter\secondary actors\articledb\DbArticleRepository.cpp" />
+    <ClCompile Include="src\adapter\secondary actors\articledb\model\ArticleDatabaseModel.cpp" />
+    <ClCompile Include="src\adapter\secondary actors\authorservice\AuthorRepository.cpp" />
+    <ClCompile Include="src\adapter\secondary actors\authorservice\model\AuthorExternalModel.cpp" />
+    <ClCompile Include="src\adapter\secondary actors\messagebroker\ArticleMessageBroker.cpp" />
+    <ClCompile Include="src\adapter\secondary actors\messagebroker\model\ArticleCreatedMessageModel.cpp" />
+    <ClCompile Include="src\adapter\secondary actors\messagebroker\model\ArticleRetrievedMessageModel.cpp" />
+    <ClCompile Include="src\adapter\secondary actors\notifications\AuthorMailNotifier.cpp" />
+    <ClCompile Include="src\adapter\secondary actors\notifications\AuthorSmsNotifier.cpp" />
+    <ClCompile Include="src\adapter\secondary actors\notifications\model\ArticleMailModel.cpp" />
+    <ClCompile Include="src\adapter\secondary actors\notifications\model\ArticleSmsModel.cpp" />
+    <ClCompile Include="src\adapter\secondary actors\socialmedia\model\ArticleTwitterModel.cpp" />
+    <ClCompile Include="src\adapter\secondary actors\socialmedia\TwitterArticlePublisher.cpp" />
+    <ClCompile Include="src\adapter\secondary actors\socialmedia\TwitterClient.cpp" />
     <ClCompile Include="src\ArticleHexagonExample.cpp" />
     <ClCompile Include="src\domain\model\Article.cpp" />
     <ClCompile Include="src\domain\model\Author.cpp" />
@@ -49,32 +49,32 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\adapter\api\ArticleEndpoint.h" />
-    <ClInclude Include="src\adapter\api\ArticleFacade.h" />
-    <ClInclude Include="src\adapter\api\ArticleIdResponse.h" />
-    <ClInclude Include="src\adapter\api\ArticleRequest.h" />
-    <ClInclude Include="src\adapter\api\ArticleResponse.h" />
-    <ClInclude Include="src\adapter\articledb\ArticleDatabaseModel.h" />
-    <ClInclude Include="src\adapter\articledb\DbArticleRepository.h" />
-    <ClInclude Include="src\adapter\authorservice\AuthorExternalModel.h" />
-    <ClInclude Include="src\adapter\authorservice\AuthorRepository.h" />
-    <ClInclude Include="src\adapter\messagebroker\ArticleCreatedMessage.h" />
-    <ClInclude Include="src\adapter\messagebroker\ArticleMessageBroker.h" />
-    <ClInclude Include="src\adapter\messagebroker\ArticleRetrievedMessage.h" />
-    <ClInclude Include="src\adapter\notifications\ArticleMailModel.h" />
-    <ClInclude Include="src\adapter\notifications\ArticleSmsModel.h" />
-    <ClInclude Include="src\adapter\notifications\AuthorMailNotifier.h" />
-    <ClInclude Include="src\adapter\notifications\AuthorSmsNotifier.h" />
-    <ClInclude Include="src\adapter\socialmedia\ArticleTwitterModel.h" />
-    <ClInclude Include="src\adapter\socialmedia\TwitterArticlePublisher.h" />
-    <ClInclude Include="src\adapter\socialmedia\TwitterClient.h" />
+    <ClInclude Include="src\adapter\primary actors\api\ArticleEndpoint.h" />
+    <ClInclude Include="src\adapter\primary actors\api\ArticleFacade.h" />
+    <ClInclude Include="src\adapter\primary actors\api\model\ArticleIdResponse.h" />
+    <ClInclude Include="src\adapter\primary actors\api\model\ArticleRequest.h" />
+    <ClInclude Include="src\adapter\primary actors\api\model\ArticleResponse.h" />
+    <ClInclude Include="src\adapter\secondary actors\articledb\DbArticleRepository.h" />
+    <ClInclude Include="src\adapter\secondary actors\articledb\model\ArticleDatabaseModel.h" />
+    <ClInclude Include="src\adapter\secondary actors\authorservice\AuthorRepository.h" />
+    <ClInclude Include="src\adapter\secondary actors\authorservice\model\AuthorExternalModel.h" />
+    <ClInclude Include="src\adapter\secondary actors\messagebroker\ArticleMessageBroker.h" />
+    <ClInclude Include="src\adapter\secondary actors\messagebroker\model\ArticleCreatedMessageModel.h" />
+    <ClInclude Include="src\adapter\secondary actors\messagebroker\model\ArticleRetrievedMessageModel.h" />
+    <ClInclude Include="src\adapter\secondary actors\notifications\AuthorMailNotifier.h" />
+    <ClInclude Include="src\adapter\secondary actors\notifications\AuthorSmsNotifier.h" />
+    <ClInclude Include="src\adapter\secondary actors\notifications\model\ArticleMailModel.h" />
+    <ClInclude Include="src\adapter\secondary actors\notifications\model\ArticleSmsModel.h" />
+    <ClInclude Include="src\adapter\secondary actors\socialmedia\model\ArticleTwitterModel.h" />
+    <ClInclude Include="src\adapter\secondary actors\socialmedia\TwitterArticlePublisher.h" />
+    <ClInclude Include="src\adapter\secondary actors\socialmedia\TwitterClient.h" />
     <ClInclude Include="src\domain\model\Article.h" />
     <ClInclude Include="src\domain\model\Author.h" />
-    <ClInclude Include="src\domain\ports\IArticleMessageSender.h" />
-    <ClInclude Include="src\domain\ports\IArticleRepository.h" />
-    <ClInclude Include="src\domain\ports\IAuthorNotifier.h" />
-    <ClInclude Include="src\domain\ports\IAuthorRepository.h" />
-    <ClInclude Include="src\domain\ports\ISocialMediaPublisher.h" />
+    <ClInclude Include="src\domain\ports\IArticleMessageSenderPort.h" />
+    <ClInclude Include="src\domain\ports\IArticleRepositoryPort.h" />
+    <ClInclude Include="src\domain\ports\IAuthorNotifierPort.h" />
+    <ClInclude Include="src\domain\ports\IAuthorRepositoryPort.h" />
+    <ClInclude Include="src\domain\ports\ISocialMediaPublisherPort.h" />
     <ClInclude Include="src\domain\services\ArticlePublisher.h" />
     <ClInclude Include="src\domain\services\ArticleService.h" />
     <ClInclude Include="src\pch\pch.h" />
@@ -132,10 +132,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)src\adapter\api;$(ProjectDir)src\adapter\articledb;$(ProjectDir)src\adapter\authorservice;$(ProjectDir)src\adapter\messagebroker;$(ProjectDir)src\adapter\notifications;$(ProjectDir)src\adapter\socialmedia;$(ProjectDir)src\domain\model;$(ProjectDir)src\domain\ports;$(ProjectDir)src\domain\services;$(ProjectDir)src\pch;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)src\adapter\primary actors\api;$(ProjectDir)src\adapter\primary actors\api\model;$(ProjectDir)src\adapter\secondary actors\articledb;$(ProjectDir)src\adapter\secondary actors\articledb\model;$(ProjectDir)src\adapter\secondary actors\authorservice;$(ProjectDir)src\adapter\secondary actors\authorservice\model;$(ProjectDir)src\adapter\secondary actors\messagebroker;$(ProjectDir)src\adapter\secondary actors\messagebroker\model;$(ProjectDir)src\adapter\secondary actors\notifications;$(ProjectDir)src\adapter\secondary actors\notifications\model;$(ProjectDir)src\adapter\secondary actors\socialmedia;$(ProjectDir)src\adapter\secondary actors\socialmedia\model;$(ProjectDir)src\domain\model;$(ProjectDir)src\domain\ports;$(ProjectDir)src\domain\services;$(ProjectDir)src\pch;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(ProjectDir)src\adapter\api;$(ProjectDir)src\adapter\articledb;$(ProjectDir)src\adapter\authorservice;$(ProjectDir)src\adapter\messagebroker;$(ProjectDir)src\adapter\notifications;$(ProjectDir)src\adapter\socialmedia;$(ProjectDir)src\domain\model;$(ProjectDir)src\domain\ports;$(ProjectDir)src\domain\services;$(ProjectDir)src\pch;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)src\adapter\primary actors\api;$(ProjectDir)src\adapter\primary actors\api\model;$(ProjectDir)src\adapter\secondary actors\articledb;$(ProjectDir)src\adapter\secondary actors\articledb\model;$(ProjectDir)src\adapter\secondary actors\authorservice;$(ProjectDir)src\adapter\secondary actors\authorservice\model;$(ProjectDir)src\adapter\secondary actors\messagebroker;$(ProjectDir)src\adapter\secondary actors\messagebroker\model;$(ProjectDir)src\adapter\secondary actors\notifications;$(ProjectDir)src\adapter\secondary actors\notifications\model;$(ProjectDir)src\adapter\secondary actors\socialmedia;$(ProjectDir)src\adapter\secondary actors\socialmedia\model;$(ProjectDir)src\domain\model;$(ProjectDir)src\domain\ports;$(ProjectDir)src\domain\services;$(ProjectDir)src\pch;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

@@ -2,6 +2,7 @@
 // ************************************************
 // *********   Ports & Andapter example ***********
 // ************************************************
+
 #include "pch.h"
 #include "Author.h"
 #include "Article.h"
@@ -26,21 +27,21 @@ ArticlePublisherPtr CreateArticlePublisher()
 	TwitterClientPtr twitterClient = CreateInstance(new TwitterClient);
 
 	//Social Media Publisher
-	ISocialMediaPublisherPtr socialMediaPublisher = CreateInstance(new TwitterArticlePublisher(twitterClient));
-	std::vector<ISocialMediaPublisherPtr> socialMediaPublisherList;
+	ISocialMediaPublisherPortPtr socialMediaPublisher = CreateInstance(new TwitterArticlePublisher(twitterClient));
+	std::vector<ISocialMediaPublisherPortPtr> socialMediaPublisherList;
 	socialMediaPublisherList.push_back(socialMediaPublisher);
 
 	//Author SMS notifier
-	IAuthorNotifierPtr authorSmSNotifier = CreateInstance(new AuthorSmsNotifier);
+	IAuthorNotifierPortPtr authorSmSNotifier = CreateInstance(new AuthorSmsNotifier);
 
 	//Author E-Mail notifier list
-	IAuthorNotifierPtr authorMailNotifier = CreateInstance(new AuthorMailNotifier);
-	std::vector<IAuthorNotifierPtr> authorMailNotifierList;
+	IAuthorNotifierPortPtr authorMailNotifier = CreateInstance(new AuthorMailNotifier);
+	std::vector<IAuthorNotifierPortPtr> authorMailNotifierList;
 	authorMailNotifierList.push_back(authorSmSNotifier);
 	authorMailNotifierList.push_back(authorMailNotifier);
 
 	//MessageSender
-	IArticleMessageSenderPtr articleMessageSender = CreateInstance(new ArticleMessageBroker);
+	IArticleMessageSenderPortPtr articleMessageSender = CreateInstance(new ArticleMessageBroker);
 
 	//Article Publisher
 	return CreateInstance(new ArticlePublisher(articleMessageSender, socialMediaPublisherList, authorMailNotifierList));
@@ -48,9 +49,9 @@ ArticlePublisherPtr CreateArticlePublisher()
 
 ArticleServicePtr CreateArticleService() {
 	//Article repo
-	IArticleRepositoryPtr articleRepo = CreateInstance(new DbArticleRepository);
+	IArticleRepositoryPortPtr articleRepo = CreateInstance(new DbArticleRepository);
 	//Author Repo
-	IAuthorRepositoryPtr authorRepo = CreateInstance(new AuthorRepository);
+	IAuthorRepositoryPortPtr authorRepo = CreateInstance(new AuthorRepository);
 	//Article Service
 	return  CreateInstance(new ArticleService(articleRepo, authorRepo, CreateArticlePublisher()));
 }

@@ -1,14 +1,13 @@
 #include "pch.h"
 #include "ArticleService.h"
-#include "IArticleRepository.h"
-#include "IArticleRepository.h"
-#include "IAuthorNotifier.h"
-#include "IAuthorRepository.h"
+#include "IArticleRepositoryPort.h"
+#include "IAuthorNotifierPort.h"
+#include "IAuthorRepositoryPort.h"
 #include "Article.h"
 #include "ArticlePublisher.h"
 
-ArticleService::ArticleService(IArticleRepositoryPtr articleRepository,
-	IAuthorRepositoryPtr authorRepository, ArticlePublisherPtr eventPublisher) :
+ArticleService::ArticleService(IArticleRepositoryPortPtr articleRepository,
+	IAuthorRepositoryPortPtr authorRepository, ArticlePublisherPtr eventPublisher) :
 	_ArticleRepository{ articleRepository },
 	_AuthorRepository{ authorRepository },
 	_EventPublisher{ eventPublisher }

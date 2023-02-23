@@ -3,15 +3,16 @@
 
 class ArticleService {
 public:
-	ArticleService() noexcept = delete;
-	ArticleService(const ArticleService& other) noexcept = delete;
-	ArticleService(ArticleService&& other) noexcept = delete;
 
-	ArticleService(IArticleRepositoryPtr articleRepository, IAuthorRepositoryPtr authorRepository, ArticlePublisherPtr eventPublisher);
+	ArticleService(const ArticleService& other) noexcept = delete;
+
+	ArticleService(IArticleRepositoryPortPtr articleRepository, 
+				   IAuthorRepositoryPortPtr authorRepository, 
+				   ArticlePublisherPtr eventPublisher);
 
 private:
-	IArticleRepositoryPtr _ArticleRepository;
-	IAuthorRepositoryPtr _AuthorRepository;
+	IArticleRepositoryPortPtr _ArticleRepository;
+	IAuthorRepositoryPortPtr _AuthorRepository;
 	ArticlePublisherPtr _EventPublisher;
 
 public:

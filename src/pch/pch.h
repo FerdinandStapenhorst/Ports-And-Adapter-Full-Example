@@ -21,15 +21,15 @@ class Author;
 class Article;
 class ArticleService;
 class ArticleFacade;
-class IArticleRepository;
+class IArticleRepositoryPort;
 class ArticleRequest;
 class ArticleResponse;
-class IAuthorRepository;
+class IAuthorRepositoryPort;
 class ArticleModel;
 class ArticlePublisher;
-class IArticleMessageSender;
-class ISocialMediaPublisher;
-class IAuthorNotifier;
+class IArticleMessageSenderPort;
+class ISocialMediaPublisherPort;
+class IAuthorNotifierPort;
 class AuthorExternalModel;
 class TwitterClient;
 class ArticleTwitterModel;
@@ -39,23 +39,39 @@ class ArticleEndpoint;
 
 //Usings
 using String = std::string;
+
+//Models
 using AuthorPtr = std::shared_ptr <Author>;
 using ArticlePtr = std::shared_ptr <Article>;
-using ArticleFacadePtr = std::shared_ptr<ArticleFacade>;
-using ArticleServicePtr = std::shared_ptr<ArticleService>;
-using IArticleRepositoryPtr = std::shared_ptr<IArticleRepository>;
-using IAuthorRepositoryPtr = std::shared_ptr<IAuthorRepository>;
+
+//Service
 using ArticlePublisherPtr = std::shared_ptr<ArticlePublisher>;
+using ArticleServicePtr = std::shared_ptr<ArticleService>;
+//Facade
+using ArticleFacadePtr = std::shared_ptr<ArticleFacade>;
+
+//Pointer to the ports
+using IArticleRepositoryPortPtr = std::shared_ptr<IArticleRepositoryPort>;
+using IAuthorRepositoryPortPtr = std::shared_ptr<IAuthorRepositoryPort>;
+using IArticleMessageSenderPortPtr = std::shared_ptr<IArticleMessageSenderPort>;
+using ISocialMediaPublisherPortPtr = std::shared_ptr<ISocialMediaPublisherPort>;
+using IAuthorNotifierPortPtr = std::shared_ptr <IAuthorNotifierPort>;
+
+//Database Adapter model
 using ArticleModelPtr = std::shared_ptr<ArticleModel>;
-using IArticleMessageSenderPtr = std::shared_ptr<IArticleMessageSender>;
-using ISocialMediaPublisherPtr = std::shared_ptr<ISocialMediaPublisher>;
-using IAuthorNotifierPtr = std::shared_ptr <IAuthorNotifier>;
+
+//Author service model
 using AuthorExternalModelPtr = std::shared_ptr <AuthorExternalModel>;
+
+//Social media Adapter
 using TwitterClientPtr = std::shared_ptr <TwitterClient>;
+
+//API
 using ArticleRequestPtr = std::shared_ptr <ArticleRequest>;
 using ArticleResponsePtr = std::shared_ptr <ArticleResponse>;
 using ArticleEndpointPtr = std::shared_ptr <ArticleEndpoint>;
 
+//Create instance helper
 template <typename T>
 std::shared_ptr<T> CreateInstance(T* p) {
 	return std::shared_ptr<T>(p);

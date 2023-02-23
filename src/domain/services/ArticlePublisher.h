@@ -7,14 +7,14 @@ public:
 	ArticlePublisher(const ArticlePublisher& other) noexcept = delete;
 	ArticlePublisher(ArticlePublisher&& other) noexcept = delete;
 
-	ArticlePublisher(IArticleMessageSenderPtr _MessageSender,
-		std::vector<ISocialMediaPublisherPtr> _SocialMediaPublishers,
-		std::vector<IAuthorNotifierPtr> _ArticleAuthorNotifiers);
+	ArticlePublisher(IArticleMessageSenderPortPtr _MessageSender,
+		std::vector<ISocialMediaPublisherPortPtr> _SocialMediaPublishers,
+		std::vector<IAuthorNotifierPortPtr> _ArticleAuthorNotifiers);
 
 private:
-	IArticleMessageSenderPtr _MessageSender;
-	std::vector<ISocialMediaPublisherPtr> _SocialMediaPublishers;
-	std::vector<IAuthorNotifierPtr> _ArticleAuthorNotifiers;
+	IArticleMessageSenderPortPtr _MessageSender;
+	std::vector<ISocialMediaPublisherPortPtr> _SocialMediaPublishers;
+	std::vector<IAuthorNotifierPortPtr> _ArticleAuthorNotifiers;
 
 public:
 	void PublishCreationOf(ArticlePtr const article);
