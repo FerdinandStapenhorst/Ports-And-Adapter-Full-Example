@@ -25,41 +25,41 @@
     <Filter Include="adapter\primary actors\api">
       <UniqueIdentifier>{38eebb81-a258-4a40-b63d-a3e0ed263c7c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="adapter\primary actors\api\model">
+      <UniqueIdentifier>{3666c84b-81f6-4657-ac0e-da9ecf7641c9}</UniqueIdentifier>
+    </Filter>
     <Filter Include="adapter\secondary actors">
       <UniqueIdentifier>{3ca63477-a280-4ab0-b2b1-a6009148d2a4}</UniqueIdentifier>
     </Filter>
     <Filter Include="adapter\secondary actors\articledb">
       <UniqueIdentifier>{f56f49ac-7216-404e-a788-d74ba57dbcfc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="adapter\secondary actors\authorservice">
-      <UniqueIdentifier>{88ee120e-e5d2-4927-a404-dbd97c0d67d2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="adapter\secondary actors\messagebroker">
-      <UniqueIdentifier>{998afca3-09b1-429e-958c-d1544a6f01a3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="adapter\secondary actors\notifications">
-      <UniqueIdentifier>{668daaaa-52f8-43b1-a236-c822e99af23b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="adapter\secondary actors\socialmedia">
-      <UniqueIdentifier>{d2e885de-8b7e-4947-85df-44b0a388b35c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="adapter\secondary actors\articledb\model">
       <UniqueIdentifier>{86daba5b-b59f-4889-b5dd-10deaf14e8d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="adapter\secondary actors\authorservice">
+      <UniqueIdentifier>{88ee120e-e5d2-4927-a404-dbd97c0d67d2}</UniqueIdentifier>
     </Filter>
     <Filter Include="adapter\secondary actors\authorservice\model">
       <UniqueIdentifier>{88af0e08-db6d-4afa-8853-5c5a5fe62afe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="adapter\secondary actors\notifications\model">
-      <UniqueIdentifier>{956b9b6c-3b2d-4d74-86c9-b2b6d11be280}</UniqueIdentifier>
+    <Filter Include="adapter\secondary actors\messagebroker">
+      <UniqueIdentifier>{998afca3-09b1-429e-958c-d1544a6f01a3}</UniqueIdentifier>
     </Filter>
     <Filter Include="adapter\secondary actors\messagebroker\model">
       <UniqueIdentifier>{58dab523-7c59-498e-8129-d6ad30a8d604}</UniqueIdentifier>
     </Filter>
+    <Filter Include="adapter\secondary actors\notifications">
+      <UniqueIdentifier>{668daaaa-52f8-43b1-a236-c822e99af23b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="adapter\secondary actors\notifications\model">
+      <UniqueIdentifier>{956b9b6c-3b2d-4d74-86c9-b2b6d11be280}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="adapter\secondary actors\socialmedia">
+      <UniqueIdentifier>{d2e885de-8b7e-4947-85df-44b0a388b35c}</UniqueIdentifier>
+    </Filter>
     <Filter Include="adapter\secondary actors\socialmedia\model">
       <UniqueIdentifier>{6760cd01-b37a-4cff-88af-d36244979f17}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="adapter\primary actors\api\model">
-      <UniqueIdentifier>{3666c84b-81f6-4657-ac0e-da9ecf7641c9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
