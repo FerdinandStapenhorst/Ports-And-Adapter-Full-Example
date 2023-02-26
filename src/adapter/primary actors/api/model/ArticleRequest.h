@@ -6,9 +6,9 @@ public:
 	ArticleRequest(const ArticleRequest& other) noexcept = delete;
 
 private:
-	String _Title;
-	String _Content;
-	String _AuthorId;
+	String m_Title;
+	String m_Content;
+	String m_AuthorId;
 
 public:
 	//JsonProperty("title")   @JsonProperty("content")   @JsonProperty("authorId")

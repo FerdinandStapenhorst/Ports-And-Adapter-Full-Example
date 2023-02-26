@@ -4,21 +4,21 @@
 #include "Article.h"
 #include "Author.h"
 
-ArticleMailModel::ArticleMailModel(String const& _RecipientId, String const& _Subject, String const& _Content) :
-	_RecipientId{ _RecipientId },
-	_Subject{ _Subject },
-	_Content{ _Content }
+ArticleMailModel::ArticleMailModel(String const& recipientId, String const& subject, String const& content) :
+	m_RecipientId{ recipientId },
+	m_Subject{ subject },
+	m_Content{ content }
 {}
 
-ArticleMailModel ArticleMailModel::Of(ArticlePtr const article)
+ArticleMailModel ArticleMailModel::Of(Article const& article)
 {
-	ArticleMailModel a(article->Author()->Name(),
-		std::format(SUBJECT, article->Title()),
-		std::format(CONTENT, article->Content()));
+	ArticleMailModel a(article.GetAuthor().Name(),
+		std::format(SUBJECT, article.Title()),
+		std::format(CONTENT, article.Content()));
 	return a;
 }
 
 String ArticleMailModel::ToString()
 {
-	return _Subject;
+	return m_Subject;
 }

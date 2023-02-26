@@ -19,62 +19,68 @@ concept IsRegularType = std::regular<T>;
 //Forward declarations
 class Author;
 class Article;
-class ArticleService;
-class ArticleFacade;
-class IArticleRepositoryPort;
 class ArticleRequest;
 class ArticleResponse;
-class IAuthorRepositoryPort;
 class ArticleModel;
-class ArticlePublisher;
+class ArticleTwitterModel;
+class ArticleIdResponse;
+class AuthorExternalModel;
+
+class IArticleFacade;
+class IArticleService;
+class IArticleRepositoryPort;
+class IAuthorRepositoryPort;
+class IArticlePublisher;
 class IArticleMessageSenderPort;
 class ISocialMediaPublisherPort;
 class IAuthorNotifierPort;
-class AuthorExternalModel;
-class TwitterClient;
-class ArticleTwitterModel;
-class ArticleIdResponse;
-class AuthorRepository;
-class ArticleEndpoint;
+class ITwitterClient;
+class IArticleEndpoint;
 
 //Usings
 using String = std::string;
 
 //Models
-using AuthorPtr = std::shared_ptr <Author>;
-using ArticlePtr = std::shared_ptr <Article>;
+using AuthorPtr = std::shared_ptr<Author>;
+using ArticlePtr = std::shared_ptr<Article>;
 
 //Service
-using ArticlePublisherPtr = std::shared_ptr<ArticlePublisher>;
-using ArticleServicePtr = std::shared_ptr<ArticleService>;
+using IArticlePublisherPtr = std::shared_ptr<IArticlePublisher>;
+using IArticleServicePtr = std::shared_ptr<IArticleService>;
 //Facade
-using ArticleFacadePtr = std::shared_ptr<ArticleFacade>;
+using IArticleFacadePtr = std::shared_ptr<IArticleFacade>;
 
-//Pointer to the ports
+//Pointer to the secondary ports
 using IArticleRepositoryPortPtr = std::shared_ptr<IArticleRepositoryPort>;
 using IAuthorRepositoryPortPtr = std::shared_ptr<IAuthorRepositoryPort>;
 using IArticleMessageSenderPortPtr = std::shared_ptr<IArticleMessageSenderPort>;
 using ISocialMediaPublisherPortPtr = std::shared_ptr<ISocialMediaPublisherPort>;
-using IAuthorNotifierPortPtr = std::shared_ptr <IAuthorNotifierPort>;
+using IAuthorNotifierPortPtr = std::shared_ptr<IAuthorNotifierPort>;
 
 //Database Adapter model
 using ArticleModelPtr = std::shared_ptr<ArticleModel>;
 
 //Author service model
-using AuthorExternalModelPtr = std::shared_ptr <AuthorExternalModel>;
+using AuthorExternalModelPtr = std::shared_ptr<AuthorExternalModel>;
 
 //Social media Adapter
-using TwitterClientPtr = std::shared_ptr <TwitterClient>;
+using ITwitterClientPtr = std::shared_ptr<ITwitterClient>;
 
-//API
-using ArticleRequestPtr = std::shared_ptr <ArticleRequest>;
-using ArticleResponsePtr = std::shared_ptr <ArticleResponse>;
-using ArticleEndpointPtr = std::shared_ptr <ArticleEndpoint>;
+//API models
+using ArticleRequestPtr = std::shared_ptr<ArticleRequest>;
+using ArticleResponsePtr = std::shared_ptr<ArticleResponse>;
+//API Endpoint 
+using IArticleEndpointPtr = std::shared_ptr<IArticleEndpoint>;
 
 //Create instance helper
 template <typename T>
 std::shared_ptr<T> CreateInstance(T* p) {
 	return std::shared_ptr<T>(p);
+}
+
+template <typename T>
+std::unique_ptr<T> CreateUniqueInstance(T* p) {
+	return std::unique_ptr<T>(p);
 }
 
 //Tools

@@ -3,12 +3,12 @@
 #include "pch.h"
 #include "ArticleRetrievedMessageModel.h"
 
-ArticleRetrievedMessageModel::ArticleRetrievedMessageModel(ArticlePtr const article, String const& sentAt) :
-	_Article{ article },
-	_SentAt{ sentAt }
+ArticleRetrievedMessageModel::ArticleRetrievedMessageModel(Article const& article, String const& sentAt) :
+	m_Article{ article },
+	m_SentAt{ sentAt }
 {}
 
-ArticleRetrievedMessageModel ArticleRetrievedMessageModel::Of(ArticlePtr const article)
+ArticleRetrievedMessageModel ArticleRetrievedMessageModel::Of(Article const& article)
 {
 	ArticleRetrievedMessageModel a(article, "Now");
 	return a;
@@ -16,5 +16,5 @@ ArticleRetrievedMessageModel ArticleRetrievedMessageModel::Of(ArticlePtr const a
 
 String ArticleRetrievedMessageModel::ToString()
 {
-	return std::format("Article >>{}<< retrieved", _Article->Title());
+	return std::format("Article >>{}<< retrieved", m_Article.Title());
 }

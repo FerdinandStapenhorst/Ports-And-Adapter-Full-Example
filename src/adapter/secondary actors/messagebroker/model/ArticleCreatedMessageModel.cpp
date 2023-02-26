@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "ArticleCreatedMessageModel.h"
 
-ArticleCreatedMessageModel ArticleCreatedMessageModel::Of(ArticlePtr const article)
+ArticleCreatedMessageModel ArticleCreatedMessageModel::Of(Article const& article)
 {
 	ArticleCreatedMessageModel a(article, "Now");
 	return a;
@@ -9,5 +9,5 @@ ArticleCreatedMessageModel ArticleCreatedMessageModel::Of(ArticlePtr const artic
 
 String ArticleCreatedMessageModel::ToString()
 {
-	return std::format("Article >>{}<< retrieved", _Article->Title());
+	return std::format("Article >>{}<< retrieved", m_Article.Title());
 }

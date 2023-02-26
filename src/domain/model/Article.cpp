@@ -3,11 +3,12 @@
 #include "Article.h"
 #include "Author.h"
 
-Article::Article(String const& _Id, String const& title, String const& _Content, AuthorPtr author) :
-	_Id{ _Id },
-	_Title{ title },
-	_Content{ _Content },
-	_Author{ author }
+
+Article::Article(String const& id, String const& title, String const& content, Author const& author) :
+	m_Id{ id },
+	m_Title{ title },
+	m_Content{ content },
+	m_Author{ author }
 {
 }
 
@@ -24,19 +25,19 @@ void Article::ValidateEligibilityForPublication() {
 }
 
 String Article::Id() const {
-	return _Id;
+	return m_Id;
 }
 
 String Article::Title() const {
-	return _Title;
+	return m_Title;
 }
 
 String Article::Content() const {
-	return _Content;
+	return m_Content;
 }
 
-AuthorPtr Article::Author() const {
-	return _Author;
+Author Article::GetAuthor() const {
+	return m_Author;
 }
 
 void Article::checkGrammar() {
@@ -64,29 +65,29 @@ Article::ArticleBuilder Article::Create() {
 
 #pragma region ArticleBuilder
 
+
 std::shared_ptr<Article> Article::ArticleBuilder::build() {
-	Article* a = new Article(_Id, _Title, _Content, _Author);
-	std::cout << "ArticleBuilder.build called" << std::endl;
+	Article* a = new Article(m_Id, m_Title, m_Content, *m_Author);
 	return std::shared_ptr<Article>(a);
 }
 
 Article::ArticleBuilder Article::ArticleBuilder::withId(String const& id) {
-	_Id = id;
+	m_Id = id;
 	return *this;
 }
 
 Article::ArticleBuilder Article::ArticleBuilder::withTitle(String const& title) {
-	_Title = title;
+	m_Title = title;
 	return *this;
 }
 
 Article::ArticleBuilder Article::ArticleBuilder::withContent(String const& content) {
-	_Content = content;
+	m_Content = content;
 	return *this;
 }
 
-Article::ArticleBuilder Article::ArticleBuilder::withAuthor(AuthorPtr author) {
-	_Author = author;
+Article::ArticleBuilder Article::ArticleBuilder::withAuthor(Author const& author) {
+	m_Author = &author;
 	return *this;
 }
 

@@ -8,11 +8,10 @@ public:
 	ArticleIdResponse(ArticleIdResponse&& other) noexcept = default; //required
 
 private:
-	ArticleIdResponse(String const& _Id);
-
-	String _Id;
+	ArticleIdResponse(String const& id);
+	String m_Id;
 
 public:
 	static ArticleIdResponse Of(String const& articleId);
-	String Id()  const;
+	String Id() const;
 };

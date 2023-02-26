@@ -6,19 +6,19 @@
 
 ArticleTwitterModel::ArticleTwitterModel(String const& twitterAccountId, String const& tweet)
 {
-	_TwitterAccountId = twitterAccountId;
-	_Tweet = tweet;
+	m_TwitterAccountId = twitterAccountId;
+	m_Tweet = tweet;
 }
 
-ArticleTwitterModel ArticleTwitterModel::Of(ArticlePtr const article)
+ArticleTwitterModel ArticleTwitterModel::Of(Article const &article)
 {
-	String title = article->Title();
-	String twitterId = article->Author()->Name();
+	String title = article.Title();
+	String twitterId = article.GetAuthor().Name();
 	ArticleTwitterModel a = ArticleTwitterModel(twitterId, std::format(TWEET, title, twitterId));
 	return a;
 }
 
 String ArticleTwitterModel::ToString() const
 {
-	return _Tweet;
+	return m_Tweet;
 }

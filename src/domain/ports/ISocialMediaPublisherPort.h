@@ -3,5 +3,5 @@
 
 class ISocialMediaPublisherPort {
 public:
-	virtual void Publish(ArticlePtr const article) = 0;
+	virtual void Publish(Article const& article) const noexcept = 0;
 };

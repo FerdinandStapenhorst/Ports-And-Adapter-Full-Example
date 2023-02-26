@@ -7,7 +7,12 @@ public:
 	AuthorMailNotifier() noexcept = default; //required
 	AuthorMailNotifier(const AuthorMailNotifier& other) noexcept = delete;
 	AuthorMailNotifier(AuthorMailNotifier&& other) noexcept = delete;
-
+	virtual ~AuthorMailNotifier() = default;
 public:
-	virtual void NotifyAboutCreationOf(ArticlePtr const article) override;
+	#pragma region IAuthorNotifierPort
+
+	void NotifyAboutCreationOf(Article const& article) const noexcept override final;
+
+	#pragma endregion
+
 };

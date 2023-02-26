@@ -3,5 +3,5 @@
 
 class IAuthorNotifierPort {
 public:
-	virtual void NotifyAboutCreationOf(ArticlePtr const article) = 0;
+	virtual void NotifyAboutCreationOf(Article const& article) const noexcept = 0;
 };

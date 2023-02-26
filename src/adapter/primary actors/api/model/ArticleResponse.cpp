@@ -5,10 +5,10 @@
 #include "ArticleResponse.h"
 
 ArticleResponse::ArticleResponse(String const& id, String  const& title, String const& content, String const& authorName) {
-	_Id = id;
-	_Title = title;
-	_Content = content;
-	_AuthorName = authorName;
+	m_Id = id;
+	m_Title = title;
+	m_Content = content;
+	m_AuthorName = authorName;
 }
 
 ArticleResponse ArticleResponse::Of(ArticlePtr const article)
@@ -16,25 +16,25 @@ ArticleResponse ArticleResponse::Of(ArticlePtr const article)
 	ArticleResponse a(article->Id(),
 		article->Title(),
 		article->Content(),
-		article->Author()->Name());
+		article->GetAuthor().Name());
 	return a;
 }
 
 String ArticleResponse::Id() const
 {
-	return _Id;
+	return m_Id;
 }
 //@JsonProperty("title")
 String ArticleResponse::Title() const {
-	return _Title;
+	return m_Title;
 }
 
 //@JsonProperty("content")
 String ArticleResponse::Content() const {
-	return _Content;
+	return m_Content;
 }
 
 //@JsonProperty("authorName")
 String ArticleResponse::AuthorName()const {
-	return _AuthorName;
+	return m_AuthorName;
 }

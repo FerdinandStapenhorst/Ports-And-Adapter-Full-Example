@@ -3,14 +3,14 @@
 #include "AuthorRepository.h"
 #include "AuthorExternalModel.h"
 
-AuthorPtr AuthorRepository::Get(String const& authorId)
+AuthorPtr AuthorRepository::Get(String const& authorId) const noexcept
 {
 	/**
 	 * external author service integration implementation comes here
 	 */
 
 	AuthorExternalModelPtr author = AuthorExternalModel::Create()
-		.withId("1")
+		.withId(authorId)
 		.withFirstName("Albert")
 		.withLastName("Einstein")
 		.build();

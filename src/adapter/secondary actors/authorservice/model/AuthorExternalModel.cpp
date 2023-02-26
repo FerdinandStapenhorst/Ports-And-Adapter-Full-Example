@@ -3,23 +3,23 @@
 #include "AuthorExternalModel.h"
 #include "Author.h"
 
-AuthorExternalModel::AuthorExternalModel(String const& _Id, String const& _FirstName, String const& _LastName) :
-	_Id{ _Id },
-	_FirstName{ _FirstName },
-	_LastName{ _LastName }
+AuthorExternalModel::AuthorExternalModel(String const& id, String const& firstName, String const& lastName) :
+	m_Id{ id },
+	m_FirstName{ firstName },
+	m_LastName{ lastName }
 {}
 
 AuthorPtr AuthorExternalModel::ToDomain()
 {
 	return Author::Create()
-		.withId(_Id)
+		.withId(m_Id)
 		.withName(FullName())
 		.build();
 }
 
 String AuthorExternalModel::FullName() const
 {
-	return std::format("{} {}", _FirstName, _LastName);
+	return std::format("{} {}", m_FirstName, m_LastName);
 }
 
 String AuthorExternalModel::ToString() const
@@ -34,22 +34,22 @@ AuthorExternalModel::AuthorExternalModelBuilder AuthorExternalModel::Create()
 }
 
 AuthorExternalModel::AuthorExternalModelBuilder AuthorExternalModel::AuthorExternalModelBuilder::withId(String const& id) {
-	_Id = id;
+	m_Id = id;
 	return *this;
 }
 
 AuthorExternalModel::AuthorExternalModelBuilder AuthorExternalModel::AuthorExternalModelBuilder::withFirstName(String const& firstName)
 {
-	_FirstName = firstName;
+	m_FirstName = firstName;
 	return *this;
 }
 AuthorExternalModel::AuthorExternalModelBuilder AuthorExternalModel::AuthorExternalModelBuilder::withLastName(String const& lastName)
 {
-	_LastName = lastName;
+	m_LastName = lastName;
 	return *this;
 }
 
 AuthorExternalModelPtr AuthorExternalModel::AuthorExternalModelBuilder::build() {
-	AuthorExternalModel* a = new AuthorExternalModel(_Id, _FirstName, _LastName);
+	AuthorExternalModel* a = new AuthorExternalModel(m_Id, m_FirstName, m_LastName);
 	return std::shared_ptr<AuthorExternalModel>(a);
 }

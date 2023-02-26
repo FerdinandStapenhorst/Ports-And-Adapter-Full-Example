@@ -11,10 +11,10 @@ private:
 	ArticleResponse(String const& id, String const& title, String const& content, String const& authorName);
 
 	friend class ArticleFacade;
-	String _Id;
-	String _Title;
-	String _Content;
-	String _AuthorName;
+	String m_Id;
+	String m_Title;
+	String m_Content;
+	String m_AuthorName;
 
 
 public:

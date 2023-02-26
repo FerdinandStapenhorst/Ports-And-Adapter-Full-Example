@@ -5,27 +5,28 @@
 #include "IAuthorRepositoryPort.h"
 #include "Article.h"
 #include "ArticlePublisher.h"
+#include "Author.h"
 
 ArticleService::ArticleService(IArticleRepositoryPortPtr articleRepository,
-	IAuthorRepositoryPortPtr authorRepository, ArticlePublisherPtr eventPublisher) :
-	_ArticleRepository{ articleRepository },
-	_AuthorRepository{ authorRepository },
-	_EventPublisher{ eventPublisher }
+	IAuthorRepositoryPortPtr authorRepository, IArticlePublisherPtr eventPublisher) :
+	m_ArticleRepository{ articleRepository },
+	m_AuthorRepository{ authorRepository },
+	m_EventPublisher{ eventPublisher }
 {
 }
 
-String ArticleService::Create(String const& authorId, String const& title, String const& _Content)
+String ArticleService::Create(String const& authorId, String const& title, String const& content) noexcept
 {
-	auto author = _AuthorRepository->Get(authorId);
-	auto article = _ArticleRepository->Save(author, title, _Content);
+	auto const author = m_AuthorRepository->Get(authorId);
+	auto article = m_ArticleRepository->Save(*author, title, content);
 	article->ValidateEligibilityForPublication();
-	_EventPublisher->PublishCreationOf(article);
+	m_EventPublisher->PublishCreationOf(*article);
 	return article->Id();
 }
 
-ArticlePtr ArticleService::Get(String const& _Id)
+ArticlePtr ArticleService::Get(String const& id) const noexcept
 {
-	auto article = _ArticleRepository->Get(_Id);
-	_EventPublisher->PublishRetrievalOf(article);
+	auto article = m_ArticleRepository->Get(id);
+	m_EventPublisher->PublishRetrievalOf(*article);
 	return article;
 }

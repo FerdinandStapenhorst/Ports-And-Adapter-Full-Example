@@ -1,15 +1,18 @@
 #pragma once
 #include "pch.h"
+#include "IArticleFacade.h"
+
 //Facade design pattern: https://refactoring.guru/design-patterns/facade
-class ArticleFacade {
+class ArticleFacade : public IArticleFacade {
 public:
 	ArticleFacade(const ArticleFacade& other) noexcept = delete;
-	ArticleFacade(ArticleServicePtr const articleService);
+	ArticleFacade(IArticleServicePtr const articleService);
+	virtual ~ArticleFacade() = default;
 
 private:
-	ArticleServicePtr _ArticleService;
+	IArticleServicePtr m_ArticleService;
 
 public:
-	ArticleResponse Get(String const& articleId);
-	ArticleIdResponse Create(ArticleRequestPtr articleRequest);
+	ArticleResponse Get(String const& articleId) const noexcept override final;
+	ArticleIdResponse Create(ArticleRequestPtr articleRequest) noexcept override final;
 };

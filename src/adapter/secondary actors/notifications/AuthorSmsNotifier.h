@@ -7,7 +7,8 @@ public:
 	AuthorSmsNotifier() noexcept = default; //required
 	AuthorSmsNotifier(const AuthorSmsNotifier& other) noexcept = delete;
 	AuthorSmsNotifier(AuthorSmsNotifier&& other) noexcept = delete;
-
+	virtual ~AuthorSmsNotifier() = default;
 public:
-	virtual void NotifyAboutCreationOf(ArticlePtr const article) override;
+
+	void NotifyAboutCreationOf(Article const& article) const noexcept override final;
 };

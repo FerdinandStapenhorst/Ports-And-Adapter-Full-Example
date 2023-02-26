@@ -2,7 +2,7 @@
 #include "AuthorSmsNotifier.h"
 #include "ArticleSmsModel.h"
 
-void AuthorSmsNotifier::NotifyAboutCreationOf(ArticlePtr const article)
+void AuthorSmsNotifier::NotifyAboutCreationOf(Article const& article) const noexcept
 {
 	/**
 	 * SMS system integration implementation comes here

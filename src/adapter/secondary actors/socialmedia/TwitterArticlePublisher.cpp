@@ -4,11 +4,11 @@
 #include "TwitterClient.h"
 #include "ArticleTwitterModel.h"
 
-TwitterArticlePublisher::TwitterArticlePublisher(TwitterClientPtr const twitterClient) {
+TwitterArticlePublisher::TwitterArticlePublisher(ITwitterClientPtr const twitterClient) {
 	_TwitterClient = twitterClient;
 }
 
-void TwitterArticlePublisher::Publish(ArticlePtr const article)
+void TwitterArticlePublisher::Publish(Article const & article) const noexcept
 {
 	ArticleTwitterModel articleTweet = ArticleTwitterModel::Of(article);
 	_TwitterClient->Tweet(articleTweet);

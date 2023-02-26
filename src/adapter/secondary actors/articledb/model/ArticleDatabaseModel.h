@@ -2,24 +2,26 @@
 #include "pch.h"
 
 class ArticleModel {
+
 public:
 	ArticleModel(const ArticleModel& other) noexcept = delete;
+	virtual ~ArticleModel() = default;
 
 private:
 	friend class ArticleModelBuilder;
 
-	ArticleModel(String const& _Id, String const& title,
-		String const& _Content, String const& authorId,
+	ArticleModel(String const& id, String const& title,
+		String const& content, String const& authorId,
 		uint32_t const& version, String const& authorName);
 
 public:
 
-	String _Id;
-	String _Title;
-	String _Content;
-	uint32_t _Version;
-	String _AuthorId;
-	String _AuthorName;
+	String m_Id;
+	String m_Title;
+	String m_Content;
+	uint32_t m_Version;
+	String m_AuthorId;
+	String m_AuthorName;
 
 public:
 
@@ -27,7 +29,7 @@ public:
 
 	ArticlePtr ToDomain();
 
-	static ArticleModelPtr Of(AuthorPtr const author, String const& title, String const& _Content);
+	static ArticleModelPtr Of(Author const &author, String const& title, String const& content);
 
 #pragma region ArticleModelBuilder
 
@@ -37,12 +39,12 @@ public:
 	private:
 		friend class ArticleModel;
 
-		String _Id;
-		String _Title;
-		String _Content;
-		uint32_t _Version{ 0U };
-		String _AuthorId;
-		String _AuthorName;
+		String m_Id;
+		String m_Title;
+		String m_Content;
+		uint32_t m_Version{ 0U };
+		String m_AuthorId;
+		String m_AuthorName;
 
 		ArticleModelBuilder() noexcept = default;
 		ArticleModelBuilder(const ArticleModelBuilder& other) noexcept = default; //required
@@ -50,7 +52,7 @@ public:
 
 	public:
 
-		ArticleModelBuilder withId(String const& _Id);
+		ArticleModelBuilder withId(String const& id);
 
 		ArticleModelBuilder withTitle(String const& title);
 

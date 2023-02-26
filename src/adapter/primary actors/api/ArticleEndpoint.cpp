@@ -6,18 +6,18 @@
 #include "ArticleResponse.h"
 #include "ArticleRequest.h"
 
-ArticleEndpoint::ArticleEndpoint(ArticleFacadePtr const articles) :
-	_Articles{ articles }
+ArticleEndpoint::ArticleEndpoint(IArticleFacadePtr const articles) :
+	m_Articles{ articles }
 {}
 
-ArticleResponse ArticleEndpoint::Get(String const& articleId)
+ArticleResponse ArticleEndpoint::Get(String const& articleId) const noexcept
 {
 	std::cout << "ArticleEndpoint -> Get called" << std::endl;
-	return _Articles->Get(articleId);
+	return m_Articles->Get(articleId);
 }
 
-ArticleIdResponse ArticleEndpoint::Create(ArticleRequestPtr const articleRequest)
+ArticleIdResponse ArticleEndpoint::Create(ArticleRequestPtr articleRequest) noexcept
 {
 	std::cout << "ArticleEndpoint -> Create called" << std::endl;
-	return _Articles->Create(articleRequest);
+	return m_Articles->Create(articleRequest);
 }

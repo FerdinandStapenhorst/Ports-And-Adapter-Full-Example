@@ -3,5 +3,5 @@
 
 class IAuthorRepositoryPort {
 public:
-	virtual AuthorPtr Get(String const& authorId) = 0;
+	virtual [[nodiscard]] AuthorPtr Get(String const& authorId) const noexcept = 0;
 };

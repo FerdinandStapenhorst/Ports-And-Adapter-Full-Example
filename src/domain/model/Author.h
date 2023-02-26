@@ -2,39 +2,43 @@
 #include "pch.h"
 
 class Author {
-public:
 	friend class AuthorBuilder;
 
+public:
+
 	Author() noexcept = delete;
-	Author(const Author& other) noexcept = delete;
-	Author(Author&& other) noexcept = delete;
+	Author(const Author& other) noexcept = default;
+	Author(Author&& other) noexcept = default;
+	Author& operator =(Author const& other) noexcept = default;
+	virtual ~Author() = default;
 
 private:
-	String _Id;
-	String _Name;
+	
+	String m_Id;
+	String m_Name;
 
 	//Private constructor only used by friend class AuthorBuilder
-	Author(String const& _Id, String const& name);
+	Author(String const& id, String const& name);
 
 #pragma region AuthorBuilder
 public:
 
 	//Builder pattern https://refactoring.guru/design-patterns/builder
 	class AuthorBuilder {
-	public:
 		friend class Author;
 
+	public:
 		AuthorBuilder(AuthorBuilder&& other) noexcept = default; //required
 
 	private:
 		AuthorBuilder() noexcept = default;
 		AuthorBuilder(const AuthorBuilder& other) noexcept = default;//required
 
-		String _Id;
-		String  _Name;
+		String m_Id;
+		String m_Name;
 
 	public:
-		AuthorBuilder withId(String const& _Id);
+		AuthorBuilder withId(String const& id);
 		AuthorBuilder withName(String const& name);
 		AuthorPtr build();
 	};

@@ -7,20 +7,18 @@
 #include "ArticleService.h"
 #include "Article.h"
 
-ArticleFacade::ArticleFacade(ArticleServicePtr const articleService) :
-	_ArticleService{ articleService }
+ArticleFacade::ArticleFacade(IArticleServicePtr const articleService) :
+	m_ArticleService{ articleService }
 {}
 
-ArticleResponse ArticleFacade::Get(String const& articleId)
+ArticleResponse ArticleFacade::Get(String const& articleId) const noexcept
 {
-	std::cout << "ArticleFacade -> Get called" << std::endl;
-	ArticlePtr article = _ArticleService->Get(articleId);
+	ArticlePtr article = m_ArticleService->Get(articleId);
 	return ArticleResponse::Of(article);
 }
 
-ArticleIdResponse ArticleFacade::Create(ArticleRequestPtr articleRequest)
+ArticleIdResponse ArticleFacade::Create(ArticleRequestPtr articleRequest) noexcept
 {
-	std::cout << "ArticleFacade -> Create called" << std::endl;
-	String articleId = _ArticleService->Create(articleRequest->AuthorId(), articleRequest->Title(), articleRequest->Content());
+	String articleId = m_ArticleService->Create(articleRequest->AuthorId(), articleRequest->Title(), articleRequest->Content());
 	return ArticleIdResponse::Of(articleId);
 }

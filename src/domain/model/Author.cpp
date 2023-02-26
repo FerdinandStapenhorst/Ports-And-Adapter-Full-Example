@@ -3,14 +3,13 @@
 #include "Author.h"
 
 AuthorPtr Author::AuthorBuilder::build() {
-	Author* a = new Author(_Id, _Name);
-	std::cout << "AuthorBuilder.build called" << std::endl;
+	Author* a = new Author(m_Id, m_Name);
 	return std::shared_ptr<Author>(a);
 }
 
 Author::Author(String const& id, String const& name) {
-	_Id = id;
-	_Name = name;
+	m_Id = id;
+	m_Name = name;
 }
 
 Author::AuthorBuilder Author::Create() {
@@ -19,19 +18,19 @@ Author::AuthorBuilder Author::Create() {
 }
 
 String Author::Name() const {
-	return _Name;
+	return m_Name;
 }
 
 String Author::Id() const {
-	return _Id;
+	return m_Id;
 }
 
 Author::AuthorBuilder Author::AuthorBuilder::withId(String const& id) {
-	_Id = id;
+	m_Id = id;
 	return *this;
 }
 
 Author::AuthorBuilder Author::AuthorBuilder::withName(String const& name) {
-	_Name = name;
+	m_Name = name;
 	return *this;
 }

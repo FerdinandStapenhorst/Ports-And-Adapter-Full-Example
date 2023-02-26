@@ -4,28 +4,28 @@
 #include "Author.h"
 
 ArticleRequest::ArticleRequest(String const& title, String const& content, String const& authorId) :
-	_Title{ title },
-	_Content{ content },
-	_AuthorId{ authorId }
+	m_Title{ title },
+	m_Content{ content },
+	m_AuthorId{ authorId }
 {}
 
 ArticleRequest::ArticleRequest(ArticlePtr const article) :
-	_Title{ article->Title() },
-	_Content{ article->Content() },
-	_AuthorId{ article->Author()->Id() }
+	m_Title{ article->Title() },
+	m_Content{ article->Content() },
+	m_AuthorId{ article->GetAuthor().Id() }
 {}
 
 String ArticleRequest::Title() const
 {
-	return _Title;
+	return m_Title;
 }
 
 String ArticleRequest::Content() const
 {
-	return _Content;
+	return m_Content;
 }
 
 String ArticleRequest::AuthorId() const
 {
-	return _AuthorId;
+	return m_AuthorId;
 }

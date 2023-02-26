@@ -4,22 +4,22 @@
 #include "Author.h"
 #include "ArticleDatabaseModel.h"
 
-ArticlePtr DbArticleRepository::Save(AuthorPtr author, String const& title, String const& _Content)
+ArticlePtr DbArticleRepository::Save(Author const& author, String const& title, String const& content) noexcept
 {
 	/**
 	 * Database integration implementation comes here
 	 */
-	ArticleModelPtr entity = ArticleModel::Of(author, title, _Content);
+	ArticleModelPtr entity = ArticleModel::Of(author, title, content);
 	return entity->ToDomain();
 }
 
-ArticlePtr DbArticleRepository::Get(String const& _Id)
+ArticlePtr DbArticleRepository::Get(String const& id) const noexcept
 {
 	/**
 	 * Database integration implementation comes here
 	 */
 	ArticleModelPtr entity = ArticleModel::Create()
-		.withId(Tools::CreateGuid())
+		.withId(id)
 		.withAuthorName("Albert Einstein")
 		.withAuthorId("1")
 		.withTitle("Theory of relativity")

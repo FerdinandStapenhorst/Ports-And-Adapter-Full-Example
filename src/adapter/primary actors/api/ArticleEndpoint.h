@@ -1,18 +1,25 @@
 #pragma once
 #include "pch.h"
+#include "IArticleEndpoint.h"
 
-class ArticleEndpoint {
+
+class ArticleEndpoint : public IArticleEndpoint {
 public:
 	ArticleEndpoint(const ArticleEndpoint& other) noexcept = delete;
-	ArticleEndpoint(ArticleFacadePtr const articles);
+	ArticleEndpoint(IArticleFacadePtr const articles);
+	virtual ~ArticleEndpoint() = default;
 
 private:
-	ArticleFacadePtr _Articles;
+	IArticleFacadePtr m_Articles;
 
 public:
-	//@GetMapping("{articleId}")  @PathVariable("articleId")
-	ArticleResponse Get(String const& articleId);
 
+	#pragma region IArticleEndpoint
+
+	//@GetMapping("{articleId}")  @PathVariable("articleId")
+	ArticleResponse Get(String const& articleId) const noexcept override final;
 	//@PostMapping  @RequestBody
-	ArticleIdResponse Create(ArticleRequestPtr const articleRequest);
+	ArticleIdResponse Create(ArticleRequestPtr articleRequest)noexcept override final;
+
+	#pragma endregion
 };

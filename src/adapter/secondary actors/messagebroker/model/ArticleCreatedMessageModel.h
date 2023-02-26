@@ -6,16 +6,17 @@ class ArticleCreatedMessageModel {
 	friend class ArticleMessageBroker;
 
 public:
-	ArticleCreatedMessageModel(const ArticleCreatedMessageModel& other) noexcept = delete;
+	ArticleCreatedMessageModel(const ArticleCreatedMessageModel& other) noexcept = default;
+	virtual ~ArticleCreatedMessageModel() = default;
 
 private:
 	ArticleCreatedMessageModel(ArticleCreatedMessageModel&& other) noexcept = default;//required
-	ArticleCreatedMessageModel(ArticlePtr const article, String sentAt) : _Article{ article }, _SentAt{ sentAt } {}
+	ArticleCreatedMessageModel(Article const& article, String sentAt) : m_Article{ article }, m_SentAt{ sentAt } {}
 
-	ArticlePtr _Article;
-	String _SentAt;
+	Article m_Article;
+	String m_SentAt;
 
 public:
-	static ArticleCreatedMessageModel Of(ArticlePtr const article);
+	static ArticleCreatedMessageModel Of(Article const& article);
 	String ToString();
 };

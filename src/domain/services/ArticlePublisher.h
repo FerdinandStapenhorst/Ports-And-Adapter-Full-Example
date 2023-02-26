@@ -1,23 +1,29 @@
 #pragma once
 #include "pch.h"
+#include "IArticlePublisher.h"
 
-class ArticlePublisher {
+class ArticlePublisher : public IArticlePublisher {
 public:
 	ArticlePublisher() noexcept = delete;
 	ArticlePublisher(const ArticlePublisher& other) noexcept = delete;
 	ArticlePublisher(ArticlePublisher&& other) noexcept = delete;
+	virtual ~ArticlePublisher() = default;
 
-	ArticlePublisher(IArticleMessageSenderPortPtr _MessageSender,
-		std::vector<ISocialMediaPublisherPortPtr> _SocialMediaPublishers,
-		std::vector<IAuthorNotifierPortPtr> _ArticleAuthorNotifiers);
+	ArticlePublisher(IArticleMessageSenderPortPtr messageSender,
+		std::vector<ISocialMediaPublisherPortPtr> socialMediaPublishers,
+		std::vector<IAuthorNotifierPortPtr> articleAuthorNotifiers);
 
 private:
-	IArticleMessageSenderPortPtr _MessageSender;
-	std::vector<ISocialMediaPublisherPortPtr> _SocialMediaPublishers;
-	std::vector<IAuthorNotifierPortPtr> _ArticleAuthorNotifiers;
+	IArticleMessageSenderPortPtr m_MessageSender;
+	std::vector<ISocialMediaPublisherPortPtr> m_SocialMediaPublishers;
+	std::vector<IAuthorNotifierPortPtr> m_ArticleAuthorNotifiers;
 
 public:
-	void PublishCreationOf(ArticlePtr const article);
 
-	void PublishRetrievalOf(ArticlePtr const article);
+#pragma region IArticlePublisher
+
+	void PublishCreationOf(Article const& article) const noexcept override final;
+	void PublishRetrievalOf(Article const& article) const noexcept override final;
+
+#pragma endregion
 };

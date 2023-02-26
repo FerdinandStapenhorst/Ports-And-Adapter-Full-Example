@@ -4,19 +4,19 @@
 #include "Article.h"
 #include "Author.h"
 
-ArticleSmsModel::ArticleSmsModel(String const& recipientId, String const& _Text) :
-	_RecipientId{ recipientId },
-	_Text{ _Text }
+ArticleSmsModel::ArticleSmsModel(String const& recipientId, String const& text) :
+	m_RecipientId{ recipientId },
+	m_Text{ text }
 {}
 
-ArticleSmsModel ArticleSmsModel::Of(ArticlePtr const article)
+ArticleSmsModel ArticleSmsModel::Of(Article const& article)
 {
-	ArticleSmsModel a(article->Author()->Name(),
-		std::format(CONTENT, article->Title()));
+	ArticleSmsModel a(article.GetAuthor().Name(),
+		std::format(CONTENT, article.Title()));
 	return a;
 }
 
 String ArticleSmsModel::ToString()
 {
-	return _Text;
+	return m_Text;
 }

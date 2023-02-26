@@ -7,13 +7,13 @@ public:
 	ArticleTwitterModel(const ArticleTwitterModel& other) noexcept = default;//required
 
 	static constexpr const char* TWEET = "Check out the new article >>{}<< by {}";
-	String _TwitterAccountId;
-	String _Tweet;
+	String m_TwitterAccountId;
+	String m_Tweet;
 
 private:
 	ArticleTwitterModel(String const& twitterAccountId, String const& tweet);
 
 public:
-	static ArticleTwitterModel Of(ArticlePtr const article);
+	static ArticleTwitterModel Of(Article const& article);
 	String ToString() const;
 };

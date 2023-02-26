@@ -21,10 +21,10 @@
 #include "ArticleIdResponse.h"
 #include "ArticleResponse.h"
 
-ArticlePublisherPtr CreateArticlePublisher()
+IArticlePublisherPtr CreateArticlePublisher()
 {
 	//TwitterClient
-	TwitterClientPtr twitterClient = CreateInstance(new TwitterClient);
+	ITwitterClientPtr twitterClient = CreateInstance(new TwitterClient);
 
 	//Social Media Publisher
 	ISocialMediaPublisherPortPtr socialMediaPublisher = CreateInstance(new TwitterArticlePublisher(twitterClient));
@@ -47,7 +47,7 @@ ArticlePublisherPtr CreateArticlePublisher()
 	return CreateInstance(new ArticlePublisher(articleMessageSender, socialMediaPublisherList, authorMailNotifierList));
 }
 
-ArticleServicePtr CreateArticleService() {
+IArticleServicePtr CreateArticleService() {
 	//Article repo
 	IArticleRepositoryPortPtr articleRepo = CreateInstance(new DbArticleRepository);
 	//Author Repo
@@ -56,18 +56,18 @@ ArticleServicePtr CreateArticleService() {
 	return  CreateInstance(new ArticleService(articleRepo, authorRepo, CreateArticlePublisher()));
 }
 
-ArticleEndpointPtr CreateArticleEndpoint()
+IArticleEndpointPtr CreateArticleEndpoint()
 {
-	ArticleFacadePtr articleFacade = CreateInstance(new ArticleFacade(CreateArticleService()));
+	IArticleFacadePtr articleFacade = CreateInstance(new ArticleFacade(CreateArticleService()));
 	return CreateInstance(new ArticleEndpoint(articleFacade));
 }
 
 int main()
 {
 	//Simulate incoming request from endpoint to get an article
-	ArticleEndpointPtr articleEndpoint = CreateArticleEndpoint();
-	ArticleResponse article = articleEndpoint->Get("*");
+	IArticleEndpointPtr articleEndpoint = CreateArticleEndpoint();
 
+	ArticleResponse article = articleEndpoint->Get("*");
 
 	auto author = Author::Create()
 		.withId("2")
@@ -76,15 +76,16 @@ int main()
 
 	//Create a new article
 	auto articleNew = Article::Create()
-		.withAuthor(author)
+		.withAuthor(*author)
 		.withTitle(article.Title())
 		.withId(article.Id())
 		.withContent(article.Content())
 		.build();
+
 	//Create request
 	ArticleRequestPtr articleRequest = CreateInstance(new ArticleRequest(articleNew));
 
-	//simulate sending requerst to endpoint to create a new article 
+	//simulate sending requerst to endpoint to create a new article
 	auto articleIdResponse = articleEndpoint->Create(articleRequest);
 
 	return 0;

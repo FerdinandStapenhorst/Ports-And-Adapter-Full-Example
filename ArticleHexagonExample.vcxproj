@@ -51,6 +51,8 @@
   <ItemGroup>
     <ClInclude Include="src\adapter\primary actors\api\ArticleEndpoint.h" />
     <ClInclude Include="src\adapter\primary actors\api\ArticleFacade.h" />
+    <ClInclude Include="src\adapter\primary actors\api\IArticleEndpoint.h" />
+    <ClInclude Include="src\adapter\primary actors\api\IArticleFacade.h" />
     <ClInclude Include="src\adapter\primary actors\api\model\ArticleIdResponse.h" />
     <ClInclude Include="src\adapter\primary actors\api\model\ArticleRequest.h" />
     <ClInclude Include="src\adapter\primary actors\api\model\ArticleResponse.h" />
@@ -65,6 +67,7 @@
     <ClInclude Include="src\adapter\secondary actors\notifications\AuthorSmsNotifier.h" />
     <ClInclude Include="src\adapter\secondary actors\notifications\model\ArticleMailModel.h" />
     <ClInclude Include="src\adapter\secondary actors\notifications\model\ArticleSmsModel.h" />
+    <ClInclude Include="src\adapter\secondary actors\socialmedia\ITwitterClient.h" />
     <ClInclude Include="src\adapter\secondary actors\socialmedia\model\ArticleTwitterModel.h" />
     <ClInclude Include="src\adapter\secondary actors\socialmedia\TwitterArticlePublisher.h" />
     <ClInclude Include="src\adapter\secondary actors\socialmedia\TwitterClient.h" />
@@ -77,6 +80,7 @@
     <ClInclude Include="src\domain\ports\ISocialMediaPublisherPort.h" />
     <ClInclude Include="src\domain\services\ArticlePublisher.h" />
     <ClInclude Include="src\domain\services\ArticleService.h" />
+    <ClInclude Include="src\domain\services\IArticlePublisher.h" />
     <ClInclude Include="src\pch\pch.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -105,6 +109,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <EnableASAN>true</EnableASAN>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -167,13 +172,18 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+      <TreatAngleIncludeAsExternal>true</TreatAngleIncludeAsExternal>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <AdditionalOptions>/w14640 /w14254 /w14263 /w14265 /w14287 /we4289 /w14296 /w14311 /w14545 /w14546 /w14547 /w14549 /w14555 /w14619  /w14640 /w14826 /w14905 /w14906 /w14928 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -182,7 +192,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
@@ -190,6 +200,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

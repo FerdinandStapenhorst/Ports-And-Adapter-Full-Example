@@ -4,11 +4,19 @@
 
 class TwitterArticlePublisher : public ISocialMediaPublisherPort {
 public:
+	TwitterArticlePublisher() noexcept = delete;
 	TwitterArticlePublisher(const TwitterArticlePublisher& other) noexcept = delete;
-	TwitterArticlePublisher(TwitterClientPtr const twitterClient);
+	TwitterArticlePublisher(TwitterArticlePublisher&& other) noexcept = delete;
+	TwitterArticlePublisher(ITwitterClientPtr const twitterClient);
+	virtual ~TwitterArticlePublisher() = default;
 
 private:
-	TwitterClientPtr _TwitterClient;
+	ITwitterClientPtr _TwitterClient;
 
-	virtual void Publish(ArticlePtr const article) override;
+	#pragma region ISocialMediaPublisherPort
+
+	void Publish(Article const& article) const noexcept override final;
+
+	#pragma endregion
+
 };

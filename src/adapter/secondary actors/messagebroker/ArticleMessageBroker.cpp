@@ -4,7 +4,7 @@
 #include "ArticleRetrievedMessageModel.h"
 #include "ArticleCreatedMessageModel.h"
 
-void ArticleMessageBroker::SendMessageForCreated(ArticlePtr const article)
+void ArticleMessageBroker::SendMessageForCreated(Article const& article) const noexcept
 {
 	/**
 	 * message broker integration implementation comes here
@@ -13,7 +13,7 @@ void ArticleMessageBroker::SendMessageForCreated(ArticlePtr const article)
 	std::cout << "Article Message Broker: Send created event " << m.ToString() << std::endl;
 }
 
-void ArticleMessageBroker::SendMessageForRetrieved(ArticlePtr const article)
+void ArticleMessageBroker::SendMessageForRetrieved(Article const& article) const noexcept
 {
 	/**
 	 * message broker integration implementation comes here

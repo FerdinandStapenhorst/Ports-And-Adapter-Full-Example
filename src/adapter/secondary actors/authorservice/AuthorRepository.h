@@ -7,7 +7,12 @@ public:
 	AuthorRepository() noexcept = default;
 	AuthorRepository(const AuthorRepository& other) noexcept = delete;
 	AuthorRepository(AuthorRepository&& other) noexcept = delete;
+	virtual ~AuthorRepository() = default;
 
 public:
-	AuthorPtr Get(String const& authorId);
+	#pragma region IAuthorRepositoryPort
+
+	[[nodiscard]] AuthorPtr Get(String const& authorId) const noexcept override final;
+
+	#pragma endregion
 };

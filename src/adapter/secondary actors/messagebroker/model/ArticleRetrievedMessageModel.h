@@ -5,18 +5,19 @@
 class ArticleRetrievedMessageModel {
 	friend class ArticleMessageBroker;
 public:
-	ArticleRetrievedMessageModel(const ArticleRetrievedMessageModel& other) noexcept = delete;
+	ArticleRetrievedMessageModel(const ArticleRetrievedMessageModel& other) noexcept = default;
+	virtual ~ArticleRetrievedMessageModel() = default;
 
 private:
 	ArticleRetrievedMessageModel(ArticleRetrievedMessageModel&& other) noexcept = default; //required
 
-	ArticleRetrievedMessageModel(ArticlePtr const article, String const& sentAt);
+	ArticleRetrievedMessageModel(Article const& article, String const& sentAt);
 
-	ArticlePtr _Article;
-	String _SentAt;
+	Article m_Article;
+	String m_SentAt;
 
 public:
-	static ArticleRetrievedMessageModel Of(ArticlePtr const article);
+	static ArticleRetrievedMessageModel Of(Article const& article);
 
 	String ToString();
 };

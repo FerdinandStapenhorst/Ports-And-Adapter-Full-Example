@@ -3,7 +3,7 @@
 #include "TwitterClient.h"
 #include "ArticleTwitterModel.h"
 
-void TwitterClient::Tweet(ArticleTwitterModel const articleTweet)
+void TwitterClient::Tweet(ArticleTwitterModel const articleTweet) const noexcept
 {
 	/**
 	 * social media integration implementation comes here

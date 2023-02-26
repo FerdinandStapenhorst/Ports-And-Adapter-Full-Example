@@ -1,49 +1,55 @@
 #pragma once
 #include "pch.h"
+#include "Author.h"
 
 class Article {
-public:
 	friend class ArticleBuilder;
 
+public:
 	Article() noexcept = delete;
-	Article(const Article& other) noexcept = delete;
-	Article(Article&& other) noexcept = delete;
+	Article(const Article& other) noexcept = default;
+	Article(Article&& other) noexcept = default;
+	virtual ~Article() = default;
 
 private:
-	String _Id;
-	String _Title;
-	String _Content;
-	AuthorPtr _Author;
 
+	String m_Id;
+	String m_Title;
+	String m_Content;
+	Author m_Author;
+
+	
 	//Private constructor only used by friend class ArticleBuilder
-	Article(String const& _Id, String const& title, String const& _Content, AuthorPtr author);
+	Article(String const& id, String const& title, String const& content, Author const& author);
 
 #pragma region ArticleBuilder
 	//Builder pattern https://refactoring.guru/design-patterns/builder
 public:
 	class ArticleBuilder {
-	public:
 		friend class Article;
 
 	private:
-		String _Id;
-		String _Title;
-		String _Content;
-		AuthorPtr _Author;
 		ArticleBuilder() noexcept = default;
+
+		String m_Id;
+		String m_Title;
+		String m_Content;
+		Author const* m_Author{ nullptr };
+
+		
 		ArticleBuilder(const ArticleBuilder& other) noexcept = default; //required
 		ArticleBuilder(ArticleBuilder&& other) noexcept = default; //required
 
 	public:
-		ArticleBuilder withId(String const& _Id);
+		ArticleBuilder withId(String const& id);
 
 		ArticleBuilder withTitle(String const& title);
 
-		ArticleBuilder withContent(String const& _Content);
+		ArticleBuilder withContent(String const& content);
 
-		ArticleBuilder withAuthor(AuthorPtr author);
+		ArticleBuilder withAuthor(Author const& author);
 
-		std::shared_ptr<Article> build();
+	 	ArticlePtr build();
 	};
 
 #pragma endregion
@@ -60,7 +66,7 @@ public:
 
 	String Content() const;
 
-	AuthorPtr Author() const;
+	Author GetAuthor() const;
 
 private:
 	void checkGrammar();
