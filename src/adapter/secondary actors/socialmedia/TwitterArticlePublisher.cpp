@@ -4,7 +4,7 @@
 #include "TwitterClient.h"
 #include "ArticleTwitterModel.h"
 
-TwitterArticlePublisher::TwitterArticlePublisher(ITwitterClientPtr const twitterClient) {
+TwitterArticlePublisher::TwitterArticlePublisher(ITwitterClientPtr twitterClient) {
 	_TwitterClient = twitterClient;
 }
 

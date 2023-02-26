@@ -6,7 +6,7 @@
 #include "ArticleResponse.h"
 #include "ArticleRequest.h"
 
-ArticleEndpoint::ArticleEndpoint(IArticleFacadePtr const articles) :
+ArticleEndpoint::ArticleEndpoint(IArticleFacadePtr articles) :
 	m_Articles{ articles }
 {}
 

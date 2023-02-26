@@ -9,7 +9,7 @@ ArticleRequest::ArticleRequest(String const& title, String const& content, Strin
 	m_AuthorId{ authorId }
 {}
 
-ArticleRequest::ArticleRequest(ArticlePtr const article) :
+ArticleRequest::ArticleRequest(ArticlePtr article) :
 	m_Title{ article->Title() },
 	m_Content{ article->Content() },
 	m_AuthorId{ article->GetAuthor().Id() }

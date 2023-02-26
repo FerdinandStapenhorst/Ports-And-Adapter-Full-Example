@@ -11,7 +11,7 @@ ArticleResponse::ArticleResponse(String const& id, String  const& title, String 
 	m_AuthorName = authorName;
 }
 
-ArticleResponse ArticleResponse::Of(ArticlePtr const article)
+ArticleResponse ArticleResponse::Of(ArticlePtr article)
 {
 	ArticleResponse a(article->Id(),
 		article->Title(),

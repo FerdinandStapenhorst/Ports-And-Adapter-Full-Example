@@ -13,7 +13,7 @@ private:
 public:
 	//JsonProperty("title")   @JsonProperty("content")   @JsonProperty("authorId")
 	ArticleRequest(String const& title, String const& content, String const& authorId);
-	ArticleRequest(ArticlePtr const article);
+	ArticleRequest(ArticlePtr article);
 
 	String Title() const;
 

@@ -18,7 +18,7 @@ private:
 
 
 public:
-	static ArticleResponse Of(ArticlePtr const article);
+	static ArticleResponse Of(ArticlePtr article);
 
 	//@JsonProperty("id")
 	String Id() const;

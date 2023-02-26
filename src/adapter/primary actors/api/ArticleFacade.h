@@ -6,7 +6,7 @@
 class ArticleFacade : public IArticleFacade {
 public:
 	ArticleFacade(const ArticleFacade& other) noexcept = delete;
-	ArticleFacade(IArticleServicePtr const articleService);
+	ArticleFacade(IArticleServicePtr articleService);
 	virtual ~ArticleFacade() = default;
 
 private:

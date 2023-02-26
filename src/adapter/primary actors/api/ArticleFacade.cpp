@@ -7,7 +7,7 @@
 #include "ArticleService.h"
 #include "Article.h"
 
-ArticleFacade::ArticleFacade(IArticleServicePtr const articleService) :
+ArticleFacade::ArticleFacade(IArticleServicePtr articleService) :
 	m_ArticleService{ articleService }
 {}
 

@@ -7,7 +7,7 @@ public:
 	TwitterArticlePublisher() noexcept = delete;
 	TwitterArticlePublisher(const TwitterArticlePublisher& other) noexcept = delete;
 	TwitterArticlePublisher(TwitterArticlePublisher&& other) noexcept = delete;
-	TwitterArticlePublisher(ITwitterClientPtr const twitterClient);
+	TwitterArticlePublisher(ITwitterClientPtr twitterClient);
 	virtual ~TwitterArticlePublisher() = default;
 
 private:

@@ -6,7 +6,7 @@
 class ArticleEndpoint : public IArticleEndpoint {
 public:
 	ArticleEndpoint(const ArticleEndpoint& other) noexcept = delete;
-	ArticleEndpoint(IArticleFacadePtr const articles);
+	ArticleEndpoint(IArticleFacadePtr articles);
 	virtual ~ArticleEndpoint() = default;
 
 private:
