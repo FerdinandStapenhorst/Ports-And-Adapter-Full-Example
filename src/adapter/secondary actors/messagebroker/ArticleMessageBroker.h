@@ -8,7 +8,9 @@ public:
 	ArticleMessageBroker() noexcept = default; //required
 	ArticleMessageBroker(const ArticleMessageBroker& other) noexcept = delete;
 	ArticleMessageBroker(ArticleMessageBroker&& other) noexcept = delete;
-	virtual ~ArticleMessageBroker() = default;
+	virtual ~ArticleMessageBroker() {
+		std::cout << "~ArticleMessageBroker" << std::endl;
+	}
 
 public:
 

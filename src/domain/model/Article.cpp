@@ -66,9 +66,9 @@ Article::ArticleBuilder Article::Create() {
 #pragma region ArticleBuilder
 
 
-std::shared_ptr<Article> Article::ArticleBuilder::build() {
+ArticlePtr Article::ArticleBuilder::build() {
 	Article* a = new Article(m_Id, m_Title, m_Content, *m_Author);
-	return std::shared_ptr<Article>(a);
+	return ArticlePtr(a);
 }
 
 Article::ArticleBuilder Article::ArticleBuilder::withId(String const& id) {

@@ -6,7 +6,9 @@ public:
 	ArticleMailModel() noexcept = delete;
 	ArticleMailModel(const ArticleMailModel& other) noexcept = delete;
 	ArticleMailModel(ArticleMailModel&& other) noexcept = default; //required
-	virtual ~ArticleMailModel() = default;
+	virtual ~ArticleMailModel() {
+		std::cout << "~ArticleMailModel" << std::endl;
+	}
 
 private:
 	friend class AuthorMailNotifier;

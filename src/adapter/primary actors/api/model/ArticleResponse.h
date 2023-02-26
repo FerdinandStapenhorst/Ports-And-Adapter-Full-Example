@@ -6,6 +6,9 @@ public:
 	ArticleResponse() noexcept = delete;
 	ArticleResponse(const ArticleResponse& other) noexcept = default;
 	ArticleResponse(ArticleResponse&& other) noexcept = default;
+	virtual ~ArticleResponse() {
+		std::cout << "~ArticleResponse" << std::endl;
+	}
 
 private:
 	ArticleResponse(String const& id, String const& title, String const& content, String const& authorName);

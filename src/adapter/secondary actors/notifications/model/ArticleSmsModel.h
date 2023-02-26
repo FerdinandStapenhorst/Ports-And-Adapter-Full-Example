@@ -7,7 +7,9 @@ public:
 	ArticleSmsModel() noexcept = delete;
 	ArticleSmsModel(const ArticleSmsModel& other) noexcept = delete;
 	ArticleSmsModel(ArticleSmsModel&& other) noexcept = default; //required
-	virtual ~ArticleSmsModel() = default;
+	virtual ~ArticleSmsModel() {
+		std::cout << "~ArticleSmsModel" << std::endl;
+	}
 
 private:
 	friend class AuthorSmsNotifier;

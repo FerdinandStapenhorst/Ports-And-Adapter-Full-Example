@@ -10,7 +10,9 @@ public:
 	Author(const Author& other) noexcept = default;
 	Author(Author&& other) noexcept = default;
 	Author& operator =(Author const& other) noexcept = default;
-	virtual ~Author() = default;
+	virtual ~Author() {
+		std::cout << "~Author" << std::endl;
+	}
 
 private:
 	

@@ -51,5 +51,5 @@ AuthorExternalModel::AuthorExternalModelBuilder AuthorExternalModel::AuthorExter
 
 AuthorExternalModelPtr AuthorExternalModel::AuthorExternalModelBuilder::build() {
 	AuthorExternalModel* a = new AuthorExternalModel(m_Id, m_FirstName, m_LastName);
-	return std::shared_ptr<AuthorExternalModel>(a);
+	return AuthorExternalModelPtr(a);
 }

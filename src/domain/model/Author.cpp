@@ -4,7 +4,7 @@
 
 AuthorPtr Author::AuthorBuilder::build() {
 	Author* a = new Author(m_Id, m_Name);
-	return std::shared_ptr<Author>(a);
+	return AuthorPtr(a);
 }
 
 Author::Author(String const& id, String const& name) {

@@ -81,6 +81,7 @@
     <ClInclude Include="src\domain\services\ArticlePublisher.h" />
     <ClInclude Include="src\domain\services\ArticleService.h" />
     <ClInclude Include="src\domain\services\IArticlePublisher.h" />
+    <ClInclude Include="src\domain\services\IArticleService.h" />
     <ClInclude Include="src\pch\pch.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

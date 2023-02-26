@@ -6,7 +6,9 @@ class DbArticleRepository : public IArticleRepositoryPort {
 public:
 	DbArticleRepository() noexcept = default;
 	DbArticleRepository(const DbArticleRepository& other) noexcept = delete;
-	virtual ~DbArticleRepository() = default;
+	virtual ~DbArticleRepository() {
+		std::cout << "~DbArticleRepository" << std::endl;
+	}
 
 public:
 

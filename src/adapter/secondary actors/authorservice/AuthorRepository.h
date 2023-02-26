@@ -5,9 +5,11 @@
 class AuthorRepository : public IAuthorRepositoryPort {
 public:
 	AuthorRepository() noexcept = default;
-	AuthorRepository(const AuthorRepository& other) noexcept = delete;
-	AuthorRepository(AuthorRepository&& other) noexcept = delete;
-	virtual ~AuthorRepository() = default;
+	AuthorRepository(const AuthorRepository& other) noexcept = default;
+	AuthorRepository(AuthorRepository&& other) noexcept = default;
+	virtual ~AuthorRepository() {
+		std::cout << "~AuthorRepository" << std::endl;
+	}
 
 public:
 	#pragma region IAuthorRepositoryPort

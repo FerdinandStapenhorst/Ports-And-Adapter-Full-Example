@@ -8,7 +8,10 @@ public:
 	TwitterArticlePublisher(const TwitterArticlePublisher& other) noexcept = delete;
 	TwitterArticlePublisher(TwitterArticlePublisher&& other) noexcept = delete;
 	TwitterArticlePublisher(ITwitterClientPtr twitterClient);
-	virtual ~TwitterArticlePublisher() = default;
+
+	virtual ~TwitterArticlePublisher() {
+		std::cout << "~TwitterArticlePublisher" << std::endl;
+	}
 
 private:
 	ITwitterClientPtr _TwitterClient;

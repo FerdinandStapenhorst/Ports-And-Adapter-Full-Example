@@ -41,43 +41,32 @@ class IArticleEndpoint;
 using String = std::string;
 
 //Models
-using AuthorPtr = std::shared_ptr<Author>;
-using ArticlePtr = std::shared_ptr<Article>;
-
+using AuthorPtr						= std::unique_ptr<Author>;
+using ArticlePtr					= std::unique_ptr<Article>;
 //Service
-using IArticlePublisherPtr = std::shared_ptr<IArticlePublisher>;
-using IArticleServicePtr = std::shared_ptr<IArticleService>;
+using IArticlePublisherPtr			= std::unique_ptr<IArticlePublisher>;
+using IArticleServicePtr			= std::unique_ptr<IArticleService>;
 //Facade
-using IArticleFacadePtr = std::shared_ptr<IArticleFacade>;
-
+using IArticleFacadePtr				= std::unique_ptr<IArticleFacade>;
 //Pointer to the secondary ports
-using IArticleRepositoryPortPtr = std::shared_ptr<IArticleRepositoryPort>;
-using IAuthorRepositoryPortPtr = std::shared_ptr<IAuthorRepositoryPort>;
-using IArticleMessageSenderPortPtr = std::shared_ptr<IArticleMessageSenderPort>;
-using ISocialMediaPublisherPortPtr = std::shared_ptr<ISocialMediaPublisherPort>;
-using IAuthorNotifierPortPtr = std::shared_ptr<IAuthorNotifierPort>;
-
+using IArticleRepositoryPortPtr		= std::unique_ptr<IArticleRepositoryPort>;
+using IAuthorRepositoryPortPtr		= std::unique_ptr<IAuthorRepositoryPort>;
+using IArticleMessageSenderPortPtr	= std::unique_ptr<IArticleMessageSenderPort>;
+using ISocialMediaPublisherPortPtr	= std::unique_ptr<ISocialMediaPublisherPort>;
+using IAuthorNotifierPortPtr		= std::unique_ptr<IAuthorNotifierPort>;
 //Database Adapter model
-using ArticleModelPtr = std::shared_ptr<ArticleModel>;
-
+using ArticleModelPtr				= std::unique_ptr<ArticleModel>;
 //Author service model
-using AuthorExternalModelPtr = std::shared_ptr<AuthorExternalModel>;
-
+using AuthorExternalModelPtr		= std::unique_ptr<AuthorExternalModel>;
 //Social media Adapter
-using ITwitterClientPtr = std::shared_ptr<ITwitterClient>;
-
+using ITwitterClientPtr				= std::unique_ptr<ITwitterClient>;
 //API models
-using ArticleRequestPtr = std::shared_ptr<ArticleRequest>;
-using ArticleResponsePtr = std::shared_ptr<ArticleResponse>;
+using ArticleRequestPtr				= std::unique_ptr<ArticleRequest>;
+using ArticleResponsePtr			= std::unique_ptr<ArticleResponse>;
 //API Endpoint 
-using IArticleEndpointPtr = std::shared_ptr<IArticleEndpoint>;
+using IArticleEndpointPtr			= std::unique_ptr<IArticleEndpoint>;
 
 //Create instance helper
-template <typename T>
-std::shared_ptr<T> CreateInstance(T* p) {
-	return std::shared_ptr<T>(p);
-}
-
 template <typename T>
 std::unique_ptr<T> CreateUniqueInstance(T* p) {
 	return std::unique_ptr<T>(p);

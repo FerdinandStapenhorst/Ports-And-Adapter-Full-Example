@@ -9,9 +9,9 @@
 
 ArticleService::ArticleService(IArticleRepositoryPortPtr articleRepository,
 	IAuthorRepositoryPortPtr authorRepository, IArticlePublisherPtr eventPublisher) :
-	m_ArticleRepository{ articleRepository },
-	m_AuthorRepository{ authorRepository },
-	m_EventPublisher{ eventPublisher }
+	m_ArticleRepository{ std::move(articleRepository) },
+	m_AuthorRepository{ std::move(authorRepository) },
+	m_EventPublisher{ std::move(eventPublisher) }
 {
 }
 

@@ -2,6 +2,7 @@
 #include "pch.h"
 #include "AuthorRepository.h"
 #include "AuthorExternalModel.h"
+#include "Author.h"
 
 AuthorPtr AuthorRepository::Get(String const& authorId) const noexcept
 {

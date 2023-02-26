@@ -237,5 +237,8 @@
     <ClInclude Include="src\adapter\primary actors\api\IArticleFacade.h">
       <Filter>adapter\primary actors\api</Filter>
     </ClInclude>
+    <ClInclude Include="src\domain\services\IArticleService.h">
+      <Filter>domain\services</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

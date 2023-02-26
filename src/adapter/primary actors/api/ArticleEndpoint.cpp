@@ -7,7 +7,7 @@
 #include "ArticleRequest.h"
 
 ArticleEndpoint::ArticleEndpoint(IArticleFacadePtr articles) :
-	m_Articles{ articles }
+	m_Articles{ std::move(articles) }
 {}
 
 ArticleResponse ArticleEndpoint::Get(String const& articleId) const noexcept
@@ -19,5 +19,5 @@ ArticleResponse ArticleEndpoint::Get(String const& articleId) const noexcept
 ArticleIdResponse ArticleEndpoint::Create(ArticleRequestPtr articleRequest) noexcept
 {
 	std::cout << "ArticleEndpoint -> Create called" << std::endl;
-	return m_Articles->Create(articleRequest);
+	return m_Articles->Create(std::move(articleRequest));
 }

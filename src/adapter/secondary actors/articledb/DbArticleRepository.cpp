@@ -2,6 +2,7 @@
 #include "pch.h"
 #include "DbArticleRepository.h"
 #include "Author.h"
+#include "Article.h"
 #include "ArticleDatabaseModel.h"
 
 ArticlePtr DbArticleRepository::Save(Author const& author, String const& title, String const& content) noexcept

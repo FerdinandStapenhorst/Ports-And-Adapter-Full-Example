@@ -9,7 +9,9 @@ public:
 	Article() noexcept = delete;
 	Article(const Article& other) noexcept = default;
 	Article(Article&& other) noexcept = default;
-	virtual ~Article() = default;
+	virtual ~Article() {
+		std::cout << "~Article" << std::endl;
+	}
 
 private:
 

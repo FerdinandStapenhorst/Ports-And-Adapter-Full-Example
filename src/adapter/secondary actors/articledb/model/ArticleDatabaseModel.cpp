@@ -83,8 +83,8 @@ ArticleModel::ArticleModelBuilder ArticleModel::ArticleModelBuilder::withAuthorN
 	return *this;
 }
 
-std::shared_ptr<ArticleModel> ArticleModel::ArticleModelBuilder::build()
+ArticleModelPtr ArticleModel::ArticleModelBuilder::build()
 {
 	ArticleModel* a = new ArticleModel(m_Id, m_Title, m_Content, m_AuthorId, m_Version, m_AuthorName);
-	return std::shared_ptr<ArticleModel>(a);
+	return ArticleModelPtr(a);
 }

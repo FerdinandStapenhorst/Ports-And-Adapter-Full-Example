@@ -8,6 +8,9 @@ public:
 	AuthorExternalModel() noexcept = delete;
 	AuthorExternalModel(const AuthorExternalModel& other) noexcept = delete;
 	AuthorExternalModel(AuthorExternalModel&& other) noexcept = delete;
+	virtual ~AuthorExternalModel() {
+		std::cout << "~AuthorExternalModel" << std::endl;
+	}
 
 private:
 	AuthorExternalModel(String const& id, String const& firstName, String const& lastName);

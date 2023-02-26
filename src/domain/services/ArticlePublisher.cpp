@@ -6,12 +6,12 @@
 #include "ISocialMediaPublisherPort.h"
 #include "IAuthorNotifierPort.h"
 
-ArticlePublisher::ArticlePublisher(IArticleMessageSenderPortPtr _MessageSender,
-	std::vector<ISocialMediaPublisherPortPtr> _SocialMediaPublishers,
-	std::vector<IAuthorNotifierPortPtr> _ArticleAuthorNotifiers) :
-	m_MessageSender{ _MessageSender },
-	m_SocialMediaPublishers{ _SocialMediaPublishers },
-	m_ArticleAuthorNotifiers{ _ArticleAuthorNotifiers }
+ArticlePublisher::ArticlePublisher(IArticleMessageSenderPortPtr messageSender,
+	std::vector<ISocialMediaPublisherPortPtr> socialMediaPublishers,
+	std::vector<IAuthorNotifierPortPtr> articleAuthorNotifiers) :
+	m_MessageSender{ std::move(messageSender) },
+	m_SocialMediaPublishers{ std::move(socialMediaPublishers) },
+	m_ArticleAuthorNotifiers{ std::move(articleAuthorNotifiers) }
 {
 }
 

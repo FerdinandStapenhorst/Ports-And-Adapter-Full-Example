@@ -6,8 +6,11 @@
 class ArticleEndpoint : public IArticleEndpoint {
 public:
 	ArticleEndpoint(const ArticleEndpoint& other) noexcept = delete;
+	ArticleEndpoint(ArticleEndpoint&& other) noexcept = default;
 	ArticleEndpoint(IArticleFacadePtr articles);
-	virtual ~ArticleEndpoint() = default;
+	virtual ~ArticleEndpoint() {
+		std::cout << "~ArticleEndpoint" << std::endl;
+	}
 
 private:
 	IArticleFacadePtr m_Articles;

@@ -8,13 +8,13 @@
 #include "Article.h"
 
 ArticleFacade::ArticleFacade(IArticleServicePtr articleService) :
-	m_ArticleService{ articleService }
+	m_ArticleService{ std::move(articleService) }
 {}
 
 ArticleResponse ArticleFacade::Get(String const& articleId) const noexcept
 {
 	ArticlePtr article = m_ArticleService->Get(articleId);
-	return ArticleResponse::Of(article);
+	return ArticleResponse::Of(std::move(article));
 }
 
 ArticleIdResponse ArticleFacade::Create(ArticleRequestPtr articleRequest) noexcept

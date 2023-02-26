@@ -4,6 +4,9 @@
 class ArticleRequest {
 public:
 	ArticleRequest(const ArticleRequest& other) noexcept = delete;
+	virtual ~ArticleRequest() {
+		std::cout << "~ArticleRequest" << std::endl;
+	}
 
 private:
 	String m_Title;

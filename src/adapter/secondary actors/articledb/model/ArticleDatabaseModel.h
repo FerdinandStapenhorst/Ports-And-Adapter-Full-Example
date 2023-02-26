@@ -5,7 +5,9 @@ class ArticleModel {
 
 public:
 	ArticleModel(const ArticleModel& other) noexcept = delete;
-	virtual ~ArticleModel() = default;
+	virtual ~ArticleModel() {
+		std::cout << "~ArticleModel" << std::endl;
+	}
 
 private:
 	friend class ArticleModelBuilder;

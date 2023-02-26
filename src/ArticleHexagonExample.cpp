@@ -24,42 +24,44 @@
 IArticlePublisherPtr CreateArticlePublisher()
 {
 	//TwitterClient
-	ITwitterClientPtr twitterClient = CreateInstance(new TwitterClient);
+	ITwitterClientPtr twitterClient = CreateUniqueInstance(new TwitterClient);
 
 	//Social Media Publisher
-	ISocialMediaPublisherPortPtr socialMediaPublisher = CreateInstance(new TwitterArticlePublisher(twitterClient));
+	ISocialMediaPublisherPortPtr socialMediaPublisher = CreateUniqueInstance(new TwitterArticlePublisher(std::move(twitterClient)));
 	std::vector<ISocialMediaPublisherPortPtr> socialMediaPublisherList;
-	socialMediaPublisherList.push_back(socialMediaPublisher);
+	socialMediaPublisherList.push_back(std::move(socialMediaPublisher));
 
 	//Author SMS notifier
-	IAuthorNotifierPortPtr authorSmSNotifier = CreateInstance(new AuthorSmsNotifier);
+	IAuthorNotifierPortPtr authorSmSNotifier = CreateUniqueInstance(new AuthorSmsNotifier);
 
 	//Author E-Mail notifier list
-	IAuthorNotifierPortPtr authorMailNotifier = CreateInstance(new AuthorMailNotifier);
+	IAuthorNotifierPortPtr authorMailNotifier = CreateUniqueInstance(new AuthorMailNotifier);
 	std::vector<IAuthorNotifierPortPtr> authorMailNotifierList;
-	authorMailNotifierList.push_back(authorSmSNotifier);
-	authorMailNotifierList.push_back(authorMailNotifier);
+	authorMailNotifierList.push_back(std::move(authorSmSNotifier));
+	authorMailNotifierList.push_back(std::move(authorMailNotifier));
 
 	//MessageSender
-	IArticleMessageSenderPortPtr articleMessageSender = CreateInstance(new ArticleMessageBroker);
+	IArticleMessageSenderPortPtr articleMessageSender = CreateUniqueInstance(new ArticleMessageBroker);
 
 	//Article Publisher
-	return CreateInstance(new ArticlePublisher(articleMessageSender, socialMediaPublisherList, authorMailNotifierList));
+	return (CreateUniqueInstance(new ArticlePublisher(std::move(articleMessageSender), std::move(socialMediaPublisherList), std::move(authorMailNotifierList))));
 }
 
 IArticleServicePtr CreateArticleService() {
 	//Article repo
-	IArticleRepositoryPortPtr articleRepo = CreateInstance(new DbArticleRepository);
+	IArticleRepositoryPortPtr articleRepo = CreateUniqueInstance(new DbArticleRepository);
 	//Author Repo
-	IAuthorRepositoryPortPtr authorRepo = CreateInstance(new AuthorRepository);
+	IAuthorRepositoryPortPtr authorRepo = CreateUniqueInstance(new AuthorRepository);
 	//Article Service
-	return  CreateInstance(new ArticleService(articleRepo, authorRepo, CreateArticlePublisher()));
+	IArticlePublisherPtr articlePublisher = CreateArticlePublisher();
+	return CreateUniqueInstance(new ArticleService(std::move(articleRepo), std::move(authorRepo), std::move(articlePublisher)));
 }
 
 IArticleEndpointPtr CreateArticleEndpoint()
 {
-	IArticleFacadePtr articleFacade = CreateInstance(new ArticleFacade(CreateArticleService()));
-	return CreateInstance(new ArticleEndpoint(articleFacade));
+	IArticleServicePtr ArticleService = CreateArticleService();
+	IArticleFacadePtr articleFacade = CreateUniqueInstance(new ArticleFacade(std::move(ArticleService)));
+	return CreateUniqueInstance(new ArticleEndpoint(std::move(articleFacade)));
 }
 
 int main()
@@ -83,10 +85,10 @@ int main()
 		.build();
 
 	//Create request
-	ArticleRequestPtr articleRequest = CreateInstance(new ArticleRequest(articleNew));
+	ArticleRequestPtr articleRequest = CreateUniqueInstance(new ArticleRequest(std::move(articleNew)));
 
 	//simulate sending requerst to endpoint to create a new article
-	auto articleIdResponse = articleEndpoint->Create(articleRequest);
+	auto articleIdResponse = articleEndpoint->Create(std::move(articleRequest));
 
 	return 0;
 }
