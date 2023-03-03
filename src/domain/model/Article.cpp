@@ -10,6 +10,7 @@ Article::Article(String const& id, String const& title, String const& content, A
 	m_Content{ content },
 	m_Author{ author }
 {
+	LOGSTRING_CTOR(Article)
 }
 
 void Article::ValidateEligibilityForPublication() {

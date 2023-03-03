@@ -9,9 +9,7 @@ public:
 	TwitterClient(const TwitterClient& other) noexcept = delete;
 	TwitterClient(TwitterClient&& other) noexcept = default;
 
-	virtual ~TwitterClient() {
-		std::cout << "~TwitterClient" << std::endl;
-	}
+	DEFAULT_VIRTUAL_DESTRUCTOR(~TwitterClient)
 
 public:
 	virtual void Tweet(ArticleTwitterModel const articleTweet) const noexcept override final;

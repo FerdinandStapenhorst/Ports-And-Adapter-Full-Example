@@ -3,8 +3,6 @@
 
 class IAuthorRepositoryPort {
 public:
-	virtual ~IAuthorRepositoryPort() {
-		std::cout << "~IAuthorRepositoryPort" << std::endl;
-	}
+	DEFAULT_VIRTUAL_DESTRUCTOR(~IAuthorRepositoryPort)
 	virtual [[nodiscard]] AuthorPtr Get(String const& authorId) const noexcept = 0;
 };

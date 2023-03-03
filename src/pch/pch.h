@@ -9,6 +9,13 @@
 #include <format>
 #include <optional>
 
+#define DEFAULT_CONSTRUCTOR(className) className() noexcept {std::cout << "  " << #className << " Ctor"<< std::endl;}
+#define DEFAULT_CONSTRUCTOR_DELETE(className) className() noexcept = delete;
+#define LOGSTRING_CTOR(className) std::cout << "  " << #className << " Ctor" << std::endl;
+#define DEFAULT_VIRTUAL_DESTRUCTOR(className) virtual className() {std::cout << "  " << #className << " Dtor" << std::endl;}
+//#define DEFAULT_VIRTUAL_DESTRUCTOR(className) virtual className() {}
+
+
 #pragma region Concepts
 
 template<typename T>
@@ -73,9 +80,8 @@ std::unique_ptr<T> CreateUniqueInstance(T* p) {
 }
 
 //Tools
-class Tools
+struct Tools
 {
-public:
 	static std::string CreateGuid()
 	{
 		std::random_device rd;

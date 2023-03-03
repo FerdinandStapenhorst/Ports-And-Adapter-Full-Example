@@ -8,9 +8,7 @@ public:
 	ArticlePublisher() noexcept = delete;
 	ArticlePublisher(const ArticlePublisher& other) noexcept = delete;
 	ArticlePublisher(ArticlePublisher&& other) noexcept = delete;
-	virtual ~ArticlePublisher() {
-		std::cout << "~ArticlePublisher" << std::endl;
-	}
+	DEFAULT_VIRTUAL_DESTRUCTOR(~ArticlePublisher)
 
 	ArticlePublisher(IArticleMessageSenderPortPtr messageSender,
 		std::vector<ISocialMediaPublisherPortPtr> socialMediaPublishers,

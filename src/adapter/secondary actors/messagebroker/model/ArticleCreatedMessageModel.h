@@ -7,9 +7,8 @@ class ArticleCreatedMessageModel {
 
 public:
 	ArticleCreatedMessageModel(const ArticleCreatedMessageModel& other) noexcept = default;
-	virtual ~ArticleCreatedMessageModel() {
-		std::cout << "~ArticleCreatedMessageModel" << std::endl;
-	}
+	DEFAULT_VIRTUAL_DESTRUCTOR(~ArticleCreatedMessageModel)
+	
 
 private:
 	ArticleCreatedMessageModel(ArticleCreatedMessageModel&& other) noexcept = default;//required

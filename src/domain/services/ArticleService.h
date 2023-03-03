@@ -11,9 +11,8 @@ public:
 
 	ArticleService(const ArticleService& other) noexcept = default;
 	ArticleService(ArticleService&& other) noexcept = default;
-	virtual ~ArticleService() {
-		std::cout << "~ArticleService" << std::endl;
-	}
+	
+	DEFAULT_VIRTUAL_DESTRUCTOR(~ArticleService)
 
 	ArticleService(IArticleRepositoryPortPtr articleRepository, 
 				   IAuthorRepositoryPortPtr authorRepository, 

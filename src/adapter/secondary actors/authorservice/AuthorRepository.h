@@ -7,9 +7,8 @@ public:
 	AuthorRepository() noexcept = default;
 	AuthorRepository(const AuthorRepository& other) noexcept = default;
 	AuthorRepository(AuthorRepository&& other) noexcept = default;
-	virtual ~AuthorRepository() {
-		std::cout << "~AuthorRepository" << std::endl;
-	}
+	DEFAULT_VIRTUAL_DESTRUCTOR(~AuthorRepository)
+	
 
 public:
 	#pragma region IAuthorRepositoryPort

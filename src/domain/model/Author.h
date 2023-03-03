@@ -6,13 +6,11 @@ class Author {
 
 public:
 
-	Author() noexcept = delete;
+	DEFAULT_CONSTRUCTOR_DELETE(Author)
 	Author(const Author& other) noexcept = default;
 	Author(Author&& other) noexcept = default;
 	Author& operator =(Author const& other) noexcept = default;
-	virtual ~Author() {
-		std::cout << "~Author" << std::endl;
-	}
+	DEFAULT_VIRTUAL_DESTRUCTOR(~Author)
 
 private:
 	

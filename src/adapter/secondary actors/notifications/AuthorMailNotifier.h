@@ -7,9 +7,8 @@ public:
 	AuthorMailNotifier() noexcept = default; //required
 	AuthorMailNotifier(const AuthorMailNotifier& other) noexcept = delete;
 	AuthorMailNotifier(AuthorMailNotifier&& other) noexcept = delete;
-	virtual ~AuthorMailNotifier() {
-		std::cout << "~AuthorMailNotifier" << std::endl;
-	}
+	DEFAULT_VIRTUAL_DESTRUCTOR(~AuthorMailNotifier)
+	
 
 public:
 	#pragma region IAuthorNotifierPort

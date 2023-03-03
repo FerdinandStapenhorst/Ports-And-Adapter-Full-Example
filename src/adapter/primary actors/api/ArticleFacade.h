@@ -8,10 +8,8 @@ class ArticleFacade : public IArticleFacade {
 public:
 	ArticleFacade(const ArticleFacade& other) noexcept = delete;
 	ArticleFacade(IArticleServicePtr articleService);
-	virtual ~ArticleFacade() {
-		std::cout << "~ArticleFacade" << std::endl;
-	}
-
+	DEFAULT_VIRTUAL_DESTRUCTOR(~ArticleFacade)
+	
 private:
 	IArticleServicePtr m_ArticleService;
 

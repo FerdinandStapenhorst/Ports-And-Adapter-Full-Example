@@ -8,9 +8,8 @@ public:
 	ArticleEndpoint(const ArticleEndpoint& other) noexcept = delete;
 	ArticleEndpoint(ArticleEndpoint&& other) noexcept = default;
 	ArticleEndpoint(IArticleFacadePtr articles);
-	virtual ~ArticleEndpoint() {
-		std::cout << "~ArticleEndpoint" << std::endl;
-	}
+	DEFAULT_VIRTUAL_DESTRUCTOR(~ArticleEndpoint)
+	
 
 private:
 	IArticleFacadePtr m_Articles;

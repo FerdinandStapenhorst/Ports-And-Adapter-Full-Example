@@ -7,9 +7,8 @@ public:
 	AuthorSmsNotifier() noexcept = default; //required
 	AuthorSmsNotifier(const AuthorSmsNotifier& other) noexcept = delete;
 	AuthorSmsNotifier(AuthorSmsNotifier&& other) noexcept = delete;
-	virtual ~AuthorSmsNotifier() {
-		std::cout << "~AuthorSmsNotifier" << std::endl;
-	}
+	DEFAULT_VIRTUAL_DESTRUCTOR(~AuthorSmsNotifier)
+	
 
 public:
 

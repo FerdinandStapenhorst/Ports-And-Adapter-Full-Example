@@ -3,9 +3,7 @@
 
 class ISocialMediaPublisherPort {
 public:
-	virtual ~ISocialMediaPublisherPort() {
-		std::cout << "~ISocialMediaPublisherPort" << std::endl;
-	}
+	DEFAULT_VIRTUAL_DESTRUCTOR(~ISocialMediaPublisherPort)
 	virtual void Publish(Article const& article) const noexcept = 0;
 
 };

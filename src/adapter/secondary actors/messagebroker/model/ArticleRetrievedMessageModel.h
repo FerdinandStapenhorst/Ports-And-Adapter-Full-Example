@@ -6,9 +6,7 @@ class ArticleRetrievedMessageModel {
 	friend class ArticleMessageBroker;
 public:
 	ArticleRetrievedMessageModel(const ArticleRetrievedMessageModel& other) noexcept = default;
-	virtual ~ArticleRetrievedMessageModel() {
-		std::cout << "~ArticleRetrievedMessageModel" << std::endl;
-	}
+	DEFAULT_VIRTUAL_DESTRUCTOR(~ArticleRetrievedMessageModel)
 
 private:
 	ArticleRetrievedMessageModel(ArticleRetrievedMessageModel&& other) noexcept = default; //required

@@ -4,8 +4,6 @@
 //Twitter client interface
 class ITwitterClient {
 public:
-	virtual ~ITwitterClient() {
-		std::cout << "~ITwitterClient" << std::endl;
-	}
+	DEFAULT_VIRTUAL_DESTRUCTOR(~ITwitterClient)
 	virtual void Tweet(ArticleTwitterModel const articleTweet) const noexcept = 0;
 };

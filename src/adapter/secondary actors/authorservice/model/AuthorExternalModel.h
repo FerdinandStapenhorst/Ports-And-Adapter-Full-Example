@@ -8,9 +8,8 @@ public:
 	AuthorExternalModel() noexcept = delete;
 	AuthorExternalModel(const AuthorExternalModel& other) noexcept = delete;
 	AuthorExternalModel(AuthorExternalModel&& other) noexcept = delete;
-	virtual ~AuthorExternalModel() {
-		std::cout << "~AuthorExternalModel" << std::endl;
-	}
+	DEFAULT_VIRTUAL_DESTRUCTOR(~AuthorExternalModel)
+	
 
 private:
 	AuthorExternalModel(String const& id, String const& firstName, String const& lastName);
@@ -30,7 +29,8 @@ public:
 		friend class AuthorExternalModel;
 
 	public:
-		virtual ~AuthorExternalModelBuilder() = default;
+		DEFAULT_VIRTUAL_DESTRUCTOR(~AuthorExternalModelBuilder)
+		
 
 	private:
 		AuthorExternalModelBuilder() noexcept = default;

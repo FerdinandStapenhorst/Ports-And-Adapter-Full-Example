@@ -6,12 +6,10 @@ class Article {
 	friend class ArticleBuilder;
 
 public:
-	Article() noexcept = delete;
+	DEFAULT_CONSTRUCTOR_DELETE(Article)
 	Article(const Article& other) noexcept = default;
 	Article(Article&& other) noexcept = default;
-	virtual ~Article() {
-		std::cout << "~Article" << std::endl;
-	}
+	DEFAULT_VIRTUAL_DESTRUCTOR(~Article)
 
 private:
 

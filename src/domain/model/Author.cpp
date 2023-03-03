@@ -7,9 +7,10 @@ AuthorPtr Author::AuthorBuilder::build() {
 	return AuthorPtr(a);
 }
 
-Author::Author(String const& id, String const& name) {
-	m_Id = id;
-	m_Name = name;
+Author::Author(String const& id, String const& name) : 
+	m_Id{ id }, m_Name{ name }
+{
+	LOGSTRING_CTOR(Author)
 }
 
 Author::AuthorBuilder Author::Create() {

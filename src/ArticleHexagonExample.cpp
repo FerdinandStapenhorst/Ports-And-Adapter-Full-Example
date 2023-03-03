@@ -4,8 +4,6 @@
 // ************************************************
 
 #include "pch.h"
-#include "Author.h"
-#include "Article.h"
 #include "DbArticleRepository.h"
 #include "AuthorRepository.h"
 #include "ArticleMessageBroker.h"
@@ -15,7 +13,6 @@
 #include "TwitterClient.h"
 #include "ArticlePublisher.h"
 #include "ArticleFacade.h"
-#include "ArticleService.h"
 #include "ArticleEndpoint.h"
 #include "ArticleRequest.h"
 #include "ArticleIdResponse.h"
@@ -69,8 +66,10 @@ int main()
 	//Simulate incoming request from endpoint to get an article
 	IArticleEndpointPtr articleEndpoint = CreateArticleEndpoint();
 
-	ArticleResponse article = articleEndpoint->Get("*");
+	//Get article from database
+	ArticleResponse article = articleEndpoint->Get("0815");
 
+	//Create author
 	auto author = Author::Create()
 		.withId("2")
 		.withName(article.AuthorName())
