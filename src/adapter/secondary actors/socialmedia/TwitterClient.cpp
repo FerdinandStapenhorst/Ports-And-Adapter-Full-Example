@@ -8,5 +8,5 @@ void TwitterClient::Tweet(ArticleTwitterModel const articleTweet) const noexcept
 	/**
 	 * social media integration implementation comes here
 	 */
-	std::cout << "Publishing Tweet: " << articleTweet.ToString() << std::endl;
+	LOGSTRING(std::format("Publishing Tweet: {}", articleTweet.ToString()))
 }

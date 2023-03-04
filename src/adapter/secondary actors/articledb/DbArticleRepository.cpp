@@ -11,6 +11,7 @@ ArticlePtr DbArticleRepository::Save(Author const& author, String const& title, 
 	 * Database integration implementation comes here
 	 */
 	ArticleModelPtr entity = ArticleModel::Of(author, title, content);
+	LOGSTRING(std::format("DbArticleRepository->Save article to database. Author:{}, title:{}, content:{}", author.Name(), title, content))
 	return entity->ToDomain();
 }
 
@@ -19,6 +20,9 @@ ArticlePtr DbArticleRepository::Get(String const& id) const noexcept
 	/**
 	 * Database integration implementation comes here
 	 */
+
+	LOGSTRING("DbArticleRepository -> Get Article from database")
+
 	ArticleModelPtr entity = ArticleModel::Create()
 		.withId(id)
 		.withAuthorName("Albert Einstein")
@@ -27,6 +31,5 @@ ArticlePtr DbArticleRepository::Get(String const& id) const noexcept
 		.withContent("E = MC2")
 		.build();
 
-	std::cout << "Retrieved article from Article Repository: " << entity->ToString() << std::endl;
 	return entity->ToDomain();
 }

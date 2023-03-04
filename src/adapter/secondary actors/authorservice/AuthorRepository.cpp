@@ -16,6 +16,6 @@ AuthorPtr AuthorRepository::Get(String const& authorId) const noexcept
 		.withLastName("Einstein")
 		.build();
 
-	std::cout << "Retrieved author from Author Repository: " << author->ToString() << std::endl;
+	LOGSTRING(std::format("Retrieved author from Author Repository {}", author->ToString()))
 	return author->ToDomain();
 }

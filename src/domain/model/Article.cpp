@@ -14,7 +14,7 @@ Article::Article(String const& id, String const& title, String const& content, A
 }
 
 void Article::ValidateEligibilityForPublication() {
-	std::cout << "Checking ValidateEligibilityForPublication: " << std::endl;
+	LOGSTRING("Checking ValidateEligibilityForPublication...")
 
 	verifyForPlagiarism();
 	validateTitleLength();

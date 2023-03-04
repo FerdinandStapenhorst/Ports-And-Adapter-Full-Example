@@ -9,6 +9,6 @@ void AuthorMailNotifier::NotifyAboutCreationOf(Article const& article) const noe
 	/**
 	 * Mail system integration implementation comes here
 	 */
-	auto mailModel = ArticleMailModel::Of(article);
-	std::cout << "Notifying author via E-Mail: " << mailModel.ToString() << std::endl;
+	auto m = ArticleMailModel::Of(article);
+	LOGSTRING(std::format("Notifying author via E-Mail: {}", m.ToString()))
 }

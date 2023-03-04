@@ -8,16 +8,18 @@
 
 ArticleEndpoint::ArticleEndpoint(IArticleFacadePtr articles) :
 	m_Articles{ std::move(articles) }
-{}
+{
+	LOGSTRING_CTOR(ArticleEndpoint)
+}
 
 ArticleResponse ArticleEndpoint::Get(String const& articleId) const noexcept
 {
-	std::cout << "ArticleEndpoint -> Get called" << std::endl;
+	LOGSTRING("ArticleEndpoint->Get called")
 	return m_Articles->Get(articleId);
 }
 
 ArticleIdResponse ArticleEndpoint::Create(ArticleRequestPtr articleRequest) noexcept
 {
-	std::cout << "ArticleEndpoint -> Create called" << std::endl;
+	LOGSTRING("ArticleEndpoint->Create called")
 	return m_Articles->Create(std::move(articleRequest));
 }

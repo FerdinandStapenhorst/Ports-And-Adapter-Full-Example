@@ -69,13 +69,19 @@ int main()
 	//Get article from database
 	ArticleResponse article = articleEndpoint->Get("0815");
 
+	
+	LOGSTRING(std::format("Article loaded.\n  Autor:   {}\n  ID:      {}\n  Title:   {}\n  Content:   {}",
+	 article.AuthorName(), article.Id(), article.Title(), article.Content()))
+
 	//Create author
+	LOGSTRING("Creating new author...")
 	auto author = Author::Create()
 		.withId("2")
 		.withName(article.AuthorName())
 		.build();
 
 	//Create a new article
+	LOGSTRING("Creating new article for author...")
 	auto articleNew = Article::Create()
 		.withAuthor(*author)
 		.withTitle(article.Title())
@@ -83,11 +89,13 @@ int main()
 		.withContent(article.Content())
 		.build();
 
-	//Create request
+	//Simulating create request
 	ArticleRequestPtr articleRequest = CreateUniqueInstance(new ArticleRequest(std::move(articleNew)));
 
-	//simulate sending requerst to endpoint to create a new article
-	auto articleIdResponse = articleEndpoint->Create(std::move(articleRequest));
+	{
+		//simulate sending requerst to endpoint to create a new article
+		auto articleIdResponse = articleEndpoint->Create(std::move(articleRequest));
+	}
 
 	return 0;
 }

@@ -9,12 +9,26 @@
 #include <format>
 #include <optional>
 
-#define DEFAULT_CONSTRUCTOR(className) className() noexcept {std::cout << "  " << #className << " Ctor"<< std::endl;}
-#define DEFAULT_CONSTRUCTOR_DELETE(className) className() noexcept = delete;
-#define LOGSTRING_CTOR(className) std::cout << "  " << #className << " Ctor" << std::endl;
-#define DEFAULT_VIRTUAL_DESTRUCTOR(className) virtual className() {std::cout << "  " << #className << " Dtor" << std::endl;}
-//#define DEFAULT_VIRTUAL_DESTRUCTOR(className) virtual className() {}
 
+#define DEFAULT_CONSTRUCTOR_DELETE(className) className() noexcept = delete;
+
+//#define LOGSTRING(logstring) 
+#define LOGSTRING(logstring) std::cout << logstring << std::endl;
+
+//#define DEBUG_CTORS 1
+#ifdef DEBUG_CTORS
+
+	#define DEFAULT_CONSTRUCTOR(className) className() noexcept {std::cout << "  " << #className << " Ctor"<< std::endl;}
+	#define LOGSTRING_CTOR(className) std::cout << "  " << #className << " Ctor" << std::endl;
+	#define DEFAULT_VIRTUAL_DESTRUCTOR(className) virtual className() {std::cout << "  " << #className << " Dtor" << std::endl;}
+
+#else
+
+	#define DEFAULT_CONSTRUCTOR(className) 
+	#define LOGSTRING_CTOR(className) 
+	#define DEFAULT_VIRTUAL_DESTRUCTOR(className) virtual className() {}
+
+#endif // DEBUG_CTORS
 
 #pragma region Concepts
 

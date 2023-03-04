@@ -26,6 +26,7 @@ String ArticleService::Create(String const& authorId, String const& title, Strin
 
 ArticlePtr ArticleService::Get(String const& id) const noexcept
 {
+	LOGSTRING("ArticleService -> Get called")
 	auto article = m_ArticleRepository->Get(id);
 	m_EventPublisher->PublishRetrievalOf(*article);
 	return article;

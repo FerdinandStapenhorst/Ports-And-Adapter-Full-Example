@@ -10,7 +10,8 @@ void ArticleMessageBroker::SendMessageForCreated(Article const& article) const n
 	 * message broker integration implementation comes here
 	 */
 	auto m = ArticleCreatedMessageModel::Of(article);
-	std::cout << "Article Message Broker: Send created event " << m.ToString() << std::endl;
+	LOGSTRING(std::format("Article Message Broker: Send created event {}", m.ToString()))
+	
 }
 
 void ArticleMessageBroker::SendMessageForRetrieved(Article const& article) const noexcept
@@ -19,5 +20,5 @@ void ArticleMessageBroker::SendMessageForRetrieved(Article const& article) const
 	 * message broker integration implementation comes here
 	 */
 	auto m = ArticleRetrievedMessageModel::Of(article);
-	std::cout << "Article Message Broker: Send retrieve event " << m.ToString() << std::endl;
+	LOGSTRING(std::format("Article Message Broker: Send retrieve event {}", m.ToString()))
 }
