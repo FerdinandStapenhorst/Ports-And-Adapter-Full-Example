@@ -8,7 +8,7 @@
 #include "Author.h"
 
 ArticleService::ArticleService(IArticleRepositoryPortPtr articleRepository,
-	IAuthorRepositoryPortPtr authorRepository, IArticlePublisherPtr eventPublisher) :
+	IAuthorRepositoryPortPtr authorRepository, IArticlePublisherPortPtr eventPublisher) :
 	m_ArticleRepository{ std::move(articleRepository) },
 	m_AuthorRepository{ std::move(authorRepository) },
 	m_EventPublisher{ std::move(eventPublisher) }

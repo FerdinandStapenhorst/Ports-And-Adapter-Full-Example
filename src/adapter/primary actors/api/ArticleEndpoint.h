@@ -7,7 +7,7 @@ class ArticleEndpoint : public IArticleEndpoint {
 public:
 	ArticleEndpoint(const ArticleEndpoint& other) noexcept = delete;
 	ArticleEndpoint(ArticleEndpoint&& other) noexcept = default;
-	ArticleEndpoint(IArticleFacadePtr articles);
+	ArticleEndpoint(IArticleFacadePtr articles);  //Inject the required facade
 	DEFAULT_VIRTUAL_DESTRUCTOR(~ArticleEndpoint)
 	
 

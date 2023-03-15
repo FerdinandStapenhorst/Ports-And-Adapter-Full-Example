@@ -2,7 +2,7 @@
 #include "pch.h"
 #include "IArticleRepositoryPort.h"
 
-class DbArticleRepository : public IArticleRepositoryPort {
+class DbArticleRepository : public IArticleRepositoryPort {  //Implement (inherit) the required port
 public:
 	DbArticleRepository() noexcept = default;
 	DbArticleRepository(const DbArticleRepository& other) noexcept = delete;

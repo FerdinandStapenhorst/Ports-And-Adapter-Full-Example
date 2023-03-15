@@ -3,7 +3,7 @@
 #include "IArticleMessageSenderPort.h"
 #include "Article.h"
 
-class ArticleMessageBroker : public IArticleMessageSenderPort {
+class ArticleMessageBroker : public IArticleMessageSenderPort {  //Implement (inherit) the required port
 public:
 	ArticleMessageBroker() noexcept = default; //required
 	ArticleMessageBroker(const ArticleMessageBroker& other) noexcept = delete;

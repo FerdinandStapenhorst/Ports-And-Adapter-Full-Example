@@ -2,7 +2,7 @@
 #include "pch.h"
 #include "IAuthorNotifierPort.h"
 
-class AuthorSmsNotifier : public IAuthorNotifierPort {
+class AuthorSmsNotifier : public IAuthorNotifierPort {  //Implement (inherit) the required port
 public:
 	AuthorSmsNotifier() noexcept = default; //required
 	AuthorSmsNotifier(const AuthorSmsNotifier& other) noexcept = delete;

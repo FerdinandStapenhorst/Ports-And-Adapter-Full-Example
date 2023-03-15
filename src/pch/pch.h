@@ -15,7 +15,7 @@
 //#define LOGSTRING(logstring) 
 #define LOGSTRING(logstring) std::cout << logstring << std::endl;
 
-//#define DEBUG_CTORS 1
+// #define DEBUG_CTORS 1
 #ifdef DEBUG_CTORS
 
 	#define DEFAULT_CONSTRUCTOR(className) className() noexcept {std::cout << "  " << #className << " Ctor"<< std::endl;}
@@ -48,10 +48,10 @@ class ArticleIdResponse;
 class AuthorExternalModel;
 
 class IArticleFacade;
-class IArticleService;
+class IArticleServicePort;
 class IArticleRepositoryPort;
 class IAuthorRepositoryPort;
-class IArticlePublisher;
+class IArticlePublisherPort;
 class IArticleMessageSenderPort;
 class ISocialMediaPublisherPort;
 class IAuthorNotifierPort;
@@ -64,26 +64,34 @@ using String = std::string;
 //Models
 using AuthorPtr						= std::unique_ptr<Author>;
 using ArticlePtr					= std::unique_ptr<Article>;
-//Service
-using IArticlePublisherPtr			= std::unique_ptr<IArticlePublisher>;
-using IArticleServicePtr			= std::unique_ptr<IArticleService>;
+
+//Pointer to the primary ports
+using IArticlePublisherPortPtr		= std::unique_ptr<IArticlePublisherPort>;
+using IArticleServicePortPtr		= std::unique_ptr<IArticleServicePort>;
+
 //Facade
 using IArticleFacadePtr				= std::unique_ptr<IArticleFacade>;
+
 //Pointer to the secondary ports
 using IArticleRepositoryPortPtr		= std::unique_ptr<IArticleRepositoryPort>;
 using IAuthorRepositoryPortPtr		= std::unique_ptr<IAuthorRepositoryPort>;
 using IArticleMessageSenderPortPtr	= std::unique_ptr<IArticleMessageSenderPort>;
 using ISocialMediaPublisherPortPtr	= std::unique_ptr<ISocialMediaPublisherPort>;
 using IAuthorNotifierPortPtr		= std::unique_ptr<IAuthorNotifierPort>;
+
 //Database Adapter model
 using ArticleModelPtr				= std::unique_ptr<ArticleModel>;
+
 //Author service model
 using AuthorExternalModelPtr		= std::unique_ptr<AuthorExternalModel>;
+
 //Social media Adapter
 using ITwitterClientPtr				= std::unique_ptr<ITwitterClient>;
+
 //API models
 using ArticleRequestPtr				= std::unique_ptr<ArticleRequest>;
 using ArticleResponsePtr			= std::unique_ptr<ArticleResponse>;
+
 //API Endpoint 
 using IArticleEndpointPtr			= std::unique_ptr<IArticleEndpoint>;
 

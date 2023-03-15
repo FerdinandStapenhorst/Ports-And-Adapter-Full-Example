@@ -1,7 +1,10 @@
 #pragma once
-// ************************************************
-// *********   Ports & Andapter example ***********
-// ************************************************
+// ***************************************************************************
+// ********************** Ports & Andapter example ***************************
+// *                                                                         *
+// * - Primapy Adapters get the inbound port's interface injected and use it *
+// * - Secondary Adapters implement (inherit) the outbound port's interface  *
+// ***************************************************************************
 
 #include "pch.h"
 #include "DbArticleRepository.h"
@@ -18,7 +21,7 @@
 #include "ArticleIdResponse.h"
 #include "ArticleResponse.h"
 
-IArticlePublisherPtr CreateArticlePublisher()
+IArticlePublisherPortPtr CreateArticlePublisher()
 {
 	//TwitterClient
 	ITwitterClientPtr twitterClient = CreateUniqueInstance(new TwitterClient);
@@ -44,19 +47,19 @@ IArticlePublisherPtr CreateArticlePublisher()
 	return (CreateUniqueInstance(new ArticlePublisher(std::move(articleMessageSender), std::move(socialMediaPublisherList), std::move(authorMailNotifierList))));
 }
 
-IArticleServicePtr CreateArticleService() {
+IArticleServicePortPtr CreateArticleService() {
 	//Article repo
 	IArticleRepositoryPortPtr articleRepo = CreateUniqueInstance(new DbArticleRepository);
 	//Author Repo
 	IAuthorRepositoryPortPtr authorRepo = CreateUniqueInstance(new AuthorRepository);
 	//Article Service
-	IArticlePublisherPtr articlePublisher = CreateArticlePublisher();
+	IArticlePublisherPortPtr articlePublisher = CreateArticlePublisher();
 	return CreateUniqueInstance(new ArticleService(std::move(articleRepo), std::move(authorRepo), std::move(articlePublisher)));
 }
 
 IArticleEndpointPtr CreateArticleEndpoint()
 {
-	IArticleServicePtr ArticleService = CreateArticleService();
+	IArticleServicePortPtr ArticleService = CreateArticleService();
 	IArticleFacadePtr articleFacade = CreateUniqueInstance(new ArticleFacade(std::move(ArticleService)));
 	return CreateUniqueInstance(new ArticleEndpoint(std::move(articleFacade)));
 }

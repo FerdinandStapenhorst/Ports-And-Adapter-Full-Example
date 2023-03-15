@@ -1,9 +1,9 @@
 #pragma once
 #include "pch.h"
-#include "IArticlePublisher.h"
+#include "IArticlePublisherPort.h"
 #include "IArticleMessageSenderPort.h"
 
-class ArticlePublisher : public IArticlePublisher {
+class ArticlePublisher : public IArticlePublisherPort {
 public:
 	ArticlePublisher() noexcept = delete;
 	ArticlePublisher(const ArticlePublisher& other) noexcept = delete;

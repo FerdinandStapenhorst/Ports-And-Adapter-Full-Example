@@ -1,10 +1,10 @@
 #pragma once
 #include "pch.h"
 
-class IArticlePublisher {
+class IArticlePublisherPort {
 public:
 
-	DEFAULT_VIRTUAL_DESTRUCTOR(~IArticlePublisher)
+	DEFAULT_VIRTUAL_DESTRUCTOR(~IArticlePublisherPort)
 	
 	virtual void PublishCreationOf(Article const& article) const noexcept = 0;
 

@@ -2,7 +2,7 @@
 #include "pch.h"
 #include "IAuthorRepositoryPort.h"
 
-class AuthorRepository : public IAuthorRepositoryPort {
+class AuthorRepository : public IAuthorRepositoryPort {  //Implement (inherit) the required port
 public:
 	AuthorRepository() noexcept = default;
 	AuthorRepository(const AuthorRepository& other) noexcept = default;

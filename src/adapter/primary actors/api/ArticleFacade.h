@@ -7,11 +7,11 @@
 class ArticleFacade : public IArticleFacade {
 public:
 	ArticleFacade(const ArticleFacade& other) noexcept = delete;
-	ArticleFacade(IArticleServicePtr articleService);
+	ArticleFacade(IArticleServicePortPtr articleService); //Inject the required port
 	DEFAULT_VIRTUAL_DESTRUCTOR(~ArticleFacade)
 	
 private:
-	IArticleServicePtr m_ArticleService;
+	IArticleServicePortPtr m_ArticleService;
 
 public:
 	ArticleResponse Get(String const& articleId) const noexcept override final;

@@ -7,7 +7,7 @@
 #include "ArticleService.h"
 #include "Article.h"
 
-ArticleFacade::ArticleFacade(IArticleServicePtr articleService) :
+ArticleFacade::ArticleFacade(IArticleServicePortPtr articleService) :
 	m_ArticleService{ std::move(articleService) }
 {
 	LOGSTRING_CTOR(ArticleFacade)

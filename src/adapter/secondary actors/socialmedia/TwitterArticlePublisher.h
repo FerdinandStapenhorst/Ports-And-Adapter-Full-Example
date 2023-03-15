@@ -2,7 +2,7 @@
 #include "pch.h"
 #include "ISocialMediaPublisherPort.h"
 
-class TwitterArticlePublisher : public ISocialMediaPublisherPort {
+class TwitterArticlePublisher : public ISocialMediaPublisherPort {  //Implement (inherit) the required port
 public:
 	TwitterArticlePublisher() noexcept = delete;
 	TwitterArticlePublisher(const TwitterArticlePublisher& other) noexcept = delete;

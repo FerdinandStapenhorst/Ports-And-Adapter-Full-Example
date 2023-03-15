@@ -74,14 +74,14 @@
     <ClInclude Include="src\domain\model\Article.h" />
     <ClInclude Include="src\domain\model\Author.h" />
     <ClInclude Include="src\domain\ports\IArticleMessageSenderPort.h" />
+    <ClInclude Include="src\domain\ports\IArticlePublisherPort.h" />
     <ClInclude Include="src\domain\ports\IArticleRepositoryPort.h" />
+    <ClInclude Include="src\domain\ports\IArticleServicePort.h" />
     <ClInclude Include="src\domain\ports\IAuthorNotifierPort.h" />
     <ClInclude Include="src\domain\ports\IAuthorRepositoryPort.h" />
     <ClInclude Include="src\domain\ports\ISocialMediaPublisherPort.h" />
     <ClInclude Include="src\domain\services\ArticlePublisher.h" />
     <ClInclude Include="src\domain\services\ArticleService.h" />
-    <ClInclude Include="src\domain\services\IArticlePublisher.h" />
-    <ClInclude Include="src\domain\services\IArticleService.h" />
     <ClInclude Include="src\pch\pch.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

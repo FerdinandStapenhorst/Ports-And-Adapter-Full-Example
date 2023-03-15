@@ -1,12 +1,12 @@
 #pragma once
 #include "pch.h"
 #include "ISocialMediaPublisherPort.h"
-#include "IArticlePublisher.h"
+#include "IArticlePublisherPort.h"
 #include "IAuthorRepositoryPort.h"
 #include "IArticleRepositoryPort.h"
-#include "IArticleService.h"
+#include "IArticleServicePort.h"
 
-class ArticleService : public IArticleService {
+class ArticleService : public IArticleServicePort {
 public:
 
 	ArticleService(const ArticleService& other) noexcept = default;
@@ -16,12 +16,12 @@ public:
 
 	ArticleService(IArticleRepositoryPortPtr articleRepository, 
 				   IAuthorRepositoryPortPtr authorRepository, 
-				   IArticlePublisherPtr eventPublisher);
+				   IArticlePublisherPortPtr eventPublisher);
 
 private:
 	IArticleRepositoryPortPtr m_ArticleRepository;
 	IAuthorRepositoryPortPtr m_AuthorRepository;
-	IArticlePublisherPtr m_EventPublisher;
+	IArticlePublisherPortPtr m_EventPublisher;
 
 public:
 	String Create(String const& authorId, String const& title, String const& content) noexcept override final;

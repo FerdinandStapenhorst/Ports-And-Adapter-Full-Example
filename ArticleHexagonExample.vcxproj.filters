@@ -225,20 +225,20 @@
     <ClInclude Include="src\adapter\secondary actors\articledb\DbArticleRepository.h">
       <Filter>adapter\secondary actors\articledb</Filter>
     </ClInclude>
-    <ClInclude Include="src\domain\services\IArticlePublisher.h">
-      <Filter>domain\services</Filter>
-    </ClInclude>
     <ClInclude Include="src\adapter\primary actors\api\IArticleEndpoint.h">
       <Filter>adapter\primary actors\api</Filter>
     </ClInclude>
     <ClInclude Include="src\adapter\secondary actors\socialmedia\ITwitterClient.h">
       <Filter>adapter\secondary actors\socialmedia</Filter>
     </ClInclude>
+    <ClInclude Include="src\domain\ports\IArticlePublisherPort.h">
+      <Filter>domain\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="src\domain\ports\IArticleServicePort.h">
+      <Filter>domain\ports</Filter>
+    </ClInclude>
     <ClInclude Include="src\adapter\primary actors\api\IArticleFacade.h">
       <Filter>adapter\primary actors\api</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\services\IArticleService.h">
-      <Filter>domain\services</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
