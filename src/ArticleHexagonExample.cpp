@@ -2,7 +2,7 @@
 // ***************************************************************************
 // ********************** Ports & Andapter example ***************************
 // *                                                                         *
-// * - Primapy Adapters get the inbound port's interface injected and use it *
+// * - Primary Adapters get the inbound port's interface injected and use it *
 // * - Secondary Adapters implement (inherit) the outbound port's interface  *
 // ***************************************************************************
 
