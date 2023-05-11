@@ -1,8 +1,8 @@
 #pragma once
 #include "pch.h"
-#include "ISocialMediaPublisherPort.h"
+#include "ISocialMediaPublisher.h"
 
-class TwitterArticlePublisher : public ISocialMediaPublisherPort {  //Implement (inherit) the required port
+class TwitterArticlePublisher : public ISocialMediaPublisher {  //Implement (inherit) the required port
 public:
 	TwitterArticlePublisher() noexcept = delete;
 	TwitterArticlePublisher(const TwitterArticlePublisher& other) noexcept = delete;

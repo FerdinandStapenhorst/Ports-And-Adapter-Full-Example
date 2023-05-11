@@ -1,6 +1,6 @@
 #pragma once
 #include "pch.h"
-#include "IArticleMessageSenderPort.h"
+#include "IArticleMessageSender.h"
 #include "Article.h"
 
 class ArticleMessageBroker : public IArticleMessageSenderPort {  //Implement (inherit) the required port

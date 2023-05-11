@@ -1,8 +1,8 @@
 #pragma once
 #include "pch.h"
-#include "IAuthorNotifierPort.h"
+#include "IAuthorNotifier.h"
 
-class AuthorSmsNotifier : public IAuthorNotifierPort {  //Implement (inherit) the required port
+class AuthorSmsNotifier : public IAuthorNotifier {  //Implement (inherit) the required port
 public:
 	AuthorSmsNotifier() noexcept = default; //required
 	AuthorSmsNotifier(const AuthorSmsNotifier& other) noexcept = delete;

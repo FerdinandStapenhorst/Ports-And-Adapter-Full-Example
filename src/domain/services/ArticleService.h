@@ -1,12 +1,12 @@
 #pragma once
 #include "pch.h"
-#include "ISocialMediaPublisherPort.h"
-#include "IArticlePublisherPort.h"
-#include "IAuthorRepositoryPort.h"
-#include "IArticleRepositoryPort.h"
-#include "IArticleServicePort.h"
+#include "ISocialMediaPublisher.h"
+#include "IArticlePublisher.h"
+#include "IAuthorRepository.h"
+#include "IArticleRepository.h"
+#include "IArticleService.h"
 
-class ArticleService : public IArticleServicePort {
+class ArticleService : public IArticleService {
 public:
 
 	ArticleService(const ArticleService& other) noexcept = default;

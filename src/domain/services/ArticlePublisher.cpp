@@ -2,9 +2,9 @@
 
 #include "pch.h"
 #include "ArticlePublisher.h"
-#include "IArticleMessageSenderPort.h"
-#include "ISocialMediaPublisherPort.h"
-#include "IAuthorNotifierPort.h"
+#include "IArticleMessageSender.h"
+#include "ISocialMediaPublisher.h"
+#include "IAuthorNotifier.h"
 
 ArticlePublisher::ArticlePublisher(IArticleMessageSenderPortPtr messageSender,
 	std::vector<ISocialMediaPublisherPortPtr> socialMediaPublishers,

@@ -144,19 +144,19 @@
     <ClInclude Include="src\domain\model\Author.h">
       <Filter>domain\model</Filter>
     </ClInclude>
-    <ClInclude Include="src\domain\ports\IArticleMessageSenderPort.h">
+    <ClInclude Include="src\domain\ports\IArticleMessageSender.h">
       <Filter>domain\ports</Filter>
     </ClInclude>
-    <ClInclude Include="src\domain\ports\IArticleRepositoryPort.h">
+    <ClInclude Include="src\domain\ports\IArticleRepository.h">
       <Filter>domain\ports</Filter>
     </ClInclude>
-    <ClInclude Include="src\domain\ports\IAuthorNotifierPort.h">
+    <ClInclude Include="src\domain\ports\IAuthorNotifier.h">
       <Filter>domain\ports</Filter>
     </ClInclude>
-    <ClInclude Include="src\domain\ports\IAuthorRepositoryPort.h">
+    <ClInclude Include="src\domain\ports\IAuthorRepository.h">
       <Filter>domain\ports</Filter>
     </ClInclude>
-    <ClInclude Include="src\domain\ports\ISocialMediaPublisherPort.h">
+    <ClInclude Include="src\domain\ports\ISocialMediaPublisher.h">
       <Filter>domain\ports</Filter>
     </ClInclude>
     <ClInclude Include="src\domain\services\ArticlePublisher.h">
@@ -231,10 +231,10 @@
     <ClInclude Include="src\adapter\secondary actors\socialmedia\ITwitterClient.h">
       <Filter>adapter\secondary actors\socialmedia</Filter>
     </ClInclude>
-    <ClInclude Include="src\domain\ports\IArticlePublisherPort.h">
+    <ClInclude Include="src\domain\ports\IArticlePublisher.h">
       <Filter>domain\ports</Filter>
     </ClInclude>
-    <ClInclude Include="src\domain\ports\IArticleServicePort.h">
+    <ClInclude Include="src\domain\ports\IArticleService.h">
       <Filter>domain\ports</Filter>
     </ClInclude>
     <ClInclude Include="src\adapter\primary actors\api\IArticleFacade.h">

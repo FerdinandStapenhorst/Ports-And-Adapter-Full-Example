@@ -48,13 +48,13 @@ class ArticleIdResponse;
 class AuthorExternalModel;
 
 class IArticleFacade;
-class IArticleServicePort;
-class IArticleRepositoryPort;
-class IAuthorRepositoryPort;
-class IArticlePublisherPort;
+class IArticleService;
+class IArticleRepository;
+class IAuthorRepository;
+class IArticlePublisher;
 class IArticleMessageSenderPort;
-class ISocialMediaPublisherPort;
-class IAuthorNotifierPort;
+class ISocialMediaPublisher;
+class IAuthorNotifier;
 class ITwitterClient;
 class IArticleEndpoint;
 
@@ -66,18 +66,18 @@ using AuthorPtr						= std::unique_ptr<Author>;
 using ArticlePtr					= std::unique_ptr<Article>;
 
 //Pointer to the primary ports
-using IArticlePublisherPortPtr		= std::unique_ptr<IArticlePublisherPort>;
-using IArticleServicePortPtr		= std::unique_ptr<IArticleServicePort>;
+using IArticlePublisherPortPtr		= std::unique_ptr<IArticlePublisher>;
+using IArticleServicePortPtr		= std::unique_ptr<IArticleService>;
 
 //Facade
 using IArticleFacadePtr				= std::unique_ptr<IArticleFacade>;
 
 //Pointer to the secondary ports
-using IArticleRepositoryPortPtr		= std::unique_ptr<IArticleRepositoryPort>;
-using IAuthorRepositoryPortPtr		= std::unique_ptr<IAuthorRepositoryPort>;
+using IArticleRepositoryPortPtr		= std::unique_ptr<IArticleRepository>;
+using IAuthorRepositoryPortPtr		= std::unique_ptr<IAuthorRepository>;
 using IArticleMessageSenderPortPtr	= std::unique_ptr<IArticleMessageSenderPort>;
-using ISocialMediaPublisherPortPtr	= std::unique_ptr<ISocialMediaPublisherPort>;
-using IAuthorNotifierPortPtr		= std::unique_ptr<IAuthorNotifierPort>;
+using ISocialMediaPublisherPortPtr	= std::unique_ptr<ISocialMediaPublisher>;
+using IAuthorNotifierPortPtr		= std::unique_ptr<IAuthorNotifier>;
 
 //Database Adapter model
 using ArticleModelPtr				= std::unique_ptr<ArticleModel>;

@@ -1,8 +1,8 @@
 #pragma once
 #include "pch.h"
 
-class IAuthorNotifierPort {
+class IAuthorNotifier {
 public:
-	DEFAULT_VIRTUAL_DESTRUCTOR(~IAuthorNotifierPort)
+	DEFAULT_VIRTUAL_DESTRUCTOR(~IAuthorNotifier)
 	virtual void NotifyAboutCreationOf(Article const& article) const noexcept = 0;
 };

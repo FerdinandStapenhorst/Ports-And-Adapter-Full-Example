@@ -1,8 +1,8 @@
 #pragma once
 #include "pch.h"
-#include "IAuthorRepositoryPort.h"
+#include "IAuthorRepository.h"
 
-class AuthorRepository : public IAuthorRepositoryPort {  //Implement (inherit) the required port
+class AuthorRepository : public IAuthorRepository {  //Implement (inherit) the required port
 public:
 	AuthorRepository() noexcept = default;
 	AuthorRepository(const AuthorRepository& other) noexcept = default;
